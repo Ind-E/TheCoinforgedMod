@@ -1,5 +1,5 @@
 {
-  "coinforged:PotionID": {
+  "GamblerMod:PotionID": {
     "NAME": "Some Kind of Potion",
     "DESCRIPTIONS": [
       "Little",
@@ -7,6 +7,12 @@
       "that get put together",
       " into a description.",
       " Exactly how depends on the potion, and you can set it up however you want."
+    ]
+  },
+  "GamblerMod:SuddenWindfall": {
+    "NAME": "Sudden Windfall Potion",
+    "DESCRIPTIONS": [
+      "Gain gold equal to your missing health."
     ]
   }
 }
