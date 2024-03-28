@@ -16,13 +16,13 @@ public class GoForBroke extends AbstractCoinforgedCard{
         CardType.POWER,
         CardRarity.RARE,
         CardTarget.SELF,
-        2
+        3
     );
 
     public GoForBroke() {
         super(ID, info);
         setMagic(MAGIC);
-        setCostUpgrade(1);
+        setCostUpgrade(2);
     }
 
     @Override

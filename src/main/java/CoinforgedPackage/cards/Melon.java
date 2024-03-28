@@ -17,7 +17,7 @@ public class Melon extends AbstractCoinforgedCard {
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.ALL,
+            CardTarget.SELF,
             2);
 
     public Melon() {

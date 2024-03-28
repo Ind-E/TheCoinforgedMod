@@ -4,26 +4,33 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
+import CoinforgedPackage.cards.Grapes;
 import CoinforgedPackage.modifiers.GrapesModifier;
 import basemod.helpers.CardModifierManager;
 
 public class GrapesAction extends AbstractGameAction {
     private int amount;
+    private int cost;
+    private boolean upgraded;
     private AbstractPlayer p;
     private String msg;
     private ArrayList<AbstractCard> cannotBuff = new ArrayList<AbstractCard>();
 
-    public GrapesAction(int amount) {
+    public GrapesAction(int amount, int cost, boolean upgraded) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.isDone = false;
         this.amount = amount;
+        this.cost = cost;
+        this.upgraded = upgraded;
         msg = "Increase Damage and Block by " + this.amount + ".";
     }
 
@@ -35,20 +42,16 @@ public class GrapesAction extends AbstractGameAction {
 
             while (var1.hasNext()) {
                 c = var1.next();
-                if (c.baseBlock <= 0 || c.baseDamage <= 0) {
+                if (c.baseDamage <= 0 && c.baseBlock <= 0) {
                     this.cannotBuff.add(c);
                 }
             }
 
             if (this.cannotBuff.size() == this.p.hand.group.size()) {
                 this.isDone = true;
-                return;
-            }
-
-            if (this.p.hand.group.size() - this.cannotBuff.size() == 1) {
-                CardModifierManager.addModifier(this.p.hand.getTopCard(),
-                        new GrapesModifier(this.amount));
-                this.isDone = true;
+                AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
+                        AbstractDungeon.player.dialogY, 3.0F, "I have no cards that can be buffed", true));
+                addToBot(new MakeTempCardInHandAction(new Grapes(this.cost, this.upgraded)));
                 return;
             }
 
@@ -94,9 +97,12 @@ public class GrapesAction extends AbstractGameAction {
         while (var1.hasNext()) {
             AbstractCard c = var1.next();
             this.p.hand.addToTop(c);
+            c.superFlash();
         }
 
         this.p.hand.refreshHandLayout();
+        addToBot(new MakeTempCardInHandAction(new Grapes(this.cost + 1, this.upgraded)));
+        return;
     }
 
 }

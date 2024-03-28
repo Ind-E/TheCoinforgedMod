@@ -1,6 +1,5 @@
 package CoinforgedPackage.cards;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -40,8 +39,8 @@ public class Grapes extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GrapesAction(this.magicNumber));
-        addToBot(new MakeTempCardInHandAction(new Grapes(this.cost + 1, this.upgraded)));
+        addToBot(new GrapesAction(this.magicNumber, this.cost, this.upgraded));
+        
     }
 
     @Override

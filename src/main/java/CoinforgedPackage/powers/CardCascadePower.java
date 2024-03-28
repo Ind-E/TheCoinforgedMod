@@ -30,10 +30,7 @@ public class CardCascadePower extends BasePower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CardCascadePower.POWER_ID));
-        }
-
+    public void atStartOfTurn() {
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CardCascadePower.POWER_ID));
     }
 }

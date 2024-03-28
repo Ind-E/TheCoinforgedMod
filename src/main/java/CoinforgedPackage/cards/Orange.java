@@ -1,17 +1,15 @@
 package CoinforgedPackage.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.actions.OrangeAction;
 import CoinforgedPackage.character.Coinforged;
 
-//TODO: rework
 public class Orange extends AbstractCoinforgedCard{
-    private static final int DAMAGE = 4;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 3;
+    private static final int UPG_DAMAGE = 1;
     private static final int TIMES_TO_DEAL_DAMAGE = 2;
 
     public static final String ID = makeID(Orange.class.getSimpleName());
@@ -33,7 +31,7 @@ public class Orange extends AbstractCoinforgedCard{
         DamageInfo dmgInfo = new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL);
         dmgInfo.name = "Coinforged_Orange";
         for (int i = 0; i < TIMES_TO_DEAL_DAMAGE; i++) {
-            addToBot(new DamageAction(m, dmgInfo, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToBot(new OrangeAction(m, dmgInfo));
         }
     }
 }

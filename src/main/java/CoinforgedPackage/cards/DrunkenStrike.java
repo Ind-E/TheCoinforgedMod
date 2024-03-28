@@ -27,6 +27,7 @@ public class DrunkenStrike extends AbstractCoinforgedCard {
         super(ID, info);
         this.damageType = DamageInfo.DamageType.NORMAL;
         setDamage(DAMAGE, UPG_DAMAGE);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class DrunkenStrike extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, this.damageType),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override

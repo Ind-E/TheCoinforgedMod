@@ -13,10 +13,12 @@ public class GrapesModifier extends AbstractCardModifier {
 
     @Override
     public void onInitialApplication(AbstractCard card) {
-        card.baseDamage += this.amount;
-        card.baseBlock += this.amount;
-        card.damage = card.baseDamage;
-        card.block = card.baseBlock;
+        if (card.baseDamage > 0) {
+            card.baseDamage += this.amount;
+        }
+        if (card.baseBlock > 0) {
+            card.baseBlock += this.amount;
+        }
         card.applyPowers();
     }
 

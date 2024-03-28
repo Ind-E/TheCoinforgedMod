@@ -149,7 +149,7 @@
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
     "DESCRIPTION": "Whenever you draw a card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate NL Whenever you draw a card, gain !M! Block."
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw a card, gain !M! Block."
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
@@ -413,7 +413,7 @@
   },
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
-    "DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shard into your hand."
+    "DESCRIPTION": "Deal !D! damage X times. NL Add a *Glass *Shard into your hand."
   },
   "${modID}:LoadedDice": {
     "NAME": "Loaded Dice",
@@ -482,7 +482,7 @@
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E]  for each ${modID}:Poker_Chip in your hand. NL Exhaust."
+    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E] \u00a0for each ${modID}:Poker_Chip in your hand. NL Exhaust."
   },
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",
@@ -513,7 +513,7 @@
   },
   "${modID}:Orange": {
     "NAME": "Orange",
-    "DESCRIPTION": "Deal !D! damage twice. Doesn't consume ${modID}:Drawback."
+    "DESCRIPTION": "Deal !D! damage twice. Apply ${modID}:Crippling_Debt equal to unblocked damage dealt."
   },
   "${modID}:Blitz": {
     "NAME": "Blitz",
