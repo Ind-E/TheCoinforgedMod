@@ -12,6 +12,7 @@ import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: effect does not work
 public class AllIn extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(AllIn.class.getSimpleName());

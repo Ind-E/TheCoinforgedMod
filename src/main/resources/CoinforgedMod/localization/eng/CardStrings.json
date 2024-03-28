@@ -82,7 +82,7 @@
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
-    "DESCRIPTION": "NL Ethereal. *Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer.",
+    "DESCRIPTION": "Ethereal. NL *Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer.",
     "UPGRADE_DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
   },
   "${modID}:RedKing": {
@@ -131,7 +131,8 @@
   },
   "${modID}:ChaosSix": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Your next !M! cards this turn are played twice. NL Exhaust."
+    "DESCRIPTION": "Your next card this turn is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards this turn are played twice. NL Exhaust."
   },
   "${modID}:ChaosForm": {
     "NAME": "Chaos Form",

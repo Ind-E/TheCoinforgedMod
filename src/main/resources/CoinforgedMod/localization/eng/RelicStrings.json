@@ -1,7 +1,7 @@
 {
   "${modID}:LuckRelic": {
     "NAME": "Luck",
-    "FLAVOR": "When it comes to luck, make your own.",
+    "FLAVOR": "\"When it comes to luck, make your own.\"",
     "DESCRIPTIONS": [
       "#b",
       "% chance to double rewards from combat or chests."

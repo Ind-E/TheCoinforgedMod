@@ -535,12 +535,12 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
                 if (target == null) {
                     ((AbstractCoinforgedCard) card).setCustomVar(varEntry.getKey(), current.base, current.upgrade);
                     target = ((AbstractCoinforgedCard) card).getCustomVar(varEntry.getKey());
+                    target.calculation = current.calculation;
                 }
                 target.base = current.base;
                 target.value = current.value;
                 target.aoeValue = current.aoeValue;
                 target.upgrade = current.upgrade;
-                target.calculation = current.calculation;
             }
         }
 
