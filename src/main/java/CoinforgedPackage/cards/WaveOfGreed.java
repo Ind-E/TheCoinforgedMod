@@ -39,7 +39,7 @@ public class WaveOfGreed extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         Stream<AbstractMonster> damagedEnemiesStream = AbstractDungeon.getMonsters().monsters.stream()
                 .filter(monster -> !monster.isDeadOrEscaped() && !monster.halfDead);

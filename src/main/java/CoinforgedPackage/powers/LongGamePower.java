@@ -16,11 +16,12 @@ public class LongGamePower extends BasePower implements NonStackablePower {
     private AbstractCard card;
 
     public LongGamePower(AbstractCreature owner, int amount, AbstractCard card) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, TYPE, TURN_BASED, owner, owner, amount, false);
         this.card = card;
         updateDescription();
     }
 
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount;
         if (this.amount == 1) {
@@ -28,13 +29,13 @@ public class LongGamePower extends BasePower implements NonStackablePower {
         } else {
             this.description += DESCRIPTIONS[2];
         }
-        this.description += FontHelper.colorString(card.name, "y") + DESCRIPTIONS[3];
+        this.description += FontHelper.colorString(this.card.name, "y") + DESCRIPTIONS[3];
     }
 
     @Override
     public void atStartOfTurn() {
         if (this.amount == 1) {
-            this.addToBot(new MakeTempCardInHandAction(card));
+            this.addToBot(new MakeTempCardInHandAction(this.card));
             addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
         } else {
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));

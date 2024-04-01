@@ -13,7 +13,7 @@ import CoinforgedPackage.util.CardStats;
 
 public class MaxedOut extends AbstractCoinforgedCard {
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 10;
+    private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 2;
 
     public static final String ID = makeID(MaxedOut.class.getSimpleName());

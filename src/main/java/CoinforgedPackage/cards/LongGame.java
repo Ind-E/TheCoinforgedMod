@@ -38,7 +38,7 @@ public class LongGame extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
-                AbstractGameAction.AttackEffect.NONE));
+                AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
     }
 

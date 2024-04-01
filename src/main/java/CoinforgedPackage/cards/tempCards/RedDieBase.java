@@ -71,7 +71,7 @@ public abstract class RedDieBase extends AbstractCoinforgedCard {
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.NONE));
+                    AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
 

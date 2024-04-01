@@ -267,7 +267,7 @@
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
     "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! less this turn. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! this turn. NL Exhaust"
+    "UPGRADE_DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs 0 this turn. NL Exhaust"
   },
   "${modID}:AttackFromDeck": {
     "NAME": "Attack",

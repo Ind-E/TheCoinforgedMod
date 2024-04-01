@@ -23,7 +23,7 @@ public class LongGamePatch {
             AbstractCard card = i.next();
             if (card instanceof LongGame) {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(p, p, new LongGamePower(p, card.magicNumber, card)));
+                        new ApplyPowerAction(p, p, new LongGamePower(p, card.magicNumber, card.makeStatEquivalentCopy())));
                 i.remove();
             }
         }
