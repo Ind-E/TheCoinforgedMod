@@ -604,5 +604,9 @@
     "EXTENDED_DESCRIPTION": [
       "Enemy has no #rCrippling #rDebt."
     ]
+  },
+  "${modID}:RedRage": {
+    "NAME": "Red Rage",
+    "DESCRIPTION": "Roll !${modID}:R! ${modID}:Red_Dice. NL Gain !M! ${modID}:Advantage."
   }
 }

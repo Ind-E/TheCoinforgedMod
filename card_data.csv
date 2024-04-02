@@ -53,6 +53,7 @@ Lucky Break,1,SKILL,UNCOMMON,"Draw 2 Cards. NL If they have the same cost, gain 
 Bag of Chips,1,SKILL,UNCOMMON,"Discard any number of cards then add that many random coinforged:Poker_Chips into your hand. NL Exhaust."
 Coin Barrage,1,ATTACK,RARE,"Deal !D! damage 11 times. NL Reduce your max hand size by !M!."
 Snake Eyes,2,SKILL,UNCOMMON,"Ethereal. NL *Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
+Red Rage,1,SKILL,COMMON,"Roll !coinforged:R! coinforged:Red_Dice. NL Gain !M! coinforged:Advantage."
 Gain Advantage,0,POWER,UNCOMMON,"Gain !M! coinforged:Advantage."
 Long Game,2,ATTACK,RARE,"Doesn't shuffle into your deck at the start of combat. Added into hand on turn !M!. NL Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust."
 Luck of the Draw,1,POWER,RARE,"Whenever you draw a card, gain !M! Block."
