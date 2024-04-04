@@ -547,7 +547,7 @@
   },
   "${modID}:RedChip": {
     "NAME": "Red Chip",
-    "DESCRIPTION": "${modID}:Poker_Chip. NL Draw !M! card. NL Exhaust."
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Draw !M! card."
   },
   "${modID}:BlueChip": {
     "NAME": "Blue Chip",
