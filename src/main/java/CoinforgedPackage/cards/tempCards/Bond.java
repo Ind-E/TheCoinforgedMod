@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
-import CoinforgedPackage.character.Coinforged;
 
 public class Bond extends AbstractCoinforgedCard{
     private static final int DAMAGE = 12;
@@ -16,7 +15,7 @@ public class Bond extends AbstractCoinforgedCard{
 
     public static final String ID = makeID(Bond.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Coinforged.Enums.CARD_COLOR, 
+        CardColor.COLORLESS, 
         CardType.ATTACK,
         CardRarity.SPECIAL,
         CardTarget.ENEMY,

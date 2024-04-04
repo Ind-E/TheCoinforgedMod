@@ -547,7 +547,7 @@
   },
   "${modID}:RedChip": {
     "NAME": "Red Chip",
-    "DESCRIPTION": "${modID}:Poker_Chip. NL Gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Draw !M! card. NL Exhaust."
   },
   "${modID}:BlueChip": {
     "NAME": "Blue Chip",
@@ -563,7 +563,7 @@
   },
   "${modID}:OrangeChip": {
     "NAME": "Orange Chip",
-    "DESCRIPTION": "${modID}:Poker_Chip. NL Increase your max hand size by 1. NL Draw 1 card. NL Exhaust."
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL When this is spent, increase your max hand size by !M!."
   },
   "${modID}:BlackChip": {
     "NAME": "Black Chip",

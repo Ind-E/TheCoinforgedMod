@@ -1,13 +1,10 @@
 package CoinforgedPackage.cards.chips;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 
-//TODO: rebalance
 public class RedChip extends BaseChip {
 
     public static final String ID = makeID(RedChip.class.getSimpleName());
@@ -16,8 +13,6 @@ public class RedChip extends BaseChip {
 
     public RedChip() {
         super(ID, info);
-        this.cost = costForTurn = 0;
-        setExhaust(true);
         this.canUse = true;
         setMagic(MAGIC);
         this.chipColor = ChipColor.Red;
@@ -25,6 +20,6 @@ public class RedChip extends BaseChip {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
+        addToBot(new DrawCardAction(p, this.magicNumber));
     }
 }

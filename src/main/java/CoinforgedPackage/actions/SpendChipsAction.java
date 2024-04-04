@@ -3,6 +3,7 @@ package CoinforgedPackage.actions;
 import static CoinforgedPackage.util.GeneralUtils.getNumChips;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -13,6 +14,8 @@ import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.cards.chips.BlackChip;
 import CoinforgedPackage.cards.chips.CrackedChip;
 import CoinforgedPackage.cards.chips.GrayChip;
+import CoinforgedPackage.cards.chips.OrangeChip;
+import CoinforgedPackage.powers.ModifiedHandSizePower;
 
 public class SpendChipsAction extends AbstractGameAction {
     private int chips;
@@ -47,6 +50,8 @@ public class SpendChipsAction extends AbstractGameAction {
                 if (c.hasTag(CustomTags.POKER_CHIP)) {
                     if (c instanceof GrayChip) {
                         addToTop(new GainEnergyAction(1));
+                    } else if (c instanceof OrangeChip) {
+                        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ModifiedHandSizePower(AbstractDungeon.player, 1)));
                     }
                     if (exhaust || c instanceof CrackedChip) {
                         addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));

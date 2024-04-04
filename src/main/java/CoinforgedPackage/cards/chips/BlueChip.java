@@ -14,7 +14,6 @@ public class BlueChip extends BaseChip {
 
     public BlueChip() {
         super(ID, info);
-        this.cost = this.costForTurn = 0;
         this.canUse = true;
         setBlock(BLOCK);
         this.chipColor = ChipColor.Blue;
