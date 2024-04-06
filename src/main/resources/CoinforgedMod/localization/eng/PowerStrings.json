@@ -30,7 +30,8 @@
   "${modID}:SnakeEyesPower": {
     "NAME": "Snake Eyes",
     "DESCRIPTIONS": [
-      "#yDice rolls are #b1."
+      "Your next #b",
+      " #yDice rolls are One."
     ]
   },
   "${modID}:RedKingPower": {
@@ -201,6 +202,15 @@
     "DESCRIPTIONS": [
       "While this enemy is alive, gain",
       "at the start of your turn"
+    ]
+  },
+  "${modID}:BonusRollPower": {
+    "NAME": "Bonus Roll",
+    "DESCRIPTIONS": [
+      "Whenever you roll all six dice values, take an extra turn.",
+      "Whenever you roll all six dice values, take an extra turn. NL Not played yet: ",
+      "Whenever you roll all six dice values, take an extra turn. (Ready)",
+      "Extra Turn"
     ]
   }
 }

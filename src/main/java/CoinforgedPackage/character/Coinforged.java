@@ -36,8 +36,7 @@ public class Coinforged extends CustomPlayer {
     public static final int ORB_SLOTS = 0;
 
     // Strings
-    private static final String ID = makeID("COINFORGED"); // This should match whatever you have in the
-                                                           // CharacterStrings.json file
+    private static final String ID = makeID("COINFORGED"); // This should match whatever you have in the CharacterStrings.json file
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -48,10 +47,8 @@ public class Coinforged extends CustomPlayer {
     private static final String CORPSE = characterPath("corpse.png"); // Corpse is when you die.
 
     public static class Enums {
-        // These are used to identify your character, as well as your character's card
-        // color.
-        // Library color is basically the same as card color, but you need both because
-        // that's how the game was made.
+        // These are used to identify your character, as well as your character's card color.
+        // Library color is basically the same as card color, but you need both becausethat's how the game was made.
         @SpireEnum
         public static AbstractPlayer.PlayerClass Coinforged;
         @SpireEnum(name = "COINFORGED_COLOR") // These two MUST match. Change it to something unique for your character.
