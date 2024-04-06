@@ -58,7 +58,10 @@ public class SpendChipsAction extends AbstractGameAction {
                     } else {
                         addToTop(new DiscardSpecificCardAction(c, AbstractDungeon.player.hand));
                     }
-                    chipsSpent++;
+                    if (!(c instanceof BlackChip)) {
+                        chipsSpent++;
+                    }
+                    
                     if (chipsSpent >= chips) {
                         break;
                     }

@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: rethink
 public class StrategistsShield extends AbstractCoinforgedCard {
     private static final int BLOCK = 7;
     private static final int UPG_BLOCK = 3;

@@ -11,7 +11,7 @@ import CoinforgedPackage.powers.SnakeEyesPower;
 import CoinforgedPackage.util.CardStats;
 
 public class SnakeEyes extends AbstractCoinforgedCard {
-    private static final int POWER_DURATION = 2;
+    private static final int MAGIC = 2;
 
     public static final String ID = makeID(SnakeEyes.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -23,7 +23,7 @@ public class SnakeEyes extends AbstractCoinforgedCard {
 
     public SnakeEyes() {
         super(ID, info);
-        setMagic(POWER_DURATION);
+        setMagic(MAGIC);
         this.isEthereal = true;
     }
 
