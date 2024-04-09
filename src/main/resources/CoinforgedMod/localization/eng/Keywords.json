@@ -85,8 +85,8 @@
       "orange_chips",
       "red_chip",
       "red_chips",
-      "white_chip",
-      "white_chips"
+      "basic_chip",
+      "basic_chips"
     ],
     "DESCRIPTION": "Whenever a #yPoker #yChip is drawn, draw a card. #yPoker #yChips can be spent for extra effects and can't be upgraded."
   },

@@ -16,7 +16,7 @@ import CoinforgedPackage.cards.chips.GrayChip;
 import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.cards.chips.OrangeChip;
 import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.WhiteChip;
+import CoinforgedPackage.cards.chips.BasicChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class ChipModifier extends AbstractCardModifier {
@@ -50,7 +50,7 @@ public class ChipModifier extends AbstractCardModifier {
             case Red:
                 return new RedChip();
             case White:
-                return new WhiteChip();
+                return new BasicChip();
             default:
                 return null;
         }

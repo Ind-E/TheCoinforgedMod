@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 
-public class WhiteChip extends BaseChip {
+public class BasicChip extends BaseChip {
 
-    public static final String ID = makeID(WhiteChip.class.getSimpleName());
+    public static final String ID = makeID(BasicChip.class.getSimpleName());
 
-    public WhiteChip() {
+    public BasicChip() {
         super(ID, info);
         this.chipColor = ChipColor.White;
     }

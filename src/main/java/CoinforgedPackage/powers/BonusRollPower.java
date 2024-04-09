@@ -89,7 +89,6 @@ public class BonusRollPower extends BasePower {
                     flash();
                     ready = true;
                     AbstractDungeon.overlayMenu.endTurnButton.updateText(DESCRIPTIONS[3]);
-                    AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
                 }
                 updateDescription();
             }

@@ -12,7 +12,7 @@ import CoinforgedPackage.cards.chips.GrayChip;
 import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.cards.chips.OrangeChip;
 import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.WhiteChip;
+import CoinforgedPackage.cards.chips.BasicChip;
 
 public class MakeRandomChipsInHandAction extends AbstractGameAction {
 
@@ -50,7 +50,7 @@ public class MakeRandomChipsInHandAction extends AbstractGameAction {
             case 6:
                 return new RedChip();
             case 7:
-                return new WhiteChip();
+                return new BasicChip();
             default:
                 return null;
         }

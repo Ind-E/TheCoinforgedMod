@@ -16,7 +16,7 @@ import CoinforgedPackage.cards.chips.GrayChip;
 import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.cards.chips.OrangeChip;
 import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.WhiteChip;
+import CoinforgedPackage.cards.chips.BasicChip;
 import CoinforgedPackage.modifiers.ChipModifier;
 import CoinforgedPackage.util.CardStats;
 import basemod.abstracts.CustomSavable;
@@ -106,7 +106,7 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
             case Red:
                 return new RedChip();
             case White:
-                return new WhiteChip();
+                return new BasicChip();
             default:
                 return null;
         }

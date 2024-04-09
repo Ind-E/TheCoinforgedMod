@@ -433,8 +433,8 @@
     "NAME": "Shark's Embrace",
     "DESCRIPTION": "Whenever a card is Exhausted, discard the leftmost card in your hand, then draw a card."
   },
-  "${modID}:WhiteChip": {
-    "NAME": "White Chip",
+  "${modID}:BasicChip": {
+    "NAME": "Basic Chip",
     "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable."
   },
   "${modID}:Frenzy": {
