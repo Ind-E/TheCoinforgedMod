@@ -204,8 +204,8 @@
       "at the start of your turn"
     ]
   },
-  "${modID}:BonusRollPower": {
-    "NAME": "Bonus Roll",
+  "${modID}:RerollPower": {
+    "NAME": "Re-Roll",
     "DESCRIPTIONS": [
       "Whenever you roll all six dice values, take an extra turn.",
       "Whenever you roll all six dice values, take an extra turn. NL Not played yet: ",

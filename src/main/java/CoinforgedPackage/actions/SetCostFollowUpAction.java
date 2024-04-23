@@ -1,20 +1,16 @@
 package CoinforgedPackage.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class LuckyBreakFollowUpAction extends AbstractGameAction {
+public class SetCostFollowUpAction extends AbstractGameAction {
 
-    private int magic = 0;
-    private AbstractPlayer p = AbstractDungeon.player;
+    private int magic = -1;
 
-    public LuckyBreakFollowUpAction(int magic) {
+    public SetCostFollowUpAction(int magic) {
         this.magic = magic;
         this.duration = 0.001F;
     }
@@ -23,15 +19,11 @@ public class LuckyBreakFollowUpAction extends AbstractGameAction {
         AbstractDungeon.actionManager.addToTop(new WaitAction(0.4F));
         tickDuration();
         if (this.isDone) {
-            int cost = p.hand.getTopCard().costForTurn;
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                if (c.costForTurn != cost) {
-                    return;
-                }
+                c.costForTurn = magic;
             }
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magic)));
         }
-        
+
     }
 
 }

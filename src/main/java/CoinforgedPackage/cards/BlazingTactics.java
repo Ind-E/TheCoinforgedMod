@@ -1,46 +1,39 @@
 package CoinforgedPackage.cards;
 
-import static CoinforgedPackage.util.GeneralUtils.getNumChips;
-
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.actions.IfChipsAction;
+
+import CoinforgedPackage.actions.SetCostFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class BlazingTactics extends AbstractCoinforgedCard {
-    private static final int CARD_DRAW = 3;
-    private static final int UPG_CARD_DRAW = 1;
-    private static final int CHIPS = 1;
-    private static final int ENERGY_GAIN = 1;
+    private static final int MAGIC = 1;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 3;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardType.ATTACK,
+            CardRarity.COMMON,
             CardTarget.NONE,
-            0);
+            1);
 
     public BlazingTactics() {
         super(ID, info);
-        setMagic(CARD_DRAW, UPG_CARD_DRAW);
+        setMagic(MAGIC);
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IfChipsAction(CHIPS, new DrawCardAction(p, this.magicNumber)));
-        addToBot(new GainEnergyAction(ENERGY_GAIN));
-    }
-
-    public void triggerOnGlowCheck() {
-        if (getNumChips() >= CHIPS) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DrawCardAction(this.magicNumber, new SetCostFollowUpAction(1)));
     }
 
     @Override

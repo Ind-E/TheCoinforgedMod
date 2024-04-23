@@ -158,7 +158,7 @@
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
-    "DESCRIPTION": "Gain [E] . NL ${modID}:Chip 1: draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card and set its cost to 1 this turn."
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
@@ -609,8 +609,8 @@
     "NAME": "Red Rage",
     "DESCRIPTION": "Roll !${modID}:R! ${modID}:Red_Dice. NL Gain !M! ${modID}:Advantage."
   },
-  "${modID}:BonusRoll": {
-    "NAME": "Bonus Roll",
+  "${modID}:Reroll": {
+    "NAME": "Re-Roll",
     "DESCRIPTION": "Once per turn, whenever you play all six dice values, take an extra turn after this one.",
     "UPGRADE_DESCRIPTION": "Innate. NL Once per turn, whenever you play all six dice values, take an extra turn after this one."
   }

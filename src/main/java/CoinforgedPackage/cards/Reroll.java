@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.BonusRollPower;
+import CoinforgedPackage.powers.RerollPower;
 import CoinforgedPackage.util.CardStats;
 
-public class BonusRoll extends AbstractCoinforgedCard {
+public class Reroll extends AbstractCoinforgedCard {
 
-    public static final String ID = makeID(BonusRoll.class.getSimpleName());
+    public static final String ID = makeID(Reroll.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.POWER,
@@ -19,20 +19,20 @@ public class BonusRoll extends AbstractCoinforgedCard {
             CardTarget.SELF,
             1);
 
-    public BonusRoll() {
+    public Reroll() {
         super(ID, info);
         setInnate(false, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(BonusRollPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(p, p, new BonusRollPower(p)));
+        if (!p.hasPower(RerollPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(p, p, new RerollPower(p)));
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new BonusRoll();
+        return new Reroll();
     }
 }

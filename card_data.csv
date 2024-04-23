@@ -1,5 +1,6 @@
 Name,Cost,Type,Rarity,Description
 Poker Face,2,SKILL,UNCOMMON,"In 2 turns, set your health to its current value. NL Exhaust."
+Re-Roll,1,POWER,RARE,"Once per turn, whenever you play all six dice values, take an extra turn after this one."
 Lucky Seven,1,ATTACK,COMMON,"Deal !D! damage. NL If this is the 7th card you've played this turn, deal !D! damage to ALL enemies."
 Roll Blue,0,SKILL,BASIC,"Roll !M! coinforged:Blue_Die."
 Lucky Nine,2,SKILL,RARE,"Apply !M! Weak to ALL enemies. If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust."
@@ -74,7 +75,6 @@ Chipped Blade,2,SKILL,COMMON,"Apply !M! coinforged:Crippling_Debt. NL Apply !coi
 Skill,-2,SKILL,SPECIAL,"Put a random Skill from your draw pile into your hand. NL It costs 0 this turn."
 Heart Of The Cards,-1,SKILL,RARE,"Draw X cards and set their cost to 0 this turn. NL Exhaust."
 Deadly Wager,2,POWER,UNCOMMON,"ALL enemies lose !M! Strength. At the start of your turn, lose 2 HP"
-Bonus Roll,1,POWER,RARE,"Once per turn, whenever you play all six dice values, take an extra turn after this one."
 Ace In The Hole,0,SKILL,RARE,"Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. NL Purge."
 Joker Trick,1,SKILL,UNCOMMON,"Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! less this turn. NL Exhaust"
 Low Stakes,1,ATTACK,BASIC,"Deal !D! damage. NL coinforged:Chip 1: Gain !B! Block."

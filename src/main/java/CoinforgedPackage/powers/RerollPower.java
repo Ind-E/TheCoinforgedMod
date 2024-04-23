@@ -13,14 +13,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.cards.CustomTags;
 
-public class BonusRollPower extends BasePower {
-    public static final String POWER_ID = makeID(BonusRollPower.class.getSimpleName());
+public class RerollPower extends BasePower {
+    public static final String POWER_ID = makeID(RerollPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
     private HashMap<String, Boolean> bonusRolls = new HashMap<>();
     private boolean ready = false;
 
-    public BonusRollPower(AbstractCreature owner) {
+    public RerollPower(AbstractCreature owner) {
         super(POWER_ID, TYPE, TURN_BASED, owner, -1);
         bonusRolls.put("One", false);
         bonusRolls.put("Two", false);
