@@ -23,8 +23,7 @@ public class NoCompendiumColorlessPatch {
             Iterator<AbstractCard> iterator = colorlessCards.group.iterator();
             while (iterator.hasNext()) {
                 AbstractCard card = iterator.next();
-                NoCompendium noCompendium = card.getClass().getAnnotation(NoCompendium.class);
-                if (noCompendium != null) {
+                if (card.getClass().isAnnotationPresent(NoCompendium.class)) {
                     iterator.remove();
                 }
             }
