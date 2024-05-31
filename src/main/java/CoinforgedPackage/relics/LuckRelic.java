@@ -37,6 +37,12 @@ public class LuckRelic extends BaseRelic {
     }
 
     @Override
+    public void onVictory() {
+        flash();
+        setCounter(getCounter() + 1);
+    }
+
+    @Override
     public AbstractRelic makeCopy() {
         return new LuckRelic();
     }

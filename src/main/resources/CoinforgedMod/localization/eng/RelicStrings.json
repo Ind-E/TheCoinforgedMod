@@ -1,10 +1,10 @@
 {
   "${modID}:LuckRelic": {
-    "NAME": "Luck",
+    "NAME": "Lucky Clover",
     "FLAVOR": "\"When it comes to luck, make your own.\"",
     "DESCRIPTIONS": [
-      "#b",
-      "% chance to double rewards from combat or chests."
+      "You have a #b",
+      "% chance to receive double rewards from combat or chests, which increases by #b1% after each combat."
     ]
   },
   "${modID}:CasinoCatalyst": {

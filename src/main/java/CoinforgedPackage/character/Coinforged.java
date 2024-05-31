@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import CoinforgedPackage.cards.RollRed;
-import CoinforgedPackage.relics.CasinoCatalyst;
 import CoinforgedPackage.relics.LuckRelic;
 
 import static CoinforgedPackage.CoinforgedMain.characterPath;
@@ -101,7 +100,6 @@ public class Coinforged extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         // IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(CasinoCatalyst.ID);
         retVal.add(LuckRelic.ID);
         return retVal;
     }
