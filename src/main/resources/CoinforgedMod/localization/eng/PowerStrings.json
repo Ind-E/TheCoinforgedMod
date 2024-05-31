@@ -67,7 +67,7 @@
   "${modID}:LuckOfTheDrawPower": {
     "NAME": "Lucky Draw",
     "DESCRIPTIONS": [
-      "Whenever you draw a card, gain #b",
+      "Whenever you draw a card you have a #b25% chance to gain #b",
       " #yBlock."
     ]
   },
@@ -207,9 +207,9 @@
   "${modID}:RerollPower": {
     "NAME": "Re-Roll",
     "DESCRIPTIONS": [
-      "Whenever you roll all six dice values, take an extra turn.",
-      "Whenever you roll all six dice values, take an extra turn. NL Not played yet: ",
-      "Whenever you roll all six dice values, take an extra turn. (Ready)",
+      "Whenever you play all six dice values, take an extra turn.",
+      "Whenever you play all six dice values, take an extra turn. NL Not played yet: ",
+      "Whenever you play all six dice values, take an extra turn. (Ready)",
       "Extra Turn"
     ]
   }

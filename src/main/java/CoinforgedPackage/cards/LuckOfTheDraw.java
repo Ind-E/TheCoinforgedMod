@@ -10,7 +10,8 @@ import CoinforgedPackage.powers.LuckOfTheDrawPower;
 import CoinforgedPackage.util.CardStats;
 
 public class LuckOfTheDraw extends AbstractCoinforgedCard {
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(LuckOfTheDraw.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -22,8 +23,7 @@ public class LuckOfTheDraw extends AbstractCoinforgedCard {
 
     public LuckOfTheDraw() {
         super(ID, info);
-        setMagic(MAGIC);
-        setInnate(false, true);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

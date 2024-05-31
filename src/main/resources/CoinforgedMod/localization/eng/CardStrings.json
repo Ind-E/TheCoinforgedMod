@@ -149,8 +149,7 @@
   },
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
-    "DESCRIPTION": "Whenever you draw a card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw a card, gain !M! Block."
+    "DESCRIPTION": "Whenever you draw a card, you have a 25% chance to gain !M! Block."
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
