@@ -11,6 +11,7 @@ import CoinforgedPackage.cards.tempCards.PurpleOne;
 import CoinforgedPackage.cards.tempCards.PurpleSix;
 import CoinforgedPackage.cards.tempCards.PurpleThree;
 import CoinforgedPackage.cards.tempCards.PurpleTwo;
+import CoinforgedPackage.powers.SnakeEyesPower;
 
 public class RollPurpleAction extends RollBaseAction {
 
@@ -24,10 +25,15 @@ public class RollPurpleAction extends RollBaseAction {
 
     @Override
     public AbstractCard roll() {
-        int block = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
+        int vigor;
+        if (player.hasPower(SnakeEyesPower.POWER_ID)) {
+            vigor = 1;
+        } else {
+            vigor = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
+        }
 
         AbstractCard cardToAdd = null;
-        switch (block) {
+        switch (vigor) {
             case 1:
                 cardToAdd = new PurpleOne();
                 break;
@@ -47,7 +53,7 @@ public class RollPurpleAction extends RollBaseAction {
                 cardToAdd = new PurpleSix();
                 break;
             default:
-                cardToAdd = new PurpleSix(block);
+                cardToAdd = new PurpleSix(vigor);
                 break;
         }
         return cardToAdd;

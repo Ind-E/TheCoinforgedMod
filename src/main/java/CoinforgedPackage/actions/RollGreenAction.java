@@ -11,6 +11,7 @@ import CoinforgedPackage.cards.tempCards.GreenOne;
 import CoinforgedPackage.cards.tempCards.GreenSix;
 import CoinforgedPackage.cards.tempCards.GreenThree;
 import CoinforgedPackage.cards.tempCards.GreenTwo;
+import CoinforgedPackage.powers.SnakeEyesPower;
 
 public class RollGreenAction extends RollBaseAction {
 
@@ -24,7 +25,12 @@ public class RollGreenAction extends RollBaseAction {
 
     @Override
     public AbstractCard roll() {
-        int str_to_lose = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
+        int str_to_lose;
+        if (player.hasPower(SnakeEyesPower.POWER_ID)) {
+            str_to_lose = 1;
+        } else {
+            str_to_lose = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
+        }
 
         AbstractCard cardToAdd = null;
         switch (str_to_lose) {
