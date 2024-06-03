@@ -1,12 +1,7 @@
 package CoinforgedPackage.powers;
 
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import CoinforgedPackage.cards.CustomTags;
 
 public class SnakeEyesPower extends BasePower {
     public static final String POWER_ID = makeID(SnakeEyesPower.class.getSimpleName());
@@ -21,13 +16,6 @@ public class SnakeEyesPower extends BasePower {
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.hasTag(CustomTags.DIE)) {
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
     }
 
 }

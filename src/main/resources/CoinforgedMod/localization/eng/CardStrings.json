@@ -66,7 +66,8 @@
   },
   "${modID}:Advantage": {
     "NAME": "Gain Advantage",
-    "DESCRIPTION": "Gain !M! ${modID}:Advantage."
+    "DESCRIPTION": "Gain !M! ${modID}:Advantage.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Advantage. NL Draw 1 card."
   },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",
@@ -82,8 +83,8 @@
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
-    "DESCRIPTION": "Ethereal. NL *Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer.",
-    "UPGRADE_DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
+    "DESCRIPTION": "Ethereal. NL The next 2 times you roll *Dice you will always roll a one. NL Gain 1 *Buffer.",
+    "UPGRADE_DESCRIPTION": "The next 2 times you roll *Dice you will always roll a one. NL Gain 1 *Buffer."
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
