@@ -8,5 +8,15 @@
     "TEXT": [
       "Discard (Bag of Chips)"
     ]
+  },
+  "${modID}:CardTypeStrings": {
+    "TEXT": [
+      "Chip"
+    ]
+  },
+  "${modID}:PokerChipTooltip": {
+    "TEXT": [
+      "{modID}:poker chip"
+    ]
   }
 }

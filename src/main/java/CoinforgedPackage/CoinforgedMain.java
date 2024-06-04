@@ -247,6 +247,9 @@ public class CoinforgedMain implements
 
     private void registerKeyword(KeywordInfo info) {
         BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
+        System.out.println("PROPER_NAME: " + info.PROPER_NAME);
+        System.out.println("NAMES: " + Arrays.toString(info.NAMES));
+        System.out.println("DESCRIPTION: " + info.DESCRIPTION);
         if (!info.ID.isEmpty()) {
             keywords.put(info.ID, info);
         }

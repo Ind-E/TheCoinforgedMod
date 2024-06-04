@@ -21,10 +21,10 @@ public class BackBurner extends AbstractCoinforgedCard {
     public static final String ID = makeID(BackBurner.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.POWER,
+            CardType.ATTACK,
             CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0);
+            CardTarget.ENEMY,
+            1);
 
     public BackBurner() {
         super(ID, info);
