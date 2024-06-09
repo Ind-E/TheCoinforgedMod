@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class GoForBrokePower extends BasePower {
     public static final String POWER_ID = makeID(GoForBrokePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -39,7 +41,7 @@ public class GoForBrokePower extends BasePower {
             AbstractMonster r = AbstractDungeon.getMonsters().getRandomMonster(null, true,
                     AbstractDungeon.cardRandomRng);
             if (r != null && !r.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(r, AbstractDungeon.player, new CripplingDebtPower(r, this.amount),
+                Wiz.atb(new ApplyPowerAction(r, AbstractDungeon.player, new CripplingDebtPower(r, this.amount),
                         this.amount));
             }
         }

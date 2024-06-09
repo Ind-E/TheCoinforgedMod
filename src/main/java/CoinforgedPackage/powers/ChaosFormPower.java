@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.actions.ChaosFormAction;
+import CoinforgedPackage.util.Wiz;
 
 public class ChaosFormPower extends BasePower {
     public static final String POWER_ID = makeID(ChaosFormPower.class.getSimpleName());
@@ -27,7 +28,7 @@ public class ChaosFormPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         for (int i = 0; i < this.amount; i++) {
-            addToBot(new ChaosFormAction(AbstractDungeon.player));
+            Wiz.atb(new ChaosFormAction(AbstractDungeon.player));
         }
     }
 

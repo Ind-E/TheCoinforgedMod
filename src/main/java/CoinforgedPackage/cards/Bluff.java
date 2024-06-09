@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Bluff extends AbstractCoinforgedCard {
     private static final int DAMAGE = 16;
@@ -38,12 +39,12 @@ public class Bluff extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         int debuffCount = countDebuffs();
 
         if (debuffCount <= this.magicNumber) {
-            addToBot(new GainBlockAction(p, this.block));
+            Wiz.atb(new GainBlockAction(p, this.block));
         }
     }
 

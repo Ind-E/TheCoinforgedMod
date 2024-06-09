@@ -12,9 +12,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 //deal 12 dmg to all enemies. Chip 1: apply 2 vulnerable to all enemies
 public class Outrage extends AbstractCoinforgedCard {
@@ -40,13 +42,13 @@ public class Outrage extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AttackEffect.SLASH_HORIZONTAL));
+        Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AttackEffect.SLASH_HORIZONTAL));
         if (getNumChips() >= CHIPS) {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber,
+                Wiz.atb(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber,
                         true, AbstractGameAction.AttackEffect.NONE));
             }
-            addToBot(new SpendChipsAction(CHIPS));
+            Wiz.atb(new SpendChipsAction(CHIPS));
         }
     }
 

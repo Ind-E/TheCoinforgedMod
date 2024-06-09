@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import CoinforgedPackage.cards.Grapes;
 import CoinforgedPackage.modifiers.GrapesModifier;
+import CoinforgedPackage.util.Wiz;
 import basemod.helpers.CardModifierManager;
 
 public class GrapesAction extends AbstractGameAction {
@@ -51,7 +52,7 @@ public class GrapesAction extends AbstractGameAction {
                 this.isDone = true;
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
                         AbstractDungeon.player.dialogY, 3.0F, "I have no cards that can be buffed", true));
-                addToBot(new MakeTempCardInHandAction(new Grapes(this.cost, this.upgraded)));
+                Wiz.atb(new MakeTempCardInHandAction(new Grapes(this.cost, this.upgraded)));
                 return;
             }
 
@@ -101,7 +102,7 @@ public class GrapesAction extends AbstractGameAction {
         }
 
         this.p.hand.refreshHandLayout();
-        addToBot(new MakeTempCardInHandAction(new Grapes(this.cost + 1, this.upgraded)));
+        Wiz.atb(new MakeTempCardInHandAction(new Grapes(this.cost + 1, this.upgraded)));
         return;
     }
 

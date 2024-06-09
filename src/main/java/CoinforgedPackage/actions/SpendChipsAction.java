@@ -51,7 +51,7 @@ public class SpendChipsAction extends AbstractGameAction {
                     if (c instanceof GrayChip) {
                         addToTop(new GainEnergyAction(1));
                     } else if (c instanceof OrangeChip) {
-                        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ModifiedHandSizePower(AbstractDungeon.player, 1)));
+                        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ModifiedHandSizePower(1)));
                     }
                     if (exhaust || c instanceof CrackedChip) {
                         addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));

@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class CardCascadePower extends BasePower {
     public static final String POWER_ID = makeID(CardCascadePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -25,12 +27,12 @@ public class CardCascadePower extends BasePower {
     @Override
     public void onCardDraw(AbstractCard card) {
         flash();
-        addToBot(new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount, DamageType.THORNS),
+        Wiz.atb(new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount, DamageType.THORNS),
                 AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CardCascadePower.POWER_ID));
+        Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.owner, CardCascadePower.POWER_ID));
     }
 }

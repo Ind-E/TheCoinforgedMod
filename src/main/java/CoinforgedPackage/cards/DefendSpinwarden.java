@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DefendSpinwarden extends AbstractCoinforgedCard {
     private static final int BLOCK = 5;
@@ -28,7 +29,7 @@ public class DefendSpinwarden extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+        Wiz.atb(new GainBlockAction(p, p, block));
     }
 
     @Override

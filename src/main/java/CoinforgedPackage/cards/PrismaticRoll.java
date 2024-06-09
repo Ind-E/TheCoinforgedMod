@@ -12,6 +12,7 @@ import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class PrismaticRoll extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 1;
@@ -33,10 +34,10 @@ public class PrismaticRoll extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollRedAction(p, this.magicNumber));
-        addToBot(new RollBlueAction(p, this.magicNumber));
-        addToBot(new RollGreenAction(p, this.magicNumber));
-        addToBot(new RollPurpleAction(p, this.magicNumber));
+        Wiz.atb(new RollRedAction(p, this.magicNumber));
+        Wiz.atb(new RollBlueAction(p, this.magicNumber));
+        Wiz.atb(new RollGreenAction(p, this.magicNumber));
+        Wiz.atb(new RollPurpleAction(p, this.magicNumber));
     }
 
     public ArrayList<CardTags> getTags() {

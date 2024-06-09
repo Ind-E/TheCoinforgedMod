@@ -5,9 +5,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.DangerousInvestmentPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DangerousInvestment extends AbstractCoinforgedCard{
     private static final int MAGIC = 1;
@@ -29,7 +30,7 @@ public class DangerousInvestment extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, this.magicNumber)));
-        addToBot(new ApplyPowerAction(m, p, new DangerousInvestmentPower(m, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(m, p, new StrengthPower(m, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(m, p, new DangerousInvestmentPower(m, this.magicNumber)));
     }
 }

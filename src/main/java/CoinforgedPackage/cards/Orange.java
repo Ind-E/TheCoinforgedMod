@@ -3,9 +3,11 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.OrangeAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Orange extends AbstractCoinforgedCard{
     private static final int DAMAGE = 3;
@@ -31,7 +33,7 @@ public class Orange extends AbstractCoinforgedCard{
         DamageInfo dmgInfo = new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL);
         dmgInfo.name = "Coinforged_Orange";
         for (int i = 0; i < TIMES_TO_DEAL_DAMAGE; i++) {
-            addToBot(new OrangeAction(m, dmgInfo));
+            Wiz.atb(new OrangeAction(m, dmgInfo));
         }
     }
 }

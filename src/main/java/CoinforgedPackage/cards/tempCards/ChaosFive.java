@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
@@ -33,8 +34,8 @@ public class ChaosFive extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+        Wiz.atb(new ApplyPowerAction(p, p, new ArtifactPower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
     }
 
 }

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.util.Wiz;
 
 public class RerollPower extends BasePower {
     public static final String POWER_ID = makeID(RerollPower.class.getSimpleName());
@@ -100,7 +101,7 @@ public class RerollPower extends BasePower {
         if (isPlayer) {
             boolean allTrue = bonusRolls.values().stream().allMatch(b -> b);
             if (allTrue) {
-                addToBot(new SkipEnemiesTurnAction());
+                Wiz.atb(new SkipEnemiesTurnAction());
                 ready = false;
                 for (String key : bonusRolls.keySet()) {
                     bonusRolls.put(key, false);

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class MelonPower extends BasePower {
     public static final String POWER_ID = makeID(MelonPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -34,6 +36,6 @@ public class MelonPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, MelonPower.POWER_ID));
+        Wiz.atb(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, MelonPower.POWER_ID));
     }
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.StackedDeckPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class StackedDeck extends AbstractCoinforgedCard {
 
@@ -32,7 +33,7 @@ public class StackedDeck extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StackedDeckPower(p)));
+        Wiz.atb(new ApplyPowerAction(p, p, new StackedDeckPower(p)));
     }
 
     @Override

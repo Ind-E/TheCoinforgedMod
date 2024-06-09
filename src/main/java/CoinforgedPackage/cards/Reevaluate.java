@@ -3,9 +3,11 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.ReevaluateAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Reevaluate extends AbstractCoinforgedCard{
 
@@ -25,7 +27,7 @@ public class Reevaluate extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DiscardAction(p, p, 1, false));
-        addToBot(new ReevaluateAction());
+        Wiz.atb(new DiscardAction(p, p, 1, false));
+        Wiz.atb(new ReevaluateAction());
     }
 }

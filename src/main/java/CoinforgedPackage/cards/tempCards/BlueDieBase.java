@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
@@ -35,7 +36,7 @@ public abstract class BlueDieBase extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        Wiz.atb(new GainBlockAction(p, this.block));
     }
 
 }

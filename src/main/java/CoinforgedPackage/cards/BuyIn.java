@@ -3,10 +3,12 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.BuyInAction;
 import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class BuyIn extends AbstractCoinforgedCard {
     private static final int CHIPS = 2;
@@ -29,7 +31,7 @@ public class BuyIn extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInHandAction(new GreenChip(), this.magicNumber));
-        addToBot(new BuyInAction());
+        Wiz.atb(new MakeTempCardInHandAction(new GreenChip(), this.magicNumber));
+        Wiz.atb(new BuyInAction());
     }
 }

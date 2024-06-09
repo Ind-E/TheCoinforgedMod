@@ -7,8 +7,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Cherry extends AbstractCoinforgedCard {
     private static final int DAMAGE = 0;
@@ -32,7 +34,7 @@ public class Cherry extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageAmount = p.hand.size() * this.magicNumber + this.damage;
-        addToBot(new DamageAction(m, new DamageInfo(p, damageAmount, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, damageAmount, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 

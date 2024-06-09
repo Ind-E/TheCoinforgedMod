@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+import CoinforgedPackage.util.Wiz;
+
 public class BagOfChipsAction extends AbstractGameAction {
 
     private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("BagOfChips"));
@@ -26,7 +28,7 @@ public class BagOfChipsAction extends AbstractGameAction {
         if (this.duration == 0.5F) {
             AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
 
-            addToBot((AbstractGameAction) new WaitAction(0.25F));
+            Wiz.atb((AbstractGameAction) new WaitAction(0.25F));
             tickDuration();
             return;
         }

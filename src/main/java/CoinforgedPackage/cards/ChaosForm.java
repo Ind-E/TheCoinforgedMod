@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ChaosFormPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class ChaosForm extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
@@ -38,7 +39,7 @@ public class ChaosForm extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ChaosFormPower(p)));
+        Wiz.atb(new ApplyPowerAction(p, p, new ChaosFormPower(p)));
     }
 
     @Override

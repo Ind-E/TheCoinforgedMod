@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.DuplicationPower;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
@@ -32,7 +33,7 @@ public class ChaosSix extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new DuplicationPower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new DuplicationPower(p, this.magicNumber)));
     }
 
 }

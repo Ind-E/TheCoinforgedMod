@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.util.Wiz;
 
 public class HighRollerPower extends BasePower {
     public static final String POWER_ID = makeID(HighRollerPower.class.getSimpleName());
@@ -30,7 +31,7 @@ public class HighRollerPower extends BasePower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.hasTag(CustomTags.DIE) && card.cardID.endsWith("Six")) {
-            addToBot(new DrawCardAction(AbstractDungeon.player, this.amount));
+            Wiz.atb(new DrawCardAction(AbstractDungeon.player, this.amount));
         }
     }
 }

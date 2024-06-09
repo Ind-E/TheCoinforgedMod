@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DrunkenStrike extends AbstractCoinforgedCard {
     private static final int DAMAGE = 16;
@@ -41,7 +42,7 @@ public class DrunkenStrike extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, this.damageType),
+        Wiz.atb(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, this.damageType),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 

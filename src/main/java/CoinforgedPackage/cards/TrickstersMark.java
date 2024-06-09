@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class TrickstersMark extends AbstractCoinforgedCard {
     private static final int WEAK_AND_VULN = 2;
@@ -32,8 +33,8 @@ public class TrickstersMark extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractMonster r = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         if (r != null && !r.isDeadOrEscaped()) {
-            addToBot(new ApplyPowerAction(r, p, new VulnerablePower(r, this.magicNumber, false), this.magicNumber));
-            addToBot(new ApplyPowerAction(r, p, new WeakPower(r, this.magicNumber, false), this.magicNumber));
+            Wiz.atb(new ApplyPowerAction(r, p, new VulnerablePower(r, this.magicNumber, false), this.magicNumber));
+            Wiz.atb(new ApplyPowerAction(r, p, new WeakPower(r, this.magicNumber, false), this.magicNumber));
         }
     }
 

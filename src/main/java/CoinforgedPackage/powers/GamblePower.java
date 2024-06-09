@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class GamblePower extends BasePower {
     public static final String POWER_ID = makeID(GamblePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -20,8 +22,8 @@ public class GamblePower extends BasePower {
     }
 
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("GamblePower")));
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new GoldIfWinPower(this.owner, this.amount)));
+        Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("GamblePower")));
+        Wiz.atb(new ApplyPowerAction(this.owner, this.owner, new GoldIfWinPower(this.owner, this.amount)));
     }
 
     public void stackPower(int stackAmount) {

@@ -12,6 +12,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.DeadlyWagerPower;
 import CoinforgedPackage.powers.StrengthOnlyBuffPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DeadlyWager extends AbstractCoinforgedCard {
     private static final int ENEMY_STRENGTH_LOSS = 6;
@@ -35,14 +36,14 @@ public class DeadlyWager extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-                addToBot(new ApplyPowerAction(mo, p, new StrengthOnlyBuffPower(mo, -this.magicNumber),
+                Wiz.atb(new ApplyPowerAction(mo, p, new StrengthOnlyBuffPower(mo, -this.magicNumber),
                         -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         } else {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-                addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true,
+                Wiz.atb(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true,
                         AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, PLAYER_HP_LOSS)));
+        Wiz.atb(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, PLAYER_HP_LOSS)));
     }
 
     @Override

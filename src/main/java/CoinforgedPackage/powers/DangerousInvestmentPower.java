@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class DangerousInvestmentPower extends BasePower {
     public static final String POWER_ID = makeID("DangerousInvestmentPower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
@@ -23,6 +25,6 @@ public class DangerousInvestmentPower extends BasePower {
 
     @Override
     public void atEndOfRound() {
-        addToBot(new GainEnergyAction(this.amount));
+        Wiz.atb(new GainEnergyAction(this.amount));
     }
 }

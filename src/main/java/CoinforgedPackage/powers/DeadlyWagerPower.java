@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class DeadlyWagerPower extends BasePower {
     public static final String POWER_ID = makeID(DeadlyWagerPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
@@ -22,7 +24,7 @@ public class DeadlyWagerPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new LoseHPAction(p, p, this.amount));
+        Wiz.atb(new LoseHPAction(p, p, this.amount));
     }
 
     public void stackPower(int stackAmount) {

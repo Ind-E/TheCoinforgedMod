@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CardCascadePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class CardCascade extends AbstractCoinforgedCard {
     private static final int MAGIC = 5;
@@ -30,8 +31,8 @@ public class CardCascade extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CardCascadePower(p, this.magicNumber)));
-        addToBot(new DrawCardAction(DRAW));
+        Wiz.atb(new ApplyPowerAction(p, p, new CardCascadePower(p, this.magicNumber)));
+        Wiz.atb(new DrawCardAction(DRAW));
     }
 
     @Override

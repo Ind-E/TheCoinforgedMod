@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class CheatersLuck extends AbstractCoinforgedCard {
     private static final int CARDS_TO_DUPE = 1;
@@ -46,7 +47,7 @@ public class CheatersLuck extends AbstractCoinforgedCard {
             randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeStatEquivalentCopy();
         }
         randomCardInHand.setCostForTurn(0);
-        addToBot(new MakeTempCardInHandAction(randomCardInHand));
+        Wiz.atb(new MakeTempCardInHandAction(randomCardInHand));
     }
 
     @Override

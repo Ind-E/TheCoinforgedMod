@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class StrategistsShield extends AbstractCoinforgedCard {
     private static final int BLOCK = 7;
@@ -31,7 +32,7 @@ public class StrategistsShield extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        Wiz.atb(new GainBlockAction(p, this.block));
         int powers = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type == AbstractCard.CardType.POWER || upgraded && (c.type != AbstractCard.CardType.ATTACK && c.type != AbstractCard.CardType.SKILL)) {
@@ -39,7 +40,7 @@ public class StrategistsShield extends AbstractCoinforgedCard {
             }
         }
         if (powers > 0)
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, powers)));
+            Wiz.atb(new ApplyPowerAction(p, p, new StrengthPower(p, powers)));
     }
 
     @Override

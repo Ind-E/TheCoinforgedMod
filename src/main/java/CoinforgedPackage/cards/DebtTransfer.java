@@ -8,10 +8,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.cards.tempCards.Bond;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DebtTransfer extends AbstractCoinforgedCard {
 
@@ -32,8 +33,8 @@ public class DebtTransfer extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower debt = m.getPower(CripplingDebtPower.POWER_ID);
         if (debt != null) {
-            addToBot(new RemoveSpecificPowerAction(m, p, CripplingDebtPower.POWER_ID));
-            addToBot(new MakeTempCardInHandAction(new Bond(debt.amount)));
+            Wiz.atb(new RemoveSpecificPowerAction(m, p, CripplingDebtPower.POWER_ID));
+            Wiz.atb(new MakeTempCardInHandAction(new Bond(debt.amount)));
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
                     AbstractDungeon.player.dialogY, 3.0F, cardStrings.EXTENDED_DESCRIPTION[0], true));

@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.Settings;
 
+import CoinforgedPackage.util.Wiz;
+
 public class BuyInAction extends AbstractGameAction {
 
     public BuyInAction() {
@@ -15,7 +17,7 @@ public class BuyInAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        addToBot(new GainEnergyAction(getNumChips()));
+        Wiz.atb(new GainEnergyAction(getNumChips()));
         this.isDone = true;
     }
 }

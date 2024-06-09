@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.HighRollerPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class HighRoller extends AbstractCoinforgedCard {
 
@@ -25,7 +26,7 @@ public class HighRoller extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HighRollerPower(p, 1)));
+        Wiz.atb(new ApplyPowerAction(p, p, new HighRollerPower(p, 1)));
     }
 
     @Override

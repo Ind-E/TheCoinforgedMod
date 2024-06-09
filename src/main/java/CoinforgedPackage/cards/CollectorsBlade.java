@@ -10,9 +10,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class CollectorsBlade extends AbstractCoinforgedCard{
     private static final int DAMAGE = 4;
@@ -38,10 +39,10 @@ public class CollectorsBlade extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (m.hasPower(CripplingDebtPower.POWER_ID) || m.hasPower(ArtifactPower.POWER_ID)) {
-            addToBot(new GainEnergyAction(ENERGY));
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+            Wiz.atb(new GainEnergyAction(ENERGY));
+            Wiz.atb(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
         }
         
     }

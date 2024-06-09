@@ -9,6 +9,7 @@ import CoinforgedPackage.actions.UnleashedStrategyAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class UnleashedStrategy extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
@@ -30,8 +31,8 @@ public class UnleashedStrategy extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ModifiedHandSizePower(p, this.magicNumber), this.magicNumber));
-        addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new UnleashedStrategyAction());
+        Wiz.atb(new ApplyPowerAction(p, p, new ModifiedHandSizePower(magicNumber)));
+        Wiz.atb(new DrawCardAction(p, magicNumber));
+        Wiz.atb(new UnleashedStrategyAction());
     }
 }

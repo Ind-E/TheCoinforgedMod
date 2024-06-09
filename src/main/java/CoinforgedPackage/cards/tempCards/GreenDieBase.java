@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect.ShockWaveType;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public abstract class GreenDieBase extends AbstractCoinforgedCard {
    private static final int UPG_MAGIC = 2;
@@ -44,12 +45,12 @@ public abstract class GreenDieBase extends AbstractCoinforgedCard {
 
    @Override
    public void use(AbstractPlayer p, AbstractMonster m) {
-      this.addToBot(new SFXAction("ATTACK_PIERCING_WAIL"));
+      Wiz.atb(new SFXAction("ATTACK_PIERCING_WAIL"));
       if (Settings.FAST_MODE) {
-         this.addToBot(new VFXAction(p,
+         Wiz.atb(new VFXAction(p,
                new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveType.CHAOTIC), 0.3F));
       } else {
-         this.addToBot(new VFXAction(p,
+         Wiz.atb(new VFXAction(p,
                new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveType.CHAOTIC), 1.5F));
       }
 
@@ -58,7 +59,7 @@ public abstract class GreenDieBase extends AbstractCoinforgedCard {
       AbstractMonster mo;
       while (var3.hasNext()) {
          mo = (AbstractMonster) var3.next();
-         this.addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true,
+         Wiz.atb(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true,
                AttackEffect.NONE));
       }
 
@@ -67,7 +68,7 @@ public abstract class GreenDieBase extends AbstractCoinforgedCard {
       while (var3.hasNext()) {
          mo = (AbstractMonster) var3.next();
          if (!mo.hasPower("Artifact")) {
-            this.addToBot(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, this.magicNumber), this.magicNumber,
+            Wiz.atb(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, this.magicNumber), this.magicNumber,
                   true, AttackEffect.NONE));
          }
       }

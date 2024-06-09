@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.DoubleDealingAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class DoubleDealing extends AbstractCoinforgedCard {
 
@@ -32,7 +33,7 @@ public class DoubleDealing extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DoubleDealingAction());
+        Wiz.atb(new DoubleDealingAction());
     }
 
     @Override

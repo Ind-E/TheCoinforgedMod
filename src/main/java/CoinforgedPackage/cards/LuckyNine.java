@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 //TOD: rebalance/rethink
 public class LuckyNine extends AbstractCoinforgedCard {
@@ -32,10 +33,10 @@ public class LuckyNine extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new WeakPower(p, magicNumber, false), magicNumber));
+            Wiz.atb(new ApplyPowerAction(mo, p, new WeakPower(p, magicNumber, false), magicNumber));
         }
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 9) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 9), 9));
+            Wiz.atb(new ApplyPowerAction(p, p, new StrengthPower(p, 9), 9));
         }
     }
 

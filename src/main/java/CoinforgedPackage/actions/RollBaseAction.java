@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.powers.SnakeEyesPower;
+import CoinforgedPackage.util.Wiz;
 
 public abstract class RollBaseAction extends AbstractGameAction {
     public int minroll = 1;
@@ -47,7 +48,7 @@ public abstract class RollBaseAction extends AbstractGameAction {
 
                 rolledCard.initializeDescription();
             }
-            addToBot(new MakeTempCardInHandAction(rolledCard, 1));
+            Wiz.atb(new MakeTempCardInHandAction(rolledCard, 1));
         }
         this.isDone = true;
     }

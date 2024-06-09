@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.AceInTheHoleAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class AceInTheHole extends AbstractCoinforgedCard {
     private static final int CARDS_TO_SEEK = 1;
@@ -29,7 +30,7 @@ public class AceInTheHole extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToTop(new DiscardAction(p, p, p.hand.size(), false));
-        addToBot(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
+        Wiz.atb(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
     }
 
     @Override

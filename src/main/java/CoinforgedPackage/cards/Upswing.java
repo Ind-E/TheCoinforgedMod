@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Upswing extends AbstractCoinforgedCard {
     private static final int DAMAGE = 8;
@@ -34,10 +35,10 @@ public class Upswing extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m,
+        Wiz.atb(new DamageAction(m,
                 new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
                 AttackEffect.NONE));
-        addToBot(new RollBlueAction(p, this.magicNumber));
+        Wiz.atb(new RollBlueAction(p, this.magicNumber));
     }
 
     public ArrayList<CardTags> getTags() {

@@ -617,5 +617,42 @@
   "${modID}:BackBurner": {
     "NAME": "Back Burner",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. Increase block gained by !M! this combat."
+  },
+  "${modID}:ControlledChaos": {
+    "NAME": "Controlled Chaos",
+    "DESCRIPTION": "Draw !M! cards. NL Reduce your max hand size by 2."
+  },
+  "${modID}:SwiftGuard": {
+    "NAME": "Swift Guard",
+    "DESCRIPTION": "Gain !B! Block. NL Reduce your max hand size by !M!."
+  },
+  "${modID}:TwinSlash": {
+    "NAME": "Twin Slash",
+    "DESCRIPTION": "Deal !D! damage twice. ${modID}Overflow: draw 1 card."
+  },
+  "${modID}:Discipline": {
+    "NAME": "Twin Slash",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !M! Dexterity. NL Set your max hand size to 4."
+  },
+  "${modID}:Floodgate": {
+    "NAME": "Floodgate",
+    "DESCRIPTION": "Whenever your hand becomes full, deal !D! damage to ALL enemies."
+  },
+  "${modID}:RestoringForce": {
+    "NAME": "Restoring Force",
+    "DESCRIPTION": "Gain !B! Block twice. NL ${modID}:Overflow: Increase your max hand size by !M!."
+  },
+  "${modID}:ShiftyStrike": {
+    "NAME": "Shifty Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL ${modID}:Overflow: Apply !M! Weak."
+  },
+  "${modID}:SlotMachineLearning": {
+    "NAME": "Slot Machine Learning",
+    "DESCRIPTION": "At the start of your turn, draw 1 additional card. If you didn't, gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw 1 additional card. If you didn't, gain !M! Strength."
+  },
+  "${modID}:OverflowingArmor": {
+    "NAME": "Overflowing Armor",
+    "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !B! Block."
   }
 }

@@ -12,6 +12,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.helpers.CardModifierManager;
 
 public class RedKing extends AbstractCoinforgedCard {
@@ -35,8 +36,8 @@ public class RedKing extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(RedKing.ID))
-            addToBot(new ApplyPowerAction(p, p, new RedKingPower(p)));
-        addToBot(new RollRedAction(p, this.magicNumber));
+            Wiz.atb(new ApplyPowerAction(p, p, new RedKingPower(p)));
+        Wiz.atb(new RollRedAction(p, this.magicNumber));
         for (AbstractCard card : p.hand.group) {
             if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());

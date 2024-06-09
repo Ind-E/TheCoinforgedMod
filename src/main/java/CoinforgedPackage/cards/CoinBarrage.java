@@ -9,9 +9,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlickCoinEffect;
+
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class CoinBarrage extends AbstractCoinforgedCard {
     private static final int DAMAGE = 1;
@@ -36,11 +38,11 @@ public class CoinBarrage extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < TIMES_TO_DEAL_DAMAGE; i++) {
-            addToBot(new VFXAction(new FlickCoinEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.05F));
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+            Wiz.atb(new VFXAction(new FlickCoinEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.05F));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new ModifiedHandSizePower(p, -this.magicNumber), -this.magicNumber));
+        Wiz.atb(new ApplyPowerAction(p, p, new ModifiedHandSizePower(-magicNumber)));
     }
 
     @Override

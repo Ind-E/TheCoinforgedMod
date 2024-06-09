@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.FatesHandAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class FatesHand extends AbstractCoinforgedCard {
     private static final int STRENGTH = 1;
@@ -31,9 +32,9 @@ public class FatesHand extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(CARD_DRAW));
-        addToBot(new DiscardAction(p, p, DISCARD, false));
-        addToBot(new FatesHandAction(this.magicNumber));
+        Wiz.atb(new DrawCardAction(CARD_DRAW));
+        Wiz.atb(new DiscardAction(p, p, DISCARD, false));
+        Wiz.atb(new FatesHandAction(this.magicNumber));
     }
 
     @Override

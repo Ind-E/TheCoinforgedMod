@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import CoinforgedPackage.actions.HeartOfTheCardsFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class HeartOfTheCards extends AbstractCoinforgedCard {
     private static final int X_COST = -1;
@@ -28,7 +29,7 @@ public class HeartOfTheCards extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int effect = upgraded ? this.energyOnUse + 1 : this.energyOnUse;
-        addToBot(new DrawCardAction(effect, new HeartOfTheCardsFollowUpAction()));
+        Wiz.atb(new DrawCardAction(effect, new HeartOfTheCardsFollowUpAction()));
 
         if (!this.freeToPlayOnce)
             p.energy.use(EnergyPanel.totalCount);

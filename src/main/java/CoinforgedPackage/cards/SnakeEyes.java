@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.BufferPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.SnakeEyesPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class SnakeEyes extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
@@ -35,8 +36,8 @@ public class SnakeEyes extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SnakeEyesPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1)));
+        Wiz.atb(new ApplyPowerAction(p, p, new SnakeEyesPower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new BufferPower(p, 1)));
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.GamblePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class GoldenGamble extends AbstractCoinforgedCard {
     private static final int GOLD_GAIN = 75;
@@ -31,7 +32,7 @@ public class GoldenGamble extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.player.loseGold(10);
-        addToBot(new ApplyPowerAction(p, p, new GamblePower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new GamblePower(p, this.magicNumber)));
     }
 
     @Override

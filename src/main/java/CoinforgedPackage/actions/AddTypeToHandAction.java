@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import CoinforgedPackage.cards.CustomTags;
 import basemod.BaseMod;
 
 public class AddTypeToHandAction extends AbstractGameAction {
@@ -30,11 +32,13 @@ public class AddTypeToHandAction extends AbstractGameAction {
         AbstractCard cardToDraw;
         ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
         for (AbstractCard c : p.drawPile.group) {
-            if (c.type == this.type) {
+            if (c.type == this.type && !c.hasTag(CustomTags.POKER_CHIP)) {
                 possibleCards.add(c);
             }
         }
         if (possibleCards.size() == 0) {
+            this.addToTop(new AddTypeToHandAction(this.type, this.upgraded));
+            this.addToTop(new EmptyDeckShuffleAction()); // doesn't matter if deck is empty lol
             this.isDone = true;
             return;
         }

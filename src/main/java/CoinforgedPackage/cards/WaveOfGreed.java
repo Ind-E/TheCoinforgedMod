@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class WaveOfGreed extends AbstractCoinforgedCard {
     private static final int DAMAGE = 26;
@@ -38,7 +39,7 @@ public class WaveOfGreed extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
+        Wiz.atb(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         Stream<AbstractMonster> damagedEnemiesStream = AbstractDungeon.getMonsters().monsters.stream()

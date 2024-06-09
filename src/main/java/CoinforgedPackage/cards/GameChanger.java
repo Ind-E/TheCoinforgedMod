@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.ReflectionHacks;
 
 public class GameChanger extends AbstractCoinforgedCard {
@@ -44,7 +45,7 @@ public class GameChanger extends AbstractCoinforgedCard {
                 }
 
                 for (int i = 0; i < multiplier; i++) {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, mo.getIntentDmg(), DamageType.THORNS),
+                    Wiz.atb(new DamageAction(mo, new DamageInfo(p, mo.getIntentDmg(), DamageType.THORNS),
                             AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }
             }

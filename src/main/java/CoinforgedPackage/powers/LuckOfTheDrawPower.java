@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class LuckOfTheDrawPower extends BasePower {
     public static final String POWER_ID = makeID(LuckOfTheDrawPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -22,7 +24,7 @@ public class LuckOfTheDrawPower extends BasePower {
     @Override
     public void onCardDraw(AbstractCard card) {
         if (Math.random() < 0.25) {
-            addToBot(new GainBlockAction(owner, owner, this.amount, true));
+            Wiz.atb(new GainBlockAction(owner, owner, this.amount, true));
         }
     }
 

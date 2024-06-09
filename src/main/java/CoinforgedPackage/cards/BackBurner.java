@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class BackBurner extends AbstractCoinforgedCard {
     private static final int MAGIC = 4;
@@ -35,9 +36,9 @@ public class BackBurner extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ModifyBlockAction(this.uuid, this.magicNumber));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.magicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        Wiz.atb(new GainBlockAction(p, this.block));
+        Wiz.atb(new ModifyBlockAction(this.uuid, this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

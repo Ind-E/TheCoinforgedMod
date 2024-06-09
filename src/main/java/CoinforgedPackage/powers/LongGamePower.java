@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import CoinforgedPackage.util.Wiz;
+
 import com.megacrit.cardcrawl.helpers.FontHelper;
 
 public class LongGamePower extends BasePower implements NonStackablePower {
@@ -35,10 +38,10 @@ public class LongGamePower extends BasePower implements NonStackablePower {
     @Override
     public void atStartOfTurn() {
         if (this.amount == 1) {
-            this.addToBot(new MakeTempCardInHandAction(this.card));
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+            Wiz.atb(new MakeTempCardInHandAction(this.card));
+            Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
         } else {
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+            Wiz.atb(new ReducePowerAction(this.owner, this.owner, this, 1));
         }
     }
 }

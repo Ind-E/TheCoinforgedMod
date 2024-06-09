@@ -5,7 +5,7 @@ import static CoinforgedPackage.CoinforgedMain.powerPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.util.TextureLoader;
@@ -21,8 +21,8 @@ public class ModifiedHandSizePower extends BasePower {
     private static final Texture neg_128 = TextureLoader.getTexture(powerPath("large/ModifiedHandSizePowerNegative.png"));
     private int hand_size;
 
-    public ModifiedHandSizePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, Math.min(Math.max(amount, -9), 5));
+    public ModifiedHandSizePower(int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, AbstractDungeon.player, Math.min(Math.max(amount, -9), 5));
         this.canGoNegative = true;
         this.hand_size = BaseMod.MAX_HAND_SIZE;
         updateImage();

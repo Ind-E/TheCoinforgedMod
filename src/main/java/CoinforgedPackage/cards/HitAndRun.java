@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.HitAndRunPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class HitAndRun extends AbstractCoinforgedCard {
 
@@ -34,7 +35,7 @@ public class HitAndRun extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(HitAndRunPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(p, p, new HitAndRunPower(p, 1)));
+            Wiz.atb(new ApplyPowerAction(p, p, new HitAndRunPower(p, 1)));
         }
     }
 

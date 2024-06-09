@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.util.Wiz;
 
 public class ChipShuffleAction extends AbstractGameAction {
 
@@ -30,7 +32,7 @@ public class ChipShuffleAction extends AbstractGameAction {
         for (AbstractCard c : cardsToMove) {
             hand.moveToDeck(c, true);
         }
-        addToBot(new DrawCardAction(cardsToDraw));
+        Wiz.atb(new DrawCardAction(cardsToDraw));
         this.isDone = true;
     }
 }

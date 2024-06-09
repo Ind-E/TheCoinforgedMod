@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class CardShark extends AbstractCoinforgedCard {
     private static final int DAMAGE = 14;
@@ -37,15 +38,15 @@ public class CardShark extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {
-            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY)));
+            Wiz.atb(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY)));
             for (int i = 0; i < 5; i++)
-                addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
+                Wiz.atb(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         } else {
-            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY), 0.4F));
+            Wiz.atb(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY), 0.4F));
             for (int i = 0; i < 5; i++)
-                addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
+                Wiz.atb(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         }
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
     }
 

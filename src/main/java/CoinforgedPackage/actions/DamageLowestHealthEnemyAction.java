@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.util.Wiz;
+
 public class DamageLowestHealthEnemyAction extends AbstractGameAction {
     private AbstractPlayer p = AbstractDungeon.player;
     private int damage;
@@ -25,7 +27,7 @@ public class DamageLowestHealthEnemyAction extends AbstractGameAction {
                 target = mo;
             }
         }
-        addToBot(new DamageAction(target, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(target, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         this.isDone = true;
     }

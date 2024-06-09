@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class RollBlue extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 1;
@@ -29,7 +30,7 @@ public class RollBlue extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollBlueAction(p, this.magicNumber));
+        Wiz.atb(new RollBlueAction(p, this.magicNumber));
     }
     
     public ArrayList<CardTags> getTags() {

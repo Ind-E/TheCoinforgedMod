@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class LuckyEight extends AbstractCoinforgedCard {
     private static final int BLOCK = 8;
@@ -34,9 +35,9 @@ public class LuckyEight extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         if (cardsPlayedThisTurn == 8) {
-            addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 8)));
+            Wiz.atb(new ApplyPowerAction(p, p, new ThornsPower(p, 8)));
         }
-        addToBot(new GainBlockAction(p, this.block));
+        Wiz.atb(new GainBlockAction(p, this.block));
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.BufferPower;
 import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class GlassShield extends AbstractCoinforgedCard {
     private static final int CHIPS = 1;
@@ -32,7 +33,7 @@ public class GlassShield extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IfChipsAction(CHIPS, new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber))));
+        Wiz.atb(new IfChipsAction(CHIPS, new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber))));
     }
 
     @Override

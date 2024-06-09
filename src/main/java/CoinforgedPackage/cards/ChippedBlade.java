@@ -6,9 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class ChippedBlade extends AbstractCoinforgedCard {
     private static final int MAGIC = 12;
@@ -38,8 +39,8 @@ public class ChippedBlade extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new CripplingDebtPower(m, this.magicNumber)));
-        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, customVar("W"), false)));
+        Wiz.atb(new ApplyPowerAction(m, p, new CripplingDebtPower(m, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(m, p, new WeakPower(m, customVar("W"), false)));
     }
 
     @Override

@@ -1,5 +1,7 @@
 package CoinforgedPackage.cards;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -7,9 +9,7 @@ import CoinforgedPackage.actions.BrokenBottleAction;
 import CoinforgedPackage.cards.tempCards.GlassShard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
-
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import CoinforgedPackage.util.Wiz;
 
 public class BrokenBottle extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
@@ -33,7 +33,7 @@ public class BrokenBottle extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BrokenBottleAction(m, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));
-        addToBot(new MakeTempCardInHandAction(new GlassShard(), 1));
+        Wiz.atb(new BrokenBottleAction(m, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));
+        Wiz.atb(new MakeTempCardInHandAction(new GlassShard(), 1));
     }
 }

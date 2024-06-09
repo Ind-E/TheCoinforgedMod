@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class LuckyBreakFollowUpAction extends AbstractGameAction {
 
     private int magic = 0;
@@ -29,7 +31,7 @@ public class LuckyBreakFollowUpAction extends AbstractGameAction {
                     return;
                 }
             }
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magic)));
+            Wiz.atb(new ApplyPowerAction(p, p, new DexterityPower(p, this.magic)));
         }
         
     }

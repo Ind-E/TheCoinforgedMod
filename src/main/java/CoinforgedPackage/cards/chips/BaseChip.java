@@ -13,6 +13,7 @@ import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 
@@ -66,6 +67,6 @@ public abstract class BaseChip extends AbstractCoinforgedCard {
 
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+        Wiz.atb(new DrawCardAction(AbstractDungeon.player, 1));
     }
 }

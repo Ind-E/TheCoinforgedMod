@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class LongGame extends AbstractCoinforgedCard {
     private static final int DAMAGE = 35;
@@ -37,9 +38,9 @@ public class LongGame extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
+        Wiz.atb(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
+        Wiz.atb(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
     }
 
     @Override

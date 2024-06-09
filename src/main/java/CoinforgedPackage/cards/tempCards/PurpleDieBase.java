@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public abstract class PurpleDieBase extends AbstractCoinforgedCard {
     private static final int UPG_MAGIC = 2;
@@ -39,11 +40,11 @@ public abstract class PurpleDieBase extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {
-            addToBot(new VFXAction((AbstractCreature) p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
+            Wiz.atb(new VFXAction((AbstractCreature) p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {
-            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.4F));
+            Wiz.atb(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.4F));
         }
-        addToBot(new ApplyPowerAction(p, p, new VigorPower(p, this.magicNumber), this.magicNumber));
+        Wiz.atb(new ApplyPowerAction(p, p, new VigorPower(p, this.magicNumber), this.magicNumber));
     }
 
 }

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
@@ -36,9 +37,9 @@ public class ChaosFour extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber,
+            Wiz.atb(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber,
                     true, AbstractGameAction.AttackEffect.NONE));
-            addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true,
+            Wiz.atb(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true,
                     AbstractGameAction.AttackEffect.NONE));
         }
     }

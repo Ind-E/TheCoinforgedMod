@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class RollRed extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 2;
@@ -32,7 +34,7 @@ public class RollRed extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollRedAction(p, this.magicNumber));
+        Wiz.atb(new RollRedAction(p, this.magicNumber));
     }
 
     public ArrayList<CardTags> getTags() {

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class MaxedOut extends AbstractCoinforgedCard {
     private static final int DAMAGE = 7;
@@ -32,9 +33,9 @@ public class MaxedOut extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
-        addToBot(new GainEnergyAction(this.magicNumber));
+        Wiz.atb(new GainEnergyAction(this.magicNumber));
     }
 
     @Override

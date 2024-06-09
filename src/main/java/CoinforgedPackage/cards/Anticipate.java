@@ -7,9 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 // card art idea: laying caltrops in front of sleeping lagavulin
 public class Anticipate extends AbstractCoinforgedCard{
@@ -34,8 +35,8 @@ public class Anticipate extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollPurpleAction(p, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), 1));
+        Wiz.atb(new RollPurpleAction(p, this.magicNumber));
+        Wiz.atb(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), 1));
     }
 
     @Override

@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class CripplingDebtPower extends BasePower implements HealthBarRenderPower {
     public static final String POWER_ID = makeID(CripplingDebtPower.class.getSimpleName());
 
@@ -47,8 +49,8 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
 
     public void checkInstantKill() {
         if (this.owner.currentHealth > 0 && this.owner.currentHealth <= this.amount) {
-            addToBot(new InstantKillAction(this.owner));
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CripplingDebtPower.POWER_ID));
+            Wiz.atb(new InstantKillAction(this.owner));
+            Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.owner, CripplingDebtPower.POWER_ID));
         }
     }
 

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class LoadedDice extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
@@ -27,6 +28,6 @@ public class LoadedDice extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new LoadedDicePower(p, magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new LoadedDicePower(p, magicNumber)));
     }
 }

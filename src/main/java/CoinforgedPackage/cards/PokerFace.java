@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.PokerFacePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class PokerFace extends AbstractCoinforgedCard {
 
@@ -33,7 +34,7 @@ public class PokerFace extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PokerFacePower(p, p.currentHealth), 2));
+        Wiz.atb(new ApplyPowerAction(p, p, new PokerFacePower(p, p.currentHealth), 2));
     }
 
     @Override

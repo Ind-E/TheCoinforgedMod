@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 // feels weak
 public class FinalBet extends AbstractCoinforgedCard{
@@ -34,9 +36,9 @@ public class FinalBet extends AbstractCoinforgedCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int chips = getNumChips();
-        addToBot(new SpendChipsAction(chips, true));
+        Wiz.atb(new SpendChipsAction(chips, true));
         for (int i = 0; i < chips; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
 

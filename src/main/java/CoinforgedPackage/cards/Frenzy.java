@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.DuplicationPower;
 import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Frenzy extends AbstractCoinforgedCard {
     private static final int CHIPS = 2;
@@ -31,7 +32,7 @@ public class Frenzy extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IfChipsAction(this.magicNumber, new ApplyPowerAction(p, p, new DuplicationPower(p, 1))));
+        Wiz.atb(new IfChipsAction(this.magicNumber, new ApplyPowerAction(p, p, new DuplicationPower(p, 1))));
     }
 
     @Override

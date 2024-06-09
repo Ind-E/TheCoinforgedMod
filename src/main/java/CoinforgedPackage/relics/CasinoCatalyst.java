@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.Wiz;
 
 public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
     private static final String NAME = "CasinoCatalyst";
@@ -46,8 +47,8 @@ public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
                     AbstractDungeon.player.dialogY, 3.0F, this.DESCRIPTIONS[1], true));
             return;
         }
-        addToBot(new GainEnergyAction(1));
-        addToBot(new DrawCardAction(1));
+        Wiz.atb(new GainEnergyAction(1));
+        Wiz.atb(new DrawCardAction(1));
         flash();
         setCounter(counter - 1);
         this.usedThisCombat = true;

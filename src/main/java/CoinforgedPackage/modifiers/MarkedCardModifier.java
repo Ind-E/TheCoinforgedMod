@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MarkedCardModifier extends AbstractCardModifier {
@@ -36,8 +37,8 @@ public class MarkedCardModifier extends AbstractCardModifier {
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        addToBot(new GainEnergyAction(1));
-        addToBot(new DrawCardAction(1));
+        Wiz.atb(new GainEnergyAction(1));
+        Wiz.atb(new DrawCardAction(1));
     }
 
     public Color getGlow(AbstractCard card) {

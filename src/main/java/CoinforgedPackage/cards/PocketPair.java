@@ -12,6 +12,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.modifiers.RetainModifier;
 import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.helpers.CardModifierManager;
 
 public class PocketPair extends AbstractCoinforgedCard {
@@ -44,8 +45,8 @@ public class PocketPair extends AbstractCoinforgedCard {
             c1.initializeDescription();
             c2.initializeDescription();
         }
-        addToBot(new MakeTempCardInHandAction(c1, true, true));
-        addToBot(new MakeTempCardInHandAction(c2, true, true));
+        Wiz.atb(new MakeTempCardInHandAction(c1, true, true));
+        Wiz.atb(new MakeTempCardInHandAction(c2, true, true));
         if (upgraded) {
             CardModifierManager.addModifier(c1, new RetainModifier());
             CardModifierManager.addModifier(c2, new RetainModifier());

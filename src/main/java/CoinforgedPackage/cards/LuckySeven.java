@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class LuckySeven extends AbstractCoinforgedCard {
     private static final int DAMAGE = 7;
@@ -32,10 +33,10 @@ public class LuckySeven extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
-            addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, false),
+            Wiz.atb(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, false),
                     DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }

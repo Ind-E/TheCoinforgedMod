@@ -6,9 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.BlitzPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Blitz extends AbstractCoinforgedCard{
 
@@ -29,8 +30,8 @@ public class Blitz extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new NoDrawPower(p)));
-        addToBot(new ApplyPowerAction(p, p, new BlitzPower(p)));
+        Wiz.atb(new ApplyPowerAction(p, p, new NoDrawPower(p)));
+        Wiz.atb(new ApplyPowerAction(p, p, new BlitzPower(p)));
     }
 
     @Override

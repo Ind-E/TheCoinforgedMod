@@ -1,12 +1,15 @@
 package CoinforgedPackage.cards;
 
 import java.util.HashMap;
+
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Stash extends AbstractRandomChipCard {
     private static final int BLOCK = 8;
@@ -59,7 +62,7 @@ public class Stash extends AbstractRandomChipCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        Wiz.atb(new GainBlockAction(p, this.block));
     }
 
     @Override

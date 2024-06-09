@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.SetCostFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class BlazingTactics extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
@@ -32,8 +33,8 @@ public class BlazingTactics extends AbstractCoinforgedCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new DrawCardAction(this.magicNumber, new SetCostFollowUpAction(1)));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        Wiz.atb(new DrawCardAction(this.magicNumber, new SetCostFollowUpAction(1)));
     }
 
     @Override

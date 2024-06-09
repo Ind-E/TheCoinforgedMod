@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class PokerFacePower extends BasePower {
     public static final String POWER_ID = makeID(PokerFacePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -35,12 +37,12 @@ public class PokerFacePower extends BasePower {
             p.currentHealth = hp;
             p.healthBarUpdatedEvent();
         }
-        addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
+        Wiz.atb(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
 
     }
 
     @Override
     public void stackPower(int stackAmount) {
-        addToBot(new ApplyPowerAction(owner, source, null));
+        Wiz.atb(new ApplyPowerAction(owner, source, null));
     }
 }

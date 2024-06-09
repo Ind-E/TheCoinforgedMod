@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
+import CoinforgedPackage.util.Wiz;
+
 public class GoldIfWinPower extends BasePower {
     public static final String POWER_ID = makeID(GoldIfWinPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -21,7 +23,7 @@ public class GoldIfWinPower extends BasePower {
     }
 
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, GoldIfWinPower.POWER_ID));
+        Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.owner, GoldIfWinPower.POWER_ID));
     }
 
     public void stackPower(int stackAmount) {

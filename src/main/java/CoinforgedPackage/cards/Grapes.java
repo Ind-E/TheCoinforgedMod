@@ -3,9 +3,11 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.util.CardStats;
+
 import CoinforgedPackage.actions.GrapesAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Grapes extends AbstractCoinforgedCard{
     private static final int MAGIC = 2;
@@ -39,7 +41,7 @@ public class Grapes extends AbstractCoinforgedCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GrapesAction(this.magicNumber, this.cost, this.upgraded));
+        Wiz.atb(new GrapesAction(this.magicNumber, this.cost, this.upgraded));
         
     }
 

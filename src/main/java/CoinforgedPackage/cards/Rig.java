@@ -10,6 +10,7 @@ import CoinforgedPackage.actions.RigAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.RigPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Rig extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 1;
@@ -37,9 +38,9 @@ public class Rig extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RigAction());
-        addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new RigPower(p)));
+        Wiz.atb(new RigAction());
+        Wiz.atb(new DrawCardAction(p, this.magicNumber));
+        Wiz.atb(new ApplyPowerAction(p, p, new RigPower(p)));
     }
 
     @Override

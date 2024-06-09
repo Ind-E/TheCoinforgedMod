@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.MapCircleEffect;
+
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Underdog extends AbstractCoinforgedCard {
     private static final int DAMAGE = 20;
@@ -36,11 +38,11 @@ public class Underdog extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.currentHealth < m.currentHealth) {
-            addToBot(new VFXAction(new MapCircleEffect(m.hb.cX, m.hb.cY, 265f)));
-            addToBot(new WaitAction(0.5f));
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage * this.magicNumber, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
+            Wiz.atb(new VFXAction(new MapCircleEffect(m.hb.cX, m.hb.cY, 265f)));
+            Wiz.atb(new WaitAction(0.5f));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage * this.magicNumber, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
         } else {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
         }
     }
 

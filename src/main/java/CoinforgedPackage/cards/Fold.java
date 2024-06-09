@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.FoldAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Fold extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
@@ -29,8 +30,8 @@ public class Fold extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FoldAction(this.magicNumber));
-        addToBot(new PressEndTurnButtonAction());
+        Wiz.atb(new FoldAction(this.magicNumber));
+        Wiz.atb(new PressEndTurnButtonAction());
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.PlayerAppliedDrawReductionPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Advance extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 2;
@@ -30,7 +31,7 @@ public class Advance extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, this.magicNumber));
+        Wiz.atb(new DrawCardAction(p, this.magicNumber));
         addToTop(new ApplyPowerAction(p, p, new PlayerAppliedDrawReductionPower(p, DRAW_REDUCTION)));
     }
 

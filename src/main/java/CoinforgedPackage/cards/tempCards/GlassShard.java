@@ -5,10 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import CoinforgedPackage.util.CardStats;
-import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
 public class GlassShard extends AbstractCoinforgedCard {
@@ -32,6 +33,6 @@ public class GlassShard extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false)));
+        Wiz.atb(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false)));
     }
 }

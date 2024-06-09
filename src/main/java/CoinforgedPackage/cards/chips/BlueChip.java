@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.util.Wiz;
 
 public class BlueChip extends BaseChip {
 
@@ -21,6 +22,6 @@ public class BlueChip extends BaseChip {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        Wiz.atb(new GainBlockAction(p, this.block));
     }
 }

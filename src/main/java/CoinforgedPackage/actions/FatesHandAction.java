@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class FatesHandAction extends AbstractGameAction {
 
     private int magic = 0;
@@ -17,7 +19,7 @@ public class FatesHandAction extends AbstractGameAction {
 
     public void update() {
         if (this.p.discardPile.getTopCard().costForTurn == p.discardPile.getNCardFromTop(1).costForTurn) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magic)));
+            Wiz.atb(new ApplyPowerAction(p, p, new StrengthPower(p, this.magic)));
         }
         this.isDone = true;
     }

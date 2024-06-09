@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.RerollPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Reroll extends AbstractCoinforgedCard {
 
@@ -27,7 +28,7 @@ public class Reroll extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(RerollPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(p, p, new RerollPower(p)));
+            Wiz.atb(new ApplyPowerAction(p, p, new RerollPower(p)));
         }
     }
 

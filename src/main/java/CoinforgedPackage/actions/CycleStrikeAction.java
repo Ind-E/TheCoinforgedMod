@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
+import CoinforgedPackage.util.Wiz;
+
 public class CycleStrikeAction extends AbstractGameAction {
     public int[] multiDamage;
 
@@ -45,21 +47,21 @@ public class CycleStrikeAction extends AbstractGameAction {
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
                 if (i == 0) {
-                    addToBot(new SFXAction("ATTACK_WHIRLWIND"));
-                    addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
+                    Wiz.atb(new SFXAction("ATTACK_WHIRLWIND"));
+                    Wiz.atb(new VFXAction(new WhirlwindEffect(), 0.0F));
                 }
-                addToBot(new SFXAction("ATTACK_HEAVY"));
-                addToBot(new VFXAction(this.p, new CleaveEffect(), 0.0F));
-                addToBot(new DamageAllEnemiesAction(this.p, this.multiDamage, this.damageType,
+                Wiz.atb(new SFXAction("ATTACK_HEAVY"));
+                Wiz.atb(new VFXAction(this.p, new CleaveEffect(), 0.0F));
+                Wiz.atb(new DamageAllEnemiesAction(this.p, this.multiDamage, this.damageType,
                         AbstractGameAction.AttackEffect.NONE, true));
             }
 
             if (!this.freeToPlayOnce)
                 this.p.energy.use(EnergyPanel.totalCount);
-            addToBot(new DrawCardAction(effect));
-            addToBot(new DiscardAction(p, p, effect, false));
+            Wiz.atb(new DrawCardAction(effect));
+            Wiz.atb(new DiscardAction(p, p, effect, false));
         }
-        addToBot(new GainEnergyAction(1));
+        Wiz.atb(new GainEnergyAction(1));
         this.isDone = true;
     }
 }

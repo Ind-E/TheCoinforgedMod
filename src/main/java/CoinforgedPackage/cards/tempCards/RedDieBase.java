@@ -12,6 +12,7 @@ import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.helpers.CardModifierManager;
 
 public abstract class RedDieBase extends AbstractCoinforgedCard {
@@ -67,10 +68,10 @@ public abstract class RedDieBase extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(RedKingPower.POWER_ID) && this.target == CardTarget.ALL_ENEMY) {
-            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
+            Wiz.atb(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }

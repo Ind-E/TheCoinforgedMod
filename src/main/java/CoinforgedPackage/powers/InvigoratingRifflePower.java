@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
+import CoinforgedPackage.util.Wiz;
+
 public class InvigoratingRifflePower extends BasePower {
     public static final String POWER_ID = makeID(InvigoratingRifflePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
@@ -22,7 +24,7 @@ public class InvigoratingRifflePower extends BasePower {
     @Override
     public void onExhaust(AbstractCard card) {
         if (card.type == AbstractCard.CardType.SKILL) {
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
+            Wiz.atb(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
         }
     }
 }

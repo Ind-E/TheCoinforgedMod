@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class AllIn extends AbstractCoinforgedCard {
 
@@ -30,8 +31,8 @@ public class AllIn extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int chips = getNumChips();
-        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -chips - (upgraded ? 1 : 0))));
-        addToBot(new SpendChipsAction(chips));
+        Wiz.atb(new ApplyPowerAction(m, p, new StrengthPower(m, -chips - (upgraded ? 1 : 0))));
+        Wiz.atb(new SpendChipsAction(chips));
     }
 
     @Override

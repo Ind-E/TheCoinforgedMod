@@ -7,6 +7,7 @@ import CoinforgedPackage.actions.AddTypeToHandAction;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
@@ -38,6 +39,6 @@ public class SkillFromDeck extends AbstractCoinforgedCard {
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new AddTypeToHandAction(this.type, this.upgraded));
+        Wiz.atb(new AddTypeToHandAction(this.type, this.upgraded));
     }
 }

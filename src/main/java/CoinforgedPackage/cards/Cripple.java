@@ -5,9 +5,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class Cripple extends AbstractCoinforgedCard {
     private static final int MAGIC = 7;
@@ -29,7 +30,7 @@ public class Cripple extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new CripplingDebtPower(mo, this.magicNumber)));
+            Wiz.atb(new ApplyPowerAction(mo, p, new CripplingDebtPower(mo, this.magicNumber)));
         }
     }
 }

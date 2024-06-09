@@ -3,7 +3,9 @@ package CoinforgedPackage.cards.chips;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.util.Wiz;
 
 public class RedChip extends BaseChip {
 
@@ -20,6 +22,6 @@ public class RedChip extends BaseChip {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, this.magicNumber));
+        Wiz.atb(new DrawCardAction(p, this.magicNumber));
     }
 }

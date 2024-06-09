@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.actions.LuckyBreakFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class LuckyBreak extends AbstractCoinforgedCard {
     private static final int DEXTERITY = 1;
@@ -29,7 +30,7 @@ public class LuckyBreak extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(CARD_DRAW, new LuckyBreakFollowUpAction(this.magicNumber)));
+        Wiz.atb(new DrawCardAction(CARD_DRAW, new LuckyBreakFollowUpAction(this.magicNumber)));
     }
 
     @Override

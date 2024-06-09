@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.InvigoratingRifflePower;
 import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
 
 public class InvigoratingRiffle extends AbstractCoinforgedCard {
     private static final int VIGOR = 2;
@@ -28,7 +29,7 @@ public class InvigoratingRiffle extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new InvigoratingRifflePower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new InvigoratingRifflePower(p, this.magicNumber)));
     }
 
     @Override
