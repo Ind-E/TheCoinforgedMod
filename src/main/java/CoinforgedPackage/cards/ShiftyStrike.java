@@ -18,6 +18,7 @@ public class ShiftyStrike extends AbstractCoinforgedCard {
     private static final int DAMAGE = 12;
     private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(ShiftyStrike.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -30,14 +31,14 @@ public class ShiftyStrike extends AbstractCoinforgedCard {
     public ShiftyStrike() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
         tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
-        Wiz.atb(new DrawCardAction(magicNumber));
+        Wiz.atb(new DrawCardAction(1));
         Wiz.atb(new OverflowAction(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false))));
     }
 

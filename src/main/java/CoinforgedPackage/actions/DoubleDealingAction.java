@@ -36,7 +36,6 @@ public class DoubleDealingAction extends AbstractGameAction {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 this.chosenCards.add(c);
             }
-            System.out.println(this.chosenCards);
             if (this.chosenCards.size() == 2) {
                 AbstractCard card1 = this.chosenCards.get(0);
                 AbstractCard card2 = this.chosenCards.get(1);

@@ -15,7 +15,7 @@ public class OverflowAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (AbstractDungeon.player.hand.size() <= BaseMod.MAX_HAND_SIZE - 2) {
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE - 2) {
             Wiz.att(action);
         }
         this.isDone = true;

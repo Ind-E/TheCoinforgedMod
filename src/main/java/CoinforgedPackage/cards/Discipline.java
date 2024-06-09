@@ -25,7 +25,7 @@ public class Discipline extends AbstractCoinforgedCard {
 
     public Discipline() {
         super(ID, info);
-        setBlock(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

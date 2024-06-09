@@ -22,7 +22,7 @@ public class OverflowingArmorPower extends BasePower {
     }
 
     public void onPlayCard(AbstractCard c) {
-        if (AbstractDungeon.player.hand.size() <= BaseMod.MAX_HAND_SIZE - 2) {
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE - 2) {
             Wiz.atb(new GainBlockAction(AbstractDungeon.player, amount));
         }
     }

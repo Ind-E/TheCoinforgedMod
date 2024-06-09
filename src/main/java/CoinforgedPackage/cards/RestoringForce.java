@@ -32,8 +32,8 @@ public class RestoringForce extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new GainBlockAction(p, block));
-        Wiz.atb(new GainBlockAction(p, block));
+        Wiz.atb(new GainBlockAction(p, block, true));
+        Wiz.atb(new GainBlockAction(p, block, true));
         Wiz.atb(new OverflowAction(new ApplyPowerAction(p, p, new ModifiedHandSizePower(magicNumber))));
     }
 

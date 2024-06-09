@@ -628,15 +628,15 @@
   },
   "${modID}:TwinSlash": {
     "NAME": "Twin Slash",
-    "DESCRIPTION": "Deal !D! damage twice. ${modID}Overflow: draw 1 card."
+    "DESCRIPTION": "Deal !D! damage twice. ${modID}:Overflow: draw 1 card."
   },
   "${modID}:Discipline": {
-    "NAME": "Twin Slash",
+    "NAME": "Discipline",
     "DESCRIPTION": "Gain !M! Strength. NL Gain !M! Dexterity. NL Set your max hand size to 4."
   },
   "${modID}:Floodgate": {
     "NAME": "Floodgate",
-    "DESCRIPTION": "Whenever your hand becomes full, deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Whenever your hand becomes full, deal !M! damage to ALL enemies."
   },
   "${modID}:RestoringForce": {
     "NAME": "Restoring Force",
@@ -648,11 +648,11 @@
   },
   "${modID}:SlotMachineLearning": {
     "NAME": "Slot Machine Learning",
-    "DESCRIPTION": "At the start of your turn, draw 1 additional card. If you didn't, gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw 1 additional card. If you didn't, gain !M! Strength."
+    "DESCRIPTION": "At the start of your turn, draw 1 additional card. If you don't, gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw 1 additional card. If you don't, gain !M! Strength."
   },
   "${modID}:OverflowingArmor": {
     "NAME": "Overflowing Armor",
-    "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !B! Block."
+    "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !M! Block."
   }
 }

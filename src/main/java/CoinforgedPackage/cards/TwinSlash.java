@@ -22,7 +22,7 @@ public class TwinSlash extends AbstractCoinforgedCard {
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.NONE,
+            CardTarget.ENEMY,
             1);
 
     public TwinSlash() {

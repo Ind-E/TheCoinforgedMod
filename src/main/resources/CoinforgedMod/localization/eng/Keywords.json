@@ -103,5 +103,12 @@
       "initiate"
     ],
     "DESCRIPTION": "This effect is removed after you play this card."
+  },
+  {
+    "PROPER_NAME": "Overflow",
+    "NAMES": [
+      "overflow"
+    ],
+    "DESCRIPTION": "An extra effect if your hand is full or 1 card less than full when played."
   }
 ]

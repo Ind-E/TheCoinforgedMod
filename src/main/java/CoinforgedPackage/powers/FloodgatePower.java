@@ -1,6 +1,7 @@
 package CoinforgedPackage.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
+import com.evacipated.cardcrawl.mod.stslib.patches.bothInterfaces.OnCreateCardInterface;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;
 
-public class FloodgatePower extends BasePower implements BetterOnApplyPowerPower {
+public class FloodgatePower extends BasePower implements OnReceivePowerPower, OnCreateCardInterface {
     public static final String POWER_ID = makeID(FloodgatePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
@@ -42,14 +43,35 @@ public class FloodgatePower extends BasePower implements BetterOnApplyPowerPower
     }
 
     @Override
-    public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof ModifiedHandSizePower && BaseMod.MAX_HAND_SIZE <= power.amount
-                + BaseMod.DEFAULT_MAX_HAND_SIZE + AbstractDungeon.player.getPower(ModifiedHandSizePower.POWER_ID).amount) {
-            // if hand becomes full by reducing hand size
-            Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
-            Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.NORMAL, AttackEffect.NONE));
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power instanceof ModifiedHandSizePower) {
+            System.out.println("power instance of ModifiedHandSizePower");
+            int cardsInHand = AbstractDungeon.player.hand.size();
+            int handSizeReduction = AbstractDungeon.player.getPower(ModifiedHandSizePower.POWER_ID).amount;
+            if (AbstractDungeon.player.hasPower(ModifiedHandSizePower.POWER_ID)) {
+                if (cardsInHand >= power.amount + BaseMod.DEFAULT_MAX_HAND_SIZE + handSizeReduction &&
+                        cardsInHand < handSizeReduction + BaseMod.DEFAULT_MAX_HAND_SIZE) {
+                    Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
+                    Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.THORNS, AttackEffect.NONE));
+                }
+            } else if (cardsInHand >= power.amount + BaseMod.DEFAULT_MAX_HAND_SIZE) {
+                Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
+                Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.THORNS, AttackEffect.NONE));
+            }
         }
         return true;
+    }
+
+    @Override
+    public void onCreateCard(AbstractCard card) {
+        if (BaseMod.MAX_HAND_SIZE == AbstractDungeon.player.hand.size()) {
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c.uuid == card.uuid) {
+                    Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
+                    Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.THORNS, AttackEffect.NONE));
+                }
+            }
+        }
     }
 
 }
