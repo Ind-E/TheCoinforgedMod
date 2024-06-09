@@ -589,7 +589,7 @@
   },
   "${modID}:CollectorsBlade": {
     "NAME": "Collector's Blade",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has ${modID}:Crippling_Debt or Artifact, gain [E] and apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has ${modID}:Crippling_Debt or Artifact, gain [E] \u00a0and apply !M! Vulnerable."
   },
   "${modID}:Bond": {
     "NAME": "Bond",

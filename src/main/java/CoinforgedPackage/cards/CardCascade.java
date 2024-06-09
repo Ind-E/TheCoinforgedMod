@@ -12,7 +12,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class CardCascade extends AbstractCoinforgedCard {
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 4;
     private static final int UPG_MAGIC = 2;
     private static final int DRAW = 1;
 
