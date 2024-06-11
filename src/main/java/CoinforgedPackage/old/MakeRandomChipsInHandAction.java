@@ -1,18 +1,18 @@
-package CoinforgedPackage.actions;
+package CoinforgedPackage.old;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import CoinforgedPackage.cards.chips.BlackChip;
-import CoinforgedPackage.cards.chips.BlueChip;
-import CoinforgedPackage.cards.chips.CrackedChip;
-import CoinforgedPackage.cards.chips.GrayChip;
-import CoinforgedPackage.cards.chips.GreenChip;
-import CoinforgedPackage.cards.chips.OrangeChip;
-import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.BasicChip;
+import CoinforgedPackage.old.chips.BasicChip;
+import CoinforgedPackage.old.chips.BlackChip;
+import CoinforgedPackage.old.chips.BlueChip;
+import CoinforgedPackage.old.chips.CrackedChip;
+import CoinforgedPackage.old.chips.GrayChip;
+import CoinforgedPackage.old.chips.GreenChip;
+import CoinforgedPackage.old.chips.OrangeChip;
+import CoinforgedPackage.old.chips.RedChip;
 
 public class MakeRandomChipsInHandAction extends AbstractGameAction {
 

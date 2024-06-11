@@ -110,5 +110,12 @@
       "overflow"
     ],
     "DESCRIPTION": "An extra effect if your hand is full or 1 card less than full when played."
+  },
+  {
+    "PROPER_NAME": "Return",
+    "NAMES": [
+      "return"
+    ],
+    "DESCRIPTION": "Instead of paying energy, shuffle cards from your discard pile into your draw pile to play this card."
   }
 ]

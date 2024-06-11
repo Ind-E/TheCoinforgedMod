@@ -9,8 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import CoinforgedPackage.CoinforgedMain;
-import CoinforgedPackage.cards.CustomTags;
-import CoinforgedPackage.cards.chips.BlackChip;
 
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {
@@ -29,20 +27,6 @@ public class GeneralUtils {
 
     public static String removePrefix(String ID) {
         return ID.substring(ID.indexOf(":") + 1);
-    }
-
-    public static int getNumChips() {
-        int chips = 0;
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof BlackChip) {
-                chips+= BlackChip.BlackChipValue;
-                continue;
-            }
-            if (c.hasTag(CustomTags.POKER_CHIP)) {
-                chips++;
-            }
-        }
-        return chips;
     }
 
     public static AbstractCard generateRandomStatusCard() {

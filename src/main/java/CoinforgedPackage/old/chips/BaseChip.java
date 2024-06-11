@@ -1,4 +1,4 @@
-package CoinforgedPackage.cards.chips;
+package CoinforgedPackage.old.chips;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;

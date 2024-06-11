@@ -1,4 +1,4 @@
-package CoinforgedPackage.actions;
+package CoinforgedPackage.old;
 
 import static CoinforgedPackage.CoinforgedMain.makeID;
 

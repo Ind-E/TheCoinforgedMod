@@ -1,12 +1,12 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.BuyInAction;
-import CoinforgedPackage.cards.chips.GreenChip;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.old.chips.GreenChip;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 

@@ -1,4 +1,4 @@
-package CoinforgedPackage.modifiers;
+package CoinforgedPackage.old;
 
 import static CoinforgedPackage.util.GeneralUtils.makeKeyword;
 
@@ -7,16 +7,16 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
-import CoinforgedPackage.cards.chips.BaseChip;
-import CoinforgedPackage.cards.chips.BlackChip;
-import CoinforgedPackage.cards.chips.BlueChip;
-import CoinforgedPackage.cards.chips.CrackedChip;
-import CoinforgedPackage.cards.chips.GrayChip;
-import CoinforgedPackage.cards.chips.GreenChip;
-import CoinforgedPackage.cards.chips.OrangeChip;
-import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.BasicChip;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.old.chips.BaseChip;
+import CoinforgedPackage.old.chips.BasicChip;
+import CoinforgedPackage.old.chips.BlackChip;
+import CoinforgedPackage.old.chips.BlueChip;
+import CoinforgedPackage.old.chips.CrackedChip;
+import CoinforgedPackage.old.chips.GrayChip;
+import CoinforgedPackage.old.chips.GreenChip;
+import CoinforgedPackage.old.chips.OrangeChip;
+import CoinforgedPackage.old.chips.RedChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class ChipModifier extends AbstractCardModifier {

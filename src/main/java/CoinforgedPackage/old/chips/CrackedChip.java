@@ -1,9 +1,9 @@
-package CoinforgedPackage.cards.chips;
+package CoinforgedPackage.old.chips;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
 
 //code to exhaust on spend is in SpendChipsAction
 public class CrackedChip extends BaseChip {

@@ -1,4 +1,4 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -9,15 +9,16 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import CoinforgedPackage.cards.chips.BlackChip;
-import CoinforgedPackage.cards.chips.BlueChip;
-import CoinforgedPackage.cards.chips.CrackedChip;
-import CoinforgedPackage.cards.chips.GrayChip;
-import CoinforgedPackage.cards.chips.GreenChip;
-import CoinforgedPackage.cards.chips.OrangeChip;
-import CoinforgedPackage.cards.chips.RedChip;
-import CoinforgedPackage.cards.chips.BasicChip;
-import CoinforgedPackage.modifiers.ChipModifier;
+
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
+import CoinforgedPackage.old.chips.BasicChip;
+import CoinforgedPackage.old.chips.BlackChip;
+import CoinforgedPackage.old.chips.BlueChip;
+import CoinforgedPackage.old.chips.CrackedChip;
+import CoinforgedPackage.old.chips.GrayChip;
+import CoinforgedPackage.old.chips.GreenChip;
+import CoinforgedPackage.old.chips.OrangeChip;
+import CoinforgedPackage.old.chips.RedChip;
 import CoinforgedPackage.util.CardStats;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardModifierManager;

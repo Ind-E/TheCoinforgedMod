@@ -1,6 +1,6 @@
-package CoinforgedPackage.actions;
+package CoinforgedPackage.old;
 
-import static CoinforgedPackage.util.GeneralUtils.getNumChips;
+import static CoinforgedPackage.old.oldUtils.getNumChips;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 

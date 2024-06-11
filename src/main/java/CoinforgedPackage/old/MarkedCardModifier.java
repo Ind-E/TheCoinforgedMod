@@ -1,4 +1,4 @@
-package CoinforgedPackage.modifiers;
+package CoinforgedPackage.old;
 
 import static CoinforgedPackage.util.GeneralUtils.makeKeyword;
 

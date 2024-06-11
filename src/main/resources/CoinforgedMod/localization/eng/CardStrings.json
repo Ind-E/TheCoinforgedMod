@@ -3,7 +3,7 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:DefendSpinwarden": {
+  "${modID}:DefendCoinforged": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
@@ -654,5 +654,13 @@
   "${modID}:OverflowingArmor": {
     "NAME": "Overflowing Armor",
     "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !M! Block."
+  },
+  "${modID}:ReturnTest": {
+    "NAME": "Return Test",
+    "DESCRIPTION": "Cost: Return 2. NL Deal !D! damage."
+  },
+  "${modID}:HoldOut": {
+    "NAME": "Hold Out",
+    "DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E] [E] ."
   }
 }

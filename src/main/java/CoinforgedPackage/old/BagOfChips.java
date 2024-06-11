@@ -1,13 +1,14 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.BagOfChipsAction;
-import CoinforgedPackage.cards.chips.BasicChip;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.old.chips.BasicChip;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 

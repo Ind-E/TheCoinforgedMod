@@ -1,6 +1,6 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
-import static CoinforgedPackage.util.GeneralUtils.getNumChips;
+import static CoinforgedPackage.old.oldUtils.getNumChips;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.SpendChipsAction;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;

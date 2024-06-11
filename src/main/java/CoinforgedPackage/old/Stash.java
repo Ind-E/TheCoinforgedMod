@@ -1,4 +1,4 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
 import java.util.HashMap;
 

@@ -1,10 +1,10 @@
-package CoinforgedPackage.cards.chips;
+package CoinforgedPackage.old.chips;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.util.Wiz;
 
 public class RedChip extends BaseChip {

@@ -1,9 +1,9 @@
-package CoinforgedPackage.cards.chips;
+package CoinforgedPackage.old.chips;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
 
 //when spent, increase hand size by 1
 public class OrangeChip extends BaseChip {

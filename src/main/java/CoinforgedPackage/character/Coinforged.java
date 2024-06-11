@@ -1,7 +1,10 @@
 package CoinforgedPackage.character;
 
-import basemod.abstracts.CustomEnergyOrb;
-import basemod.abstracts.CustomPlayer;
+import static CoinforgedPackage.CoinforgedMain.characterPath;
+import static CoinforgedPackage.CoinforgedMain.makeID;
+
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -20,11 +23,8 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import CoinforgedPackage.cards.RollRed;
 import CoinforgedPackage.relics.LuckRelic;
-
-import static CoinforgedPackage.CoinforgedMain.characterPath;
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
-import java.util.ArrayList;
+import basemod.abstracts.CustomEnergyOrb;
+import basemod.abstracts.CustomPlayer;
 
 public class Coinforged extends CustomPlayer {
     // Stats
@@ -35,7 +35,8 @@ public class Coinforged extends CustomPlayer {
     public static final int ORB_SLOTS = 0;
 
     // Strings
-    private static final String ID = makeID("COINFORGED"); // This should match whatever you have in the CharacterStrings.json file
+    private static final String ID = makeID("COINFORGED"); // This should match whatever you have in the
+                                                           // CharacterStrings.json file
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -46,8 +47,10 @@ public class Coinforged extends CustomPlayer {
     private static final String CORPSE = characterPath("corpse.png"); // Corpse is when you die.
 
     public static class Enums {
-        // These are used to identify your character, as well as your character's card color.
-        // Library color is basically the same as card color, but you need both becausethat's how the game was made.
+        // These are used to identify your character, as well as your character's card
+        // color.
+        // Library color is basically the same as card color, but you need both
+        // becausethat's how the game was made.
         @SpireEnum
         public static AbstractPlayer.PlayerClass Coinforged;
         @SpireEnum(name = "COINFORGED_COLOR") // These two MUST match. Change it to something unique for your character.
@@ -78,22 +81,18 @@ public class Coinforged extends CustomPlayer {
 
     @Override
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-        // List of IDs of cards for your starting deck.
-        // If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
-        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
-        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
-        retVal.add(CoinforgedPackage.cards.RollRed.ID);
-        retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);
-        retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);
-        retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);
-        retVal.add(CoinforgedPackage.cards.RollBlue.ID);
-        retVal.add(CoinforgedPackage.cards.Advance.ID);
-        retVal.add(CoinforgedPackage.cards.LowStakes.ID);
-        retVal.add(CoinforgedPackage.cards.chips.BasicChip.ID);
+        ArrayList<String> startingDeck = new ArrayList<>();
+        startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.RollRed.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.RollBlue.ID);
+        startingDeck.add(CoinforgedPackage.cards.Advance.ID);
 
-        return retVal;
+        return startingDeck;
     }
 
     @Override
@@ -130,8 +129,10 @@ public class Coinforged extends CustomPlayer {
 
     private final Color cardRenderColor = Color.GOLDENROD.cpy(); // Used for some vfx on moving cards (sometimes)
     // (yellow to match lights)
-    private final Color cardTrailColor = new Color(242f / 255f, 224f / 255f, 127f / 255f, 1f);; // Used for card trail vfx during gameplay.
-    private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); // Used for a screen tint effect when you attack the heart.
+    private final Color cardTrailColor = new Color(242f / 255f, 224f / 255f, 127f / 255f, 1f);; // Used for card trail
+                                                                                                // vfx during gameplay.
+    private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); // Used for a screen tint effect when you attack the
+                                                                   // heart.
 
     @Override
     public Color getCardRenderColor() {

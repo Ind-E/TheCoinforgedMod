@@ -1,9 +1,9 @@
-package CoinforgedPackage.cards.chips;
+package CoinforgedPackage.old.chips;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+import CoinforgedPackage.old.AbstractRandomChipCard.ChipColor;
 
 //code for energy on spend in SpendChipsAction
 public class GrayChip extends BaseChip {

@@ -1,10 +1,9 @@
-package CoinforgedPackage.actions;
+package CoinforgedPackage.old;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import CoinforgedPackage.modifiers.MarkedCardModifier;
 import basemod.helpers.CardModifierManager;
 
 public class CasinoCatalystAction extends AbstractGameAction {

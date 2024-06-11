@@ -1,6 +1,6 @@
-package CoinforgedPackage.cards;
+package CoinforgedPackage.old;
 
-import static CoinforgedPackage.util.GeneralUtils.getNumChips;
+import static CoinforgedPackage.old.oldUtils.getNumChips;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DuplicationPower;
 
-import CoinforgedPackage.actions.IfChipsAction;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;

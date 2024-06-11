@@ -1,6 +1,7 @@
-package CoinforgedPackage.actions;
+package CoinforgedPackage.old;
 
-import static CoinforgedPackage.util.GeneralUtils.getNumChips;
+
+import static CoinforgedPackage.old.oldUtils.getNumChips;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,10 +12,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.cards.CustomTags;
-import CoinforgedPackage.cards.chips.BlackChip;
-import CoinforgedPackage.cards.chips.CrackedChip;
-import CoinforgedPackage.cards.chips.GrayChip;
-import CoinforgedPackage.cards.chips.OrangeChip;
+import CoinforgedPackage.old.chips.BlackChip;
+import CoinforgedPackage.old.chips.CrackedChip;
+import CoinforgedPackage.old.chips.GrayChip;
+import CoinforgedPackage.old.chips.OrangeChip;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 
 public class SpendChipsAction extends AbstractGameAction {

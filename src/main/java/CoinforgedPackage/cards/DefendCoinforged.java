@@ -9,11 +9,11 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-public class DefendSpinwarden extends AbstractCoinforgedCard {
+public class DefendCoinforged extends AbstractCoinforgedCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public static final String ID = makeID(DefendSpinwarden.class.getSimpleName());
+    public static final String ID = makeID(DefendCoinforged.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
@@ -21,7 +21,7 @@ public class DefendSpinwarden extends AbstractCoinforgedCard {
             CardTarget.SELF,
             1);
 
-    public DefendSpinwarden() {
+    public DefendCoinforged() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         tags.add(CardTags.STARTER_DEFEND);
@@ -34,6 +34,6 @@ public class DefendSpinwarden extends AbstractCoinforgedCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new DefendSpinwarden();
+        return new DefendCoinforged();
     }
 }
