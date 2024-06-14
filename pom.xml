@@ -81,7 +81,7 @@
                     <target>1.8</target>
                     <excludes>
                         <exclude>**/*.kra</exclude>
-                        <exclude>src/main/java/CoinforgedPackage/old/**</exclude>
+                        <exclude>**/axed/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

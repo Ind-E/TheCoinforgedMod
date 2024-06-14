@@ -1,4 +1,4 @@
-package CoinforgedPackage.cards.tempCards;
+package CoinforgedPackage.axed;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

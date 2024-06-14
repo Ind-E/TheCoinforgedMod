@@ -3,6 +3,7 @@ package CoinforgedPackage.powers;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.util.Wiz;
@@ -17,12 +18,14 @@ public class OverflowingArmorPower extends BasePower {
         super(POWER_ID, TYPE, TURN_BASED, AbstractDungeon.player, amount);
     }
 
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public void onPlayCard(AbstractCard c) {
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE - 2) {
+    @Override
+    public void onPlayCard(AbstractCard c, AbstractMonster m) { // happens before card leaves hand
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
             Wiz.atb(new GainBlockAction(AbstractDungeon.player, amount));
         }
     }

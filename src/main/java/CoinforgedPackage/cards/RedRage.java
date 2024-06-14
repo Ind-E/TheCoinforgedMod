@@ -13,10 +13,8 @@ import CoinforgedPackage.powers.AdvantagePower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-//TODO: implement advantage on 1 logic
 public class RedRage extends AbstractCoinforgedCard {
     private static final int ROLLS = 3;
-    private static final int UPG_ROLLS = 1;
     private static final int MAGIC = 1;
 
     public float rotationTimer;
@@ -34,13 +32,15 @@ public class RedRage extends AbstractCoinforgedCard {
     public RedRage() {
         super(ID, info, true);
         setMagic(MAGIC);
-        setCustomVar("rolls", ROLLS, UPG_ROLLS);
+        setCustomVar("rolls", ROLLS);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new RollRedAction(p, customVar("rolls")));
-        // Wiz.atb(new ApplyPowerAction(p, p, new AdvantagePower(p, magicNumber)));
+        if (upgraded) {
+            Wiz.atb(new ApplyPowerAction(p, p, new AdvantagePower(p, magicNumber)));
+        }
     }
 
     public ArrayList<CardTags> getPreviewTags() {

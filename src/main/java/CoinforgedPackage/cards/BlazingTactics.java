@@ -23,7 +23,7 @@ public class BlazingTactics extends AbstractCoinforgedCard {
             Coinforged.Enums.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
-            CardTarget.NONE,
+            CardTarget.ENEMY,
             1);
 
     public BlazingTactics() {

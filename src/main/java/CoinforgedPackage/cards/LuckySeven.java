@@ -34,10 +34,10 @@ public class LuckySeven extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
             Wiz.atb(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, false),
-                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
     }
 

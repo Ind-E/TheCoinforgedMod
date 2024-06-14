@@ -10,11 +10,10 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-// deal 14(18) damage. Deals 1 less damage for each card in your discard pile.
-//TODO: implement damage reduction logic
 public class ChippedBlade extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 14;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 15;
+    private static final int UPG_DAMAGE = 5;
+    private static final int MAGIC = 0;
 
     public static final String ID = makeID(ChippedBlade.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,6 +26,27 @@ public class ChippedBlade extends AbstractCoinforgedCard {
     public ChippedBlade() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
+    }
+
+    @Override
+    public void applyPowers() {
+        int realBaseDamage = baseDamage;
+        baseMagicNumber = Wiz.player().discardPile.size();
+        baseDamage -= baseMagicNumber;
+        super.applyPowers();
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        baseMagicNumber = Wiz.player().discardPile.size();
+        int realBaseDamage = baseDamage;
+        baseDamage -= baseMagicNumber;
+        super.calculateCardDamage(mo);
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 
     @Override

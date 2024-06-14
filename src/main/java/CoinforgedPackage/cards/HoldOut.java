@@ -9,9 +9,9 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-//TODO: add upgrade
 public class HoldOut extends AbstractReturnCard {
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 3;
+    private static final int UPG_MAGIC = 4;
 
     public static final String ID = makeID(HoldOut.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,7 +24,7 @@ public class HoldOut extends AbstractReturnCard {
     public HoldOut() {
         super(ID, info);
         setSelfRetain(true);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

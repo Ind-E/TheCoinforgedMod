@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.actions.RollGreenAction;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.modifiers.RetainModifier;
 import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
+import basemod.cardmods.RetainMod;
 import basemod.helpers.CardModifierManager;
 
 public class PocketPair extends AbstractCoinforgedCard {
@@ -48,8 +48,8 @@ public class PocketPair extends AbstractCoinforgedCard {
         Wiz.atb(new MakeTempCardInHandAction(c1, true, true));
         Wiz.atb(new MakeTempCardInHandAction(c2, true, true));
         if (upgraded) {
-            CardModifierManager.addModifier(c1, new RetainModifier());
-            CardModifierManager.addModifier(c2, new RetainModifier());
+            CardModifierManager.addModifier(c1, new RetainMod());
+            CardModifierManager.addModifier(c2, new RetainMod());
         }
     }
 

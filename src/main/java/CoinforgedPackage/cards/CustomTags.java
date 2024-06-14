@@ -22,4 +22,6 @@ public class CustomTags {
     public static AbstractCard.CardTags MARKED;
     @SpireEnum
     public static AbstractCard.CardTags POKER_CHIP;
+    @SpireEnum
+    public static AbstractCard.CardTags RETURN;
 }

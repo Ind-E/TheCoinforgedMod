@@ -11,9 +11,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class BankError extends AbstractCoinforgedCard {
-    private static final int DAMAGE = -1;
-    private static final int MAGIC = 11;
-    private static final int UPG_MAGIC = 4;
+    private static final int DEBT = 11;
+    private static final int UPG_DEBT = 4;
 
     public static final String ID = makeID(BankError.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -25,14 +24,14 @@ public class BankError extends AbstractCoinforgedCard {
 
     public BankError() {
         super(ID, info);
-        setDamage(DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
+        setCustomVar("debt", DEBT, UPG_DEBT);
+        setVarCalculation("debt", debtCalc);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        Wiz.applyToEnemy(m, new CripplingDebtPower(m, magicNumber));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.NORMAL)));
+        Wiz.applyToEnemy(m, new CripplingDebtPower(m, customVar("debt")));
 
     }
 }

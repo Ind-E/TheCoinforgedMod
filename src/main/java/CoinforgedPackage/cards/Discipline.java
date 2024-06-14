@@ -18,7 +18,7 @@ public class Discipline extends AbstractCoinforgedCard {
     public static final String ID = makeID(Discipline.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
             2);

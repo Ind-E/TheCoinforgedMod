@@ -11,11 +11,6 @@
     "NAME": "Cash Advance",
     "DESCRIPTION": "Draw !M! Cards. NL Draw 1 less card next turn."
   },
-  "${modID}:AllIn": {
-    "NAME": "All In",
-    "DESCRIPTION": "${modID}:Chip X: Enemey loses X Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Chip X: Enemy loses X+1 Strength. NL Exhaust."
-  },
   "${modID}:GoldenGamble": {
     "NAME": "Golden Gamble",
     "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
@@ -44,42 +39,13 @@
     "NAME": "Red Die",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
-  "${modID}:RedSeven": {
-    "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
-  },
-  "${modID}:RedEight": {
-    "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
-  },
-  "${modID}:RedNine": {
-    "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
-  },
-  "${modID}:RedTen": {
-    "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
-  },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
     "DESCRIPTION": "Roll !M! ${modID}:Red_Dice."
   },
-  "${modID}:Advantage": {
-    "NAME": "Gain Advantage",
-    "DESCRIPTION": "Gain !M! ${modID}:Advantage.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Advantage. NL Draw 1 card."
-  },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",
     "DESCRIPTION": "Gain !B! Block. NL Lose !M! Gold."
-  },
-  "${modID}:CursedDie": {
-    "NAME": "Cursed Die",
-    "DESCRIPTION": "1/6 chance to permanently remove a *Cursed *Die from your deck when played. NL Exhaust."
-  },
-  "${modID}:SunkCost": {
-    "NAME": "Sunk Cost",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Permanently increase this card's Block or damage by !M!. NL Exhaust."
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
@@ -105,10 +71,6 @@
   "${modID}:LuckyBreak": {
     "NAME": "Lucky Break",
     "DESCRIPTION": "Draw 2 Cards. NL If they have the same cost, gain !M! Dexterity."
-  },
-  "${modID}:DoubleDown": {
-    "NAME": "Double Down",
-    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less Block, apply !M! Vulnerable to ALL enemies."
   },
   "${modID}:ChaosOne": {
     "NAME": "Chaos Die",
@@ -162,30 +124,7 @@
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
-    "DESCRIPTION": "Deal !D! damage. If you have !M! debuffs, gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have !M! debuff or less, gain !B! Block."
-  },
-  "${modID}:FoolsFortune": {
-    "NAME": "Fool's Fortune",
-    "DESCRIPTION": "If you end your turn with no Attacks in hand, gain !M! Block and [E] next turn."
-  },
-  "${modID}:DeadlyWager": {
-    "NAME": "Deadly Wager",
-    "DESCRIPTION": "ALL enemies lose !M! Strength. At the start of your turn, lose 2 HP",
-    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength NL (bypasses Artifact). NL At the start of your turn, lose 2 HP"
-  },
-  "${modID}:StrategistsShield": {
-    "NAME": "Strategist's Shield",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each Power in hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each non-Attack, non-Skill in hand."
-  },
-  "${modID}:Rig": {
-    "NAME": "Rig",
-    "DESCRIPTION": "Cards in your draw and discard pile cost 0 until played this turn. NL Draw !M! card. NL Exhaust"
-  },
-  "${modID}:Jackpot": {
-    "NAME": "Jackpot",
-    "DESCRIPTION": "Retain. NL If this is the only card in your hand, draw !M! cards and gain [E] [E]. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. If you have any debuffs, gain !B! Block."
   },
   "${modID}:HeartOfTheCards": {
     "NAME": "Heart Of The Cards",
@@ -194,26 +133,17 @@
   },
   "${modID}:StackedDeck": {
     "NAME": "Stacked Deck",
-    "DESCRIPTION": "At the end of your turn, set the cost of a random card in your draw pile to 0 until played.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, set the cost of a random card in your draw pile to 0 until played."
+    "DESCRIPTION": "Scry !M!. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Scry !M!. NL Exhaustive !stslib:ex!."
   },
   "${modID}:HitAndRun": {
     "NAME": "Hit and Run",
     "DESCRIPTION": "Ethereal. NL Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it.",
     "UPGRADE_DESCRIPTION": "Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it."
   },
-  "${modID}:MaxedOut": {
-    "NAME": "Maxed Out",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E] [E]."
-  },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
     "DESCRIPTION": "Deal !D! damage 11 times. NL Reduce your max hand size by !M!."
-  },
-  "${modID}:PokerFace": {
-    "NAME": "Poker Face",
-    "DESCRIPTION": "In 2 turns, set your health to its current value. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "In 2 turns, set your health to its current value."
   },
   "${modID}:BlueOne": {
     "NAME": "Blue Die",
@@ -255,15 +185,6 @@
     "NAME": "High Roller",
     "DESCRIPTION": "Whenever you play a *Six, draw a card."
   },
-  "${modID}:FullHouse": {
-    "NAME": "Full House",
-    "DESCRIPTION": "Deal !D! damage for each card type in your hand.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (",
-      " type in hand.)",
-      " types in hand.)"
-    ]
-  },
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
     "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! less this turn. NL Exhaust",
@@ -285,13 +206,6 @@
     "NAME": "Cheater's Luck",
     "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Duplicate a random cards in your hand twice. NL They cost 0 this turn. NL Exhaust."
-  },
-  "${modID}:HighCard": {
-    "NAME": "High Card",
-    "DESCRIPTION": "Deal !D! damage. NL The next time this card is played, increase its damage by !M! this combat.",
-    "EXTENDED_DESCRIPTION": [
-      "Increase this card's damage by !M! this combat. NL The next time this card is played, deal !D! damage."
-    ]
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",
@@ -351,10 +265,6 @@
     "DESCRIPTION": "Roll !M! ${modID}:Red_Die. NL Roll !M! ${modID}:Blue_Die. NL Roll !M! ${modID}:Green_Die. NL Roll !M! ${modID}:Purple_Die. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Red_Die. NL Roll !M! ${modID}:Blue_Die. NL Roll !M! ${modID}:Green_Die. NL Roll !M! ${modID}:Purple_Die."
   },
-  "${modID}:SlyShot": {
-    "NAME": "Sly Shot",
-    "DESCRIPTION": "Deal !D! damage to the highest health enemy !M! times."
-  },
   "${modID}:PocketPair": {
     "NAME": "Pocket Pair",
     "DESCRIPTION": "Roll !M! ${modID}:Green_Dice. NL Exhaust.",
@@ -372,10 +282,6 @@
     "NAME": "Ace In The Hole",
     "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. NL Purge.",
     "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. NL Purge."
-  },
-  "${modID}:CycleStrike": {
-    "NAME": "Cycle Strike",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies X times. Draw X cards. Discard X cards. Gain [E]."
   },
   "${modID}:WaveOfGreed": {
     "NAME": "Wave of Greed",
@@ -424,54 +330,9 @@
     "NAME": "Unleashed Strategy",
     "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E] \u00a0for every 3 cards in hand. NL Exhaust."
   },
-  "${modID}:GameChanger": {
-    "NAME": "Game Changer",
-    "DESCRIPTION": "Each enemy takes damage equal to its intent to attack. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Each enemy takes damage equal to its intent to attack."
-  },
-  "${modID}:SharksEmbrace": {
-    "NAME": "Shark's Embrace",
-    "DESCRIPTION": "Whenever a card is Exhausted, discard the leftmost card in your hand, then draw a card."
-  },
-  "${modID}:BasicChip": {
-    "NAME": "Basic Chip",
-    "DESCRIPTION": "Unplayable."
-  },
-  "${modID}:Frenzy": {
-    "NAME": "Frenzy",
-    "DESCRIPTION": "${modID}:Chip !M!: This turn, your next card is played twice."
-  },
-  "${modID}:GlassShield": {
-    "NAME": "Glass Shield",
-    "DESCRIPTION": "Ethereal. NL ${modID}:Chip 1: Gain !M! Buffer.",
-    "UPGRADE_DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer."
-  },
   "${modID}:Cripple": {
     "NAME": "Cripple",
-    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt to ALL enemies."
-  },
-  "${modID}:BagOfChips": {
-    "NAME": "Bag of Chips",
-    "DESCRIPTION": "Discard any number of cards then add that many random ${modID}:Poker_Chips into your hand. NL Exhaust."
-  },
-  "${modID}:Stash": {
-    "NAME": "Stash",
-    "DESCRIPTION": "Gain !B! Block. NL Add a ${modID}:randomized ${modID}:Poker_Chip into your hand.",
-    "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block."
-    ]
-  },
-  "${modID}:LowStakes": {
-    "NAME": "Low Stakes",
-    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Chip 1: Gain !B! Block."
-  },
-  "${modID}:Outrage": {
-    "NAME": "Outrage",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${modID}:Chip 1: Apply !M! Vulnerable to ALL enemeis."
-  },
-  "${modID}:BigHands": {
-    "NAME": "Big Hands",
-    "DESCRIPTION": "Draw !M! cards. NL Discard all cards drawn this way that cost less than 2."
+    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt to ALL enemies."
   },
   "${modID}:GlassShard": {
     "NAME": "Glass Shard",
@@ -479,23 +340,11 @@
   },
   "${modID}:Indebt": {
     "NAME": "Indebt",
-    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt. NL Apply !${modID}:W! Weak."
-  },
-  "${modID}:BuyIn": {
-    "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E] \u00a0for each ${modID}:Poker_Chip in your hand. NL Exhaust."
-  },
-  "${modID}:DiceShaker": {
-    "NAME": "Dice Shaker",
-    "DESCRIPTION": "Roll 1 ${modID}:Red_Die. NL Apply !M! Vulnerable. NL Next turn, draw 1 additional card."
+    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Apply !M! Weak."
   },
   "${modID}:Grapes": {
     "NAME": "Grapes",
     "DESCRIPTION": "Ethereal. NL Increase a card's Block and damage by !M! this combat. Add a copy of this card into your hand that costs 1 more. NL Exhaust."
-  },
-  "${modID}:Lemon": {
-    "NAME": "Lemon",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Drawback."
   },
   "${modID}:Melon": {
     "NAME": "Melon",
@@ -505,74 +354,22 @@
     "NAME": "Coin Flick",
     "DESCRIPTION": "Deal !D! damage. NL Whenever you play a 2+ cost card, add this from the draw pile to your hand and increase its damage by !M!."
   },
-  "${modID}:Cherry": {
-    "NAME": "Cherry",
-    "DESCRIPTION": "Deal damage equal to !M! times your cards in hand.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Deals !D! damage.)"
-    ]
-  },
   "${modID}:BankError": {
     "NAME": "Bank Error",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Crippling_Debt."
-  },
-  "${modID}:Blitz": {
-    "NAME": "Blitz",
-    "DESCRIPTION": "Whenever you attack this turn, gain [E]. You cannot draw additional cards this turn."
+    "DESCRIPTION": "Deal !M! damage. NL Apply !${modID}:debt! ${modID}:Crippling_Debt."
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
     "DESCRIPTION": "Roll !M! ${modID}:Purple_Die. NL Retain your hand this turn.",
     "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Purple_Dice. NL Retain your hand this turn."
   },
-  "${modID}:ChipShuffle": {
-    "NAME": "Chip Shuffle",
-    "DESCRIPTION": "Shuffle all ${modID}:Poker_Chips in your hand into your draw pile. Draw a card for each one shuffled.",
-    "UPGRADE_DESCRIPTION": "Shuffle all ${modID}:Poker_Chips in your hand into your draw pile. Draw a card and gain !B! block for each one shuffled. "
-  },
-  "${modID}:FinalBet": {
-    "NAME": "Final Bet",
-    "DESCRIPTION": "Exhaust all ${modID}:Poker_Chips in your hand. Deal !D! damage for each one exhausted. NL Exhaust."
-  },
   "${modID}:CardCascade": {
     "NAME": "Card Cascade",
     "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy. NL Draw a card."
   },
-  "${modID}:CardCount": {
-    "NAME": "Card Count",
-    "DESCRIPTION": "Deal !D! damage. NL If you have 10 or more cards in hand, deal !D! damage again."
-  },
-  "${modID}:CrackedChip": {
-    "NAME": "Cracked Chip",
-    "DESCRIPTION": "Unplayable. NL When this is spent, Exhaust it."
-  },
-  "${modID}:RedChip": {
-    "NAME": "Red Chip",
-    "DESCRIPTION": "Draw !M! card."
-  },
-  "${modID}:BlueChip": {
-    "NAME": "Blue Chip",
-    "DESCRIPTION": "Gain !B! Block."
-  },
-  "${modID}:GrayChip": {
-    "NAME": "Gray Chip",
-    "DESCRIPTION": "Unplayable. NL When this is spent, gain [E] . NL Ethereal."
-  },
-  "${modID}:GreenChip": {
-    "NAME": "Green Chip",
-    "DESCRIPTION": "Unplayable. NL Retain."
-  },
-  "${modID}:OrangeChip": {
-    "NAME": "Orange Chip",
-    "DESCRIPTION": "Unplayable. NL When this is spent, increase your max hand size by !M!."
-  },
-  "${modID}:BlackChip": {
-    "NAME": "Black Chip",
-    "DESCRIPTION": "Unplayable. NL Counts as !M! ${modID}:Poker_Chips. Always spent first."
-  },
   "${modID}:DownPayment": {
     "NAME": "Down Payment",
-    "DESCRIPTION": "Innate. NL Apply !M! ${modID}:Crippling_Debt. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Exhaust."
   },
   "${modID}:GoForBroke": {
     "NAME": "Go For Broke",
@@ -590,25 +387,12 @@
   },
   "${modID}:CollectorsBlade": {
     "NAME": "Collector's Blade",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has ${modID}:Crippling_Debt or Artifact, gain [E] \u00a0and apply !M! Vulnerable."
-  },
-  "${modID}:Bond": {
-    "NAME": "Bond",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, increase its damage by 50% this combat. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "Retain. NL Deal X damage. NL When Retained, increase its damage by 50% this combat. NL Exhaust."
-    ]
-  },
-  "${modID}:DebtTransfer": {
-    "NAME": "Debt Transfer",
-    "DESCRIPTION": "Remove all ${modID}:Crippling_Debt from target enemy and add a *Bond into your hand that deals that much damage.",
-    "EXTENDED_DESCRIPTION": [
-      "Enemy has no #rCrippling #rDebt."
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has ${modID}:Crippling_Debt, they lose !M! Strength."
   },
   "${modID}:RedRage": {
     "NAME": "Red Rage",
-    "DESCRIPTION": "Roll !${modID}:rolls! ${modID}:Red_Dice. NL If you roll a 1, gain !M! ${modID}:Advantage."
+    "DESCRIPTION": "Roll !${modID}:rolls! ${modID}:Red_Dice.",
+    "UPGRADE_DESCRIPTION": "Roll !${modID}:rolls! ${modID}:Red_Dice. NL Gain !M! ${modID}:Advantage."
   },
   "${modID}:Reroll": {
     "NAME": "Re-Roll",
@@ -645,7 +429,7 @@
   },
   "${modID}:ShiftyStrike": {
     "NAME": "Shifty Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL ${modID}:Overflow: Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL ${modID}:Overflow: Apply !M! Vulnerable."
   },
   "${modID}:SlotMachineLearning": {
     "NAME": "Slot Machine Learning",
@@ -655,10 +439,6 @@
   "${modID}:OverflowingArmor": {
     "NAME": "Overflowing Armor",
     "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !M! Block."
-  },
-  "${modID}:ReturnTest": {
-    "NAME": "Return Test",
-    "DESCRIPTION": "Cost: Return 2. NL Deal !D! damage."
   },
   "${modID}:HoldOut": {
     "NAME": "Hold Out",
@@ -684,5 +464,13 @@
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
     "DESCRIPTION": "Deal !D! damage. NL Deals 1 less damage for each card in your discard pile."
+  },
+  "${modID}:Unflex": {
+    "NAME": "Unflex",
+    "DESCRIPTION": "EVERYONE loses !M! Strength this turn. NL Exhaustive !stslib:ex!."
+  },
+  "${modID}:Recession": {
+    "NAME": "Recession",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Gain !${modID}:playerWeak! Weak."
   }
 }

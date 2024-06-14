@@ -1,6 +1,5 @@
 package CoinforgedPackage.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,7 +30,7 @@ public class UnleashedStrategy extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(p, p, new ModifiedHandSizePower(magicNumber)));
+        Wiz.applyToSelf(new ModifiedHandSizePower(magicNumber));
         Wiz.atb(new DrawCardAction(p, magicNumber));
         Wiz.atb(new UnleashedStrategyAction());
     }

@@ -15,12 +15,10 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Bluff extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 16;
-    private static final int UPG_DAMAGE = 2;
-    private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 0;
-    private static final int UPG_MAGIC = 1;
+    private static final int DAMAGE = 17;
+    private static final int UPG_DAMAGE = 3;
+    private static final int BLOCK = 7;
+    private static final int UPG_BLOCK = 3;
 
     public static final String ID = makeID(Bluff.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -34,17 +32,15 @@ public class Bluff extends AbstractCoinforgedCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
-        int debuffCount = countDebuffs();
 
-        if (debuffCount <= this.magicNumber) {
-            Wiz.atb(new GainBlockAction(p, this.block));
+        if (countDebuffs() > 0) {
+            Wiz.atb(new GainBlockAction(p, block));
         }
     }
 
@@ -60,16 +56,10 @@ public class Bluff extends AbstractCoinforgedCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        int debuffCount = countDebuffs();
-        if (debuffCount <= this.magicNumber) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        if (countDebuffs() > 0) {
+            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new Bluff();
     }
 }

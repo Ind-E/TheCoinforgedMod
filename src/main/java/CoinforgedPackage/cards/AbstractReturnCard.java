@@ -29,6 +29,7 @@ public abstract class AbstractReturnCard extends AbstractCoinforgedCard {
         super(ID, info, isMultiPreview);
         CardModifierManager.addModifier(this, new ReturnModifier());
         setOrbTexture(imagePath("character/cardback/return_orb.png"), imagePath("character/cardback/return_orb_p.png"));
+        tags.add(CustomTags.RETURN);
     }
 
     @Override

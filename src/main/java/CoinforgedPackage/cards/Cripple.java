@@ -11,8 +11,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Cripple extends AbstractCoinforgedCard {
-    private static final int MAGIC = 7;
-    private static final int UPG_MAGIC = 3;
+    private static final int DEBT = 7;
+    private static final int UPG_DEBT = 3;
 
     public static final String ID = makeID(Cripple.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,13 +24,14 @@ public class Cripple extends AbstractCoinforgedCard {
 
     public Cripple() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setCustomVar("debt", DEBT, UPG_DEBT);
+        setVarCalculation("debt", debtCalc);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            Wiz.atb(new ApplyPowerAction(mo, p, new CripplingDebtPower(mo, this.magicNumber)));
+            Wiz.atb(new ApplyPowerAction(mo, p, new CripplingDebtPower(mo, customVar("debt"))));
         }
     }
 }

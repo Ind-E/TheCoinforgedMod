@@ -1,22 +1,5 @@
 package CoinforgedPackage.cards;
 
-import basemod.BaseMod;
-import basemod.abstracts.CustomCard;
-import basemod.abstracts.DynamicVariable;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import CoinforgedPackage.CoinforgedMain;
-import CoinforgedPackage.util.CardStats;
-
 import static CoinforgedPackage.util.GeneralUtils.removePrefix;
 import static CoinforgedPackage.util.TextureLoader.getCardTextureString;
 
@@ -24,6 +7,28 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
+import CoinforgedPackage.CoinforgedMain;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
+import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
+import basemod.abstracts.DynamicVariable;
 
 public abstract class AbstractCoinforgedCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
@@ -105,6 +110,19 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
             this.cardsToPreview = CardLibrary.cards.get("Madness");
         }
     }
+
+    BiFunction<AbstractMonster, Integer, Integer> debtCalc = (m, base) -> {
+        AbstractPower Str = Wiz.player().getPower(StrengthPower.POWER_ID);
+        if (Str != null) {
+            base -= Math.min(0, Str.amount);
+        }
+
+        if (Wiz.player().hasPower(WeakPower.POWER_ID)) {
+            base = MathUtils.floor(base * 1.25F);
+        }
+
+        return base;
+    };
 
     public ArrayList<CardTags> getPreviewTags() {
         return null;

@@ -4,15 +4,17 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import CoinforgedPackage.actions.OverflowAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
+import basemod.BaseMod;
 
 public class ShiftyStrike extends AbstractCoinforgedCard {
     private static final int DAMAGE = 12;
@@ -39,7 +41,16 @@ public class ShiftyStrike extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
         Wiz.atb(new DrawCardAction(1));
-        Wiz.atb(new OverflowAction(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false))));
+        Wiz.atb(new OverflowAction(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false))));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (Wiz.player().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
+            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
 }

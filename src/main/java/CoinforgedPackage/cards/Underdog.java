@@ -17,7 +17,7 @@ import CoinforgedPackage.util.Wiz;
 
 public class Underdog extends AbstractCoinforgedCard {
     private static final int DAMAGE = 25;
-    private static final int UPG_DAMAGE = 5;
+    private static final int UPG_DAMAGE = 7;
     private static final int MAGIC = 2;
 
     public static final String ID = makeID(Underdog.class.getSimpleName());

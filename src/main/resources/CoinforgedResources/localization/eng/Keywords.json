@@ -56,7 +56,7 @@
       "crippling debt",
       "crippling_debt"
     ],
-    "DESCRIPTION": "When an enemy has more #yCrippling #yDebt than HP, it dies. Increases by #b25% at the start of each turn."
+    "DESCRIPTION": "When an enemy has more #yCrippling #yDebt than HP, it dies. Increases by #b25% at the start of each turn. #yCrippling #yDebt is buffed by #yWeak and negative #yStrength."
   },
   {
     "PROPER_NAME": "Chip",
@@ -112,7 +112,7 @@
     "DESCRIPTION": "An extra effect if your hand is full or 1 card less than full when played."
   },
   {
-    "PROPER_NAME": "Return [${modID}:returnIcon]",
+    "PROPER_NAME": "[${modID}:returnIcon] Return",
     "NAMES": [
       "return"
     ],

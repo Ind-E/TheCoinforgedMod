@@ -20,7 +20,7 @@ public class SetCostFollowUpAction extends AbstractGameAction {
         tickDuration();
         if (this.isDone) {
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                c.costForTurn = magic;
+                c.setCostForTurn(magic);
             }
         }
 
