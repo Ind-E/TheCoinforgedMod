@@ -33,7 +33,7 @@ public class RollBlue extends AbstractCoinforgedCard {
         Wiz.atb(new RollBlueAction(p, this.magicNumber));
     }
     
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.BLUE_DIE);
         return tags;

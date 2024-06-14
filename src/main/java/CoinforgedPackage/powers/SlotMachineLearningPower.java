@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;
 
+//TODO: test
 public class SlotMachineLearningPower extends BasePower {
     public static final String POWER_ID = makeID(SlotMachineLearningPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;

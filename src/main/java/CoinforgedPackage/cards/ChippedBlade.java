@@ -1,51 +1,38 @@
 package CoinforgedPackage.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.CripplingDebtPower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+// deal 14(18) damage. Deals 1 less damage for each card in your discard pile.
+//TODO: implement damage reduction logic
 public class ChippedBlade extends AbstractCoinforgedCard {
-    private static final int MAGIC = 12;
-    private static final int UPG_MAGIC = 3;
-    private static final int WEAK = 2;
-    private static final int UPG_WEAK = 1;
+    private static final int DAMAGE = 14;
+    private static final int UPG_DAMAGE = 4;
 
     public static final String ID = makeID(ChippedBlade.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
-            2);
+            1);
 
     public ChippedBlade() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
-        setCustomVar("W", WEAK, UPG_WEAK);
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
-
-    // public ChippedBlade(ChipColor chip) {
-    //     super(ID, info, chip);
-    //     setDamage(DAMAGE, UPG_DAMAGE);
-    //     setMagic(MAGIC, UPG_MAGIC);
-    // }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(m, p, new CripplingDebtPower(m, this.magicNumber)));
-        Wiz.atb(new ApplyPowerAction(m, p, new WeakPower(m, customVar("W"), false)));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                AttackEffect.SLASH_HEAVY));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        // return this.chip == null ? new ChippedBlade() : new ChippedBlade(this.chip);
-        return new ChippedBlade();
-    }
 }

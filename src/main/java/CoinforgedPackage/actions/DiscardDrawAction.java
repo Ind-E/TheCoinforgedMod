@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import CoinforgedPackage.util.Wiz;
+
 public class DiscardDrawAction extends AbstractGameAction {
    private int modifier;
 
@@ -17,13 +19,13 @@ public class DiscardDrawAction extends AbstractGameAction {
    }
 
    public void update() {
-      if (this.duration == Settings.ACTION_DUR_FAST) {
+      if (duration == Settings.ACTION_DUR_FAST) {
          int count = AbstractDungeon.player.hand.size();
          if (count + modifier > 0) {
-            this.addToTop(new DrawCardAction(this.target, count - 1));
-            this.addToTop(new DiscardAction(this.target, this.target, count, true));
+            Wiz.att(new DrawCardAction(target, count - 1));
+            Wiz.att(new DiscardAction(target, target, count, true));
          }
-         this.isDone = true;
+         isDone = true;
       }
 
    }

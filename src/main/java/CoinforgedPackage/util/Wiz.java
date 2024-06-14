@@ -1,8 +1,19 @@
 package CoinforgedPackage.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,20 +28,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import CoinforgedPackage.actions.TimedVFXAction;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import CoinforgedPackage.actions.TimedVFXAction;
 
 public class Wiz {
     // The wonderful Wizard of Oz allows access to most easy compilations of data,
     // or functions.
 
-    public static AbstractPlayer adp() {
+    public static AbstractPlayer player() {
         return AbstractDungeon.player;
     }
 
@@ -186,7 +191,7 @@ public class Wiz {
     }
 
     public static void discard(int amount, boolean isRandom) {
-        atb(new DiscardAction(adp(), adp(), amount, isRandom));
+        atb(new DiscardAction(player(), player(), amount, isRandom));
     }
 
     public static void discard(int amount) {
@@ -227,6 +232,6 @@ public class Wiz {
     }
 
     // public static void playAudio(ProAudio a) {
-    //     CardCrawlGame.sound.play(makeID(a.name()));
+    // CardCrawlGame.sound.play(makeID(a.name()));
     // }
 }

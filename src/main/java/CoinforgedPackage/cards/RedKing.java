@@ -63,7 +63,7 @@ public class RedKing extends AbstractCoinforgedCard {
         }
     }
 
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         return tags;

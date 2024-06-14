@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;
 
 public class AddTypeToHandAction extends AbstractGameAction {
@@ -37,8 +38,8 @@ public class AddTypeToHandAction extends AbstractGameAction {
             }
         }
         if (possibleCards.size() == 0) {
-            this.addToTop(new AddTypeToHandAction(this.type, this.upgraded));
-            this.addToTop(new EmptyDeckShuffleAction()); // doesn't matter if deck is empty lol
+            Wiz.att(new AddTypeToHandAction(this.type, this.upgraded));
+            Wiz.att(new EmptyDeckShuffleAction()); // doesn't matter if deck is empty lol
             this.isDone = true;
             return;
         }

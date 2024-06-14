@@ -40,7 +40,7 @@ public class PrismaticRoll extends AbstractCoinforgedCard {
         Wiz.atb(new RollPurpleAction(p, this.magicNumber));
     }
 
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         tags.add(CustomTags.BLUE_DIE);

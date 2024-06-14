@@ -2,10 +2,9 @@ package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
+import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.character.Coinforged;
@@ -13,34 +12,31 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 // card art idea: laying caltrops in front of sleeping lagavulin
-public class Anticipate extends AbstractCoinforgedCard{
-    private static final int BLOCK = 8;
-    private static final int UPG_BLOCK = 4;
+public class Anticipate extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Anticipate.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Coinforged.Enums.CARD_COLOR, 
-        CardType.SKILL,
-        CardRarity.COMMON,
-        CardTarget.SELF,
-        1
-    );
+            Coinforged.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1);
 
     public Anticipate() {
         super(ID, info, true);
-        setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollPurpleAction(p, this.magicNumber));
-        Wiz.atb(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), 1));
+        Wiz.atb(new RollPurpleAction(p, magicNumber));
+        Wiz.applyToSelf(new EquilibriumPower(p, magicNumber));
     }
 
     @Override
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.PURPLE_DIE);
         return tags;

@@ -25,8 +25,6 @@
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>The Coinforged</name>
     <version>0.0.5</version>
-    <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
-    <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>Roll Dice</description>
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->
@@ -146,7 +144,6 @@
                         <configuration>
                             <target>
                                 <!--This puts a copy of your mod's jar file into the SlayTheSpire mods folder so it will be loaded.-->
-                                <!--On mac, it will be copied to another location. See further below.-->
                                 <copy file="target/${project.artifactId}.jar" tofile="${steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
                             </target>
                         </configuration>
@@ -162,7 +159,7 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
-                <excludes> <!-- These files won't not be filtered. -->
+                <excludes> <!-- These files won't be filtered. -->
                     <exclude>ModTheSpire.json</exclude>
                     <exclude>**/*.json</exclude>
                 </excludes>

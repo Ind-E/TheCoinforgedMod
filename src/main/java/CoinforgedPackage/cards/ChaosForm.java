@@ -43,7 +43,7 @@ public class ChaosForm extends AbstractCoinforgedCard {
     }
 
     @Override
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.MAGIC_DIE);
         return tags;

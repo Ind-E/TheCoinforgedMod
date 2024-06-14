@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import CoinforgedPackage.util.Wiz;
 
+//TODO: make debt affected by Weak and negative Strength
 public class CripplingDebtPower extends BasePower implements HealthBarRenderPower {
     public static final String POWER_ID = makeID(CripplingDebtPower.class.getSimpleName());
 

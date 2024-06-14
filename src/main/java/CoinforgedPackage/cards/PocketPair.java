@@ -53,7 +53,7 @@ public class PocketPair extends AbstractCoinforgedCard {
         }
     }
 
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.GREEN_DIE);
         return tags;

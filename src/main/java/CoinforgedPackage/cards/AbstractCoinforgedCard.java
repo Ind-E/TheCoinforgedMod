@@ -62,8 +62,8 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     protected static float rotationTimer;
     protected static int previewIndex;
     protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
-    protected boolean isMultiPreview;
-    protected ArrayList<CardTags> multiPreviewTags;
+    protected boolean isRotatingPreview;
+    protected ArrayList<CardTags> rotatingPreviewTags;
     protected float timerDuration = 1.5F;
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
@@ -72,12 +72,12 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, false);
     }
 
-    public AbstractCoinforgedCard(String ID, CardStats info, boolean isMultiPreview) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, isMultiPreview);
+    public AbstractCoinforgedCard(String ID, CardStats info, boolean isRotatingPreview) {
+        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, isRotatingPreview);
     }
 
     public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity,
-            CardColor color, boolean isMultiPreview) {
+            CardColor color, boolean isRotatingPreview) {
         super(ID, getName(ID), getCardTextureString(removePrefix(ID), cardType), cost, getInitialDescription(ID),
                 cardType, color, rarity, target);
         this.cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
@@ -96,24 +96,24 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
         this.blockUpgrade = 0;
         this.magicUpgrade = 0;
 
-        this.isMultiPreview = isMultiPreview;
-        if (isMultiPreview && getTags() == null) {
-            throw new IllegalStateException("getTags() must be overridden when isMultiPreview is true");
+        this.isRotatingPreview = isRotatingPreview;
+        if (isRotatingPreview && getPreviewTags() == null) {
+            throw new IllegalStateException("getTags() must be overridden when isRotatingPreview is true");
         }
-        if (isMultiPreview) {
-            this.multiPreviewTags = getTags();
+        if (isRotatingPreview) {
+            this.rotatingPreviewTags = getPreviewTags();
             this.cardsToPreview = CardLibrary.cards.get("Madness");
         }
     }
 
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         return null;
     }
 
     public ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            for (CardTags tag : multiPreviewTags) {
+            for (CardTags tag : rotatingPreviewTags) {
                 if (q.hasTag(tag) && q.damage <= 6) { // damage <= 6 b/c red dice go up to 10
                     AbstractCard r = q.makeCopy();
                     myList.add(r);
@@ -126,7 +126,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
     @Override
     public void renderCardPreviewInSingleView(SpriteBatch sb) {
-        if (!isMultiPreview) {
+        if (!isRotatingPreview) {
             super.renderCardPreviewInSingleView(sb);
             return;
         }
@@ -156,7 +156,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     @Override
     public void update() {
         super.update();
-        if (!isMultiPreview)
+        if (!isRotatingPreview)
             return;
         if (this.dupeListForPrev.isEmpty()) {
             this.dupeListForPrev.addAll(getList());

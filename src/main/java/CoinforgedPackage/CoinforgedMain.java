@@ -20,6 +20,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.cards.targeting.SelfOrEnemyTargeting;
+import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
@@ -41,6 +42,7 @@ import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.potions.BasePotion;
 import CoinforgedPackage.relics.BaseRelic;
+import CoinforgedPackage.ui.ReturnTextIcon;
 import CoinforgedPackage.util.GeneralUtils;
 import CoinforgedPackage.util.KeywordInfo;
 import CoinforgedPackage.util.TextureLoader;
@@ -67,7 +69,7 @@ public class CoinforgedMain implements
         loadModInfo();
     }
     public static final Logger logger = LogManager.getLogger(modID); // Used to output to the console.
-    private static final String resourcesFolder = "CoinforgedMod";
+    private static final String resourcesFolder = "CoinforgedResources";
 
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
@@ -295,6 +297,7 @@ public class CoinforgedMain implements
 
     @Override
     public void receiveEditCards() {
+        CustomIconHelper.addCustomIcon(ReturnTextIcon.get());
         new AutoAdd(modID)
                 .packageFilter(AbstractCoinforgedCard.class)
                 .setDefaultSeen(true)

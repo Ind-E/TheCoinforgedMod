@@ -1,7 +1,6 @@
 package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -34,10 +33,5 @@ public class StackedDeck extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new ApplyPowerAction(p, p, new StackedDeckPower(p)));
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new StackedDeck();
     }
 }

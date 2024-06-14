@@ -37,7 +37,7 @@ public class RollRed extends AbstractCoinforgedCard {
         Wiz.atb(new RollRedAction(p, this.magicNumber));
     }
 
-    public ArrayList<CardTags> getTags() {
+    public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         return tags;

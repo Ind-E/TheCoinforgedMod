@@ -16,9 +16,9 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Underdog extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 25;
     private static final int UPG_DAMAGE = 5;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
 
     public static final String ID = makeID(Underdog.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -32,7 +32,7 @@ public class Underdog extends AbstractCoinforgedCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC);
-        this.exhaust = true;
+        exhaust = true;
     }
 
     @Override
@@ -40,20 +40,21 @@ public class Underdog extends AbstractCoinforgedCard {
         if (p.currentHealth < m.currentHealth) {
             Wiz.atb(new VFXAction(new MapCircleEffect(m.hb.cX, m.hb.cY, 265f)));
             Wiz.atb(new WaitAction(0.5f));
-            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage * this.magicNumber, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, damage * magicNumber, DamageInfo.DamageType.NORMAL),
+                    AttackEffect.SMASH));
         } else {
-            Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
+            Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AttackEffect.SMASH));
         }
     }
 
     public void triggerOnGlowCheck() {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (AbstractDungeon.player.currentHealth < mo.currentHealth ) {
-                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            if (AbstractDungeon.player.currentHealth < mo.currentHealth) {
+                glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 return;
             }
         }
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     @Override

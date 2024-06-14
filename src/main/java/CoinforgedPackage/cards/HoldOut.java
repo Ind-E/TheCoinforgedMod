@@ -9,6 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+//TODO: add upgrade
 public class HoldOut extends AbstractReturnCard {
     private static final int MAGIC = 4;
 
