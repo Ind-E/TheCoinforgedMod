@@ -143,7 +143,7 @@
   },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
-    "DESCRIPTION": "Deal !D! damage 11 times. NL Reduce your max hand size by !M!."
+    "DESCRIPTION": "Deal !D! damage !${modID}:time! times. NL Reduce your max hand size by !M!."
   },
   "${modID}:BlueOne": {
     "NAME": "Blue Die",
@@ -405,11 +405,11 @@
   },
   "${modID}:ControlledChaos": {
     "NAME": "Controlled Chaos",
-    "DESCRIPTION": "Draw !M! cards. NL Reduce your max hand size by 2."
+    "DESCRIPTION": "Draw !M! cards. NL If your hand size is 8 or more, reduce it by 2. Otherwise, increase it by 2."
   },
   "${modID}:SwiftGuard": {
     "NAME": "Swift Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Reduce your max hand size by !M!."
+    "DESCRIPTION": "Gain !B! Block. NL Reduce your max hand size by !M!. NL Exhaustive !stslib:ex!."
   },
   "${modID}:TwinSlash": {
     "NAME": "Twin Slash",
@@ -442,7 +442,8 @@
   },
   "${modID}:HoldOut": {
     "NAME": "Hold Out",
-    "DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E] [E] ."
+    "DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E].",
+    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E] [E]."
   },
   "${modID}:Dive": {
     "NAME": "Dive",
@@ -472,5 +473,22 @@
   "${modID}:Recession": {
     "NAME": "Recession",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Gain !${modID}:playerWeak! Weak."
+  },
+  "${modID}:DiceBag": {
+    "NAME": "Dice Bag",
+    "DESCRIPTION": "Roll a random *Die. NL Stays in your hand. NL Exhaustive !stslib:ex!."
+  },
+  "${modID}:SeeingAhead": {
+    "NAME": "Seeing Ahead",
+    "DESCRIPTION": "Gain [E] [E]. NL Exhaust."
+  },
+  "${modID}:SwiftDefend": {
+    "NAME": "Swift Defend",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card."
+  },
+  "${modID}:Refill": {
+    "NAME": "Refill",
+    "DESCRIPTION": "Draw X cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw X+1 cards. NL Exhaust."
   }
 }

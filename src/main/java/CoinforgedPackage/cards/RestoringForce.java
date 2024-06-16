@@ -16,7 +16,7 @@ import basemod.BaseMod;
 public class RestoringForce extends AbstractCoinforgedCard {
     private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 2;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
 
     public static final String ID = makeID(RestoringForce.class.getSimpleName());
     private static final CardStats info = new CardStats(

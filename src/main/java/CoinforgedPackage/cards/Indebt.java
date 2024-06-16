@@ -11,8 +11,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Indebt extends AbstractCoinforgedCard {
-    private static final int DEBT = 12;
-    private static final int UPG_DEBT = 3;
+    private static final int DEBT = 14;
+    private static final int UPG_DEBT = 4;
     private static final int WEAK = 2;
     private static final int UPG_WEAK = 1;
 

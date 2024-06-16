@@ -34,7 +34,7 @@ public class RollRed extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollRedAction(p, this.magicNumber));
+        Wiz.atb(new RollRedAction(magicNumber));
     }
 
     public ArrayList<CardTags> getPreviewTags() {

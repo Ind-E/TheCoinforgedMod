@@ -11,7 +11,7 @@ import CoinforgedPackage.util.Wiz;
 
 public class HoldOut extends AbstractReturnCard {
     private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 4;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(HoldOut.class.getSimpleName());
     private static final CardStats info = new CardStats(

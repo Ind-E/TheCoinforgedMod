@@ -15,7 +15,7 @@ import CoinforgedPackage.cards.tempCards.ChaosTwo;
 public class ChaosFormAction extends RollBaseAction {
 
     public ChaosFormAction(AbstractCreature owner) {
-        super(owner, 1);
+        super(1);
     }
 
     public AbstractCard roll() {

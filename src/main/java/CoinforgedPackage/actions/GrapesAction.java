@@ -16,6 +16,7 @@ import CoinforgedPackage.modifiers.GrapesModifier;
 import CoinforgedPackage.util.Wiz;
 import basemod.helpers.CardModifierManager;
 
+//TODO: don't hardcode strings
 public class GrapesAction extends AbstractGameAction {
     private int amount;
     private int cost;

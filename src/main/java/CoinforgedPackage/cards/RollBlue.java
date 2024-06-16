@@ -12,16 +12,16 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class RollBlue extends AbstractCoinforgedCard {
-    private static final int DICE_TO_ROLL = 1;
+    private static final int DICE_TO_ROLL = 3;
     private static final int UPG_DICE_TO_ROLL = 1;
 
     public static final String ID = makeID(RollBlue.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.UNCOMMON,
             CardTarget.NONE,
-            0);
+            1);
 
     public RollBlue() {
         super(ID, info, true);
@@ -30,9 +30,9 @@ public class RollBlue extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollBlueAction(p, this.magicNumber));
+        Wiz.atb(new RollBlueAction(magicNumber));
     }
-    
+
     public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.BLUE_DIE);

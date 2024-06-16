@@ -3,31 +3,28 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.actions.RefillAction;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.FloodgatePower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-public class Floodgate extends AbstractCoinforgedCard {
-    private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 2;
+public class Refill extends AbstractReturnCard {
 
-    public static final String ID = makeID(Floodgate.class.getSimpleName());
+    public static final String ID = makeID(Refill.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.POWER,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1);
+            X_COST);
 
-    public Floodgate() {
+    public Refill() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new FloodgatePower(magicNumber));
+        Wiz.atb(new RefillAction(freeToPlayOnce, energyOnUse, upgraded));
     }
-
 }

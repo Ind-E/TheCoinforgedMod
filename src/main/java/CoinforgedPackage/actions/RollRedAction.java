@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import CoinforgedPackage.cards.tempCards.RedEight;
 import CoinforgedPackage.cards.tempCards.RedFive;
@@ -24,12 +23,12 @@ import CoinforgedPackage.powers.SnakeEyesPower;
 public class RollRedAction extends RollBaseAction {
     private boolean redKingActive = false;
 
-    public RollRedAction(AbstractCreature owner, int magic) {
-        super(owner, magic);
+    public RollRedAction(int magic) {
+        super(magic);
     }
 
-    public RollRedAction(AbstractCreature owner, int magic, int minroll, int maxroll) {
-        super(owner, magic, minroll, maxroll);
+    public RollRedAction(int magic, int minroll, int maxroll) {
+        super(magic, minroll, maxroll);
     }
 
     @Override

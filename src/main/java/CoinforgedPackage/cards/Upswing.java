@@ -36,9 +36,9 @@ public class Upswing extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageAction(m,
-                new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
+                new DamageInfo(p, damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
                 AttackEffect.NONE));
-        Wiz.atb(new RollBlueAction(p, this.magicNumber));
+        Wiz.atb(new RollBlueAction(magicNumber));
     }
 
     public ArrayList<CardTags> getPreviewTags() {

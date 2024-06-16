@@ -34,7 +34,7 @@ public class PocketPair extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        RollGreenAction green = new RollGreenAction(p, 1);
+        RollGreenAction green = new RollGreenAction(1);
         AbstractCard c1 = green.roll(), c2 = green.roll();
         if (p.hasPower(LoadedDice.ID)) {
             int amt = p.getPower(LoadedDicePower.POWER_ID).amount;

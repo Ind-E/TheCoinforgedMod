@@ -37,7 +37,7 @@ public class RedRage extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollRedAction(p, customVar("rolls")));
+        Wiz.atb(new RollRedAction(customVar("rolls")));
         if (upgraded) {
             Wiz.atb(new ApplyPowerAction(p, p, new AdvantagePower(p, magicNumber)));
         }

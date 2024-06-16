@@ -19,7 +19,6 @@ public class RedKing extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 2;
 
-
     public static final String ID = makeID(RedKing.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
@@ -37,7 +36,7 @@ public class RedKing extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(RedKing.ID))
             Wiz.atb(new ApplyPowerAction(p, p, new RedKingPower(p)));
-        Wiz.atb(new RollRedAction(p, this.magicNumber));
+        Wiz.atb(new RollRedAction(magicNumber));
         for (AbstractCard card : p.hand.group) {
             if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());
@@ -63,9 +62,13 @@ public class RedKing extends AbstractCoinforgedCard {
         }
     }
 
+    @Override
     public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
+        tags.add(CustomTags.BLUE_DIE);
+        tags.add(CustomTags.GREEN_DIE);
+        tags.add(CustomTags.PURPLE_DIE);
         return tags;
     }
 

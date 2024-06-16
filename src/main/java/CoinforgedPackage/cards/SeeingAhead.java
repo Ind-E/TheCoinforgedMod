@@ -1,33 +1,34 @@
 package CoinforgedPackage.cards;
 
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.FloodgatePower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-public class Floodgate extends AbstractCoinforgedCard {
-    private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 2;
+public class SeeingAhead extends AbstractCoinforgedCard {
+    private static final int MAGIC = 2;
 
-    public static final String ID = makeID(Floodgate.class.getSimpleName());
+    public static final String ID = makeID(SeeingAhead.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CardType.SKILL,
+            CardRarity.BASIC,
+            CardTarget.NONE,
             1);
 
-    public Floodgate() {
+    public SeeingAhead() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setCostUpgrade(0);
+        setMagic(MAGIC);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new FloodgatePower(magicNumber));
+        Wiz.atb(new GainEnergyAction(MAGIC));
     }
 
 }

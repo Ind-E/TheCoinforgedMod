@@ -32,6 +32,7 @@ public class CoinBarrage extends AbstractCoinforgedCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(HAND_SIZE_REDUCTION);
+        setCustomVar("times", TIMES_TO_DEAL_DAMAGE);
     }
 
     @Override

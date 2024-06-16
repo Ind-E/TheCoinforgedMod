@@ -32,6 +32,7 @@ import basemod.abstracts.DynamicVariable;
 
 public abstract class AbstractCoinforgedCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
+    public static final int X_COST = -1;
 
     protected static String makeID(String name) {
         return CoinforgedMain.makeID(name);

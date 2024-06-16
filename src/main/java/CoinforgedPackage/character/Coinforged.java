@@ -85,12 +85,14 @@ public class Coinforged extends CustomPlayer {
         startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
+        startingDeck.add(CoinforgedPackage.cards.SwiftDefend.ID);
         startingDeck.add(CoinforgedPackage.cards.RollRed.ID);
-        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
-        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
-        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
-        startingDeck.add(CoinforgedPackage.cards.RollBlue.ID);
         startingDeck.add(CoinforgedPackage.cards.Advance.ID);
+        startingDeck.add(CoinforgedPackage.cards.SeeingAhead.ID);
 
         return startingDeck;
     }

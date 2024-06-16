@@ -10,8 +10,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class OverflowingArmor extends AbstractCoinforgedCard {
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 3;
+    private static final int MAGIC = 3;
+    private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(OverflowingArmor.class.getSimpleName());
     private static final CardStats info = new CardStats(

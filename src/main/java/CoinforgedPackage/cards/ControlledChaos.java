@@ -4,10 +4,11 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.util.Wiz;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
+import CoinforgedPackage.util.CardStats;
+import CoinforgedPackage.util.Wiz;
+import basemod.BaseMod;
 
 public class ControlledChaos extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
@@ -29,6 +30,10 @@ public class ControlledChaos extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DrawCardAction(magicNumber));
-        Wiz.applyToSelf(new ModifiedHandSizePower(-2));
+        if (BaseMod.MAX_HAND_SIZE >= 8) {
+            Wiz.applyToSelf(new ModifiedHandSizePower(-2));
+        } else {
+            Wiz.applyToSelf(new ModifiedHandSizePower(2));
+        }
     }
 }

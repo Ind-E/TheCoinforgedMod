@@ -29,17 +29,18 @@ public class PrismaticRoll extends AbstractCoinforgedCard {
         super(ID, info, true);
         setMagic(DICE_TO_ROLL);
         setExhaust(true, false);
-        this.exhaust = true;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollRedAction(p, this.magicNumber));
-        Wiz.atb(new RollBlueAction(p, this.magicNumber));
-        Wiz.atb(new RollGreenAction(p, this.magicNumber));
-        Wiz.atb(new RollPurpleAction(p, this.magicNumber));
+        Wiz.atb(new RollRedAction(magicNumber));
+        Wiz.atb(new RollBlueAction(magicNumber));
+        Wiz.atb(new RollGreenAction(magicNumber));
+        Wiz.atb(new RollPurpleAction(magicNumber));
     }
 
+    @Override
     public ArrayList<CardTags> getPreviewTags() {
         ArrayList<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);

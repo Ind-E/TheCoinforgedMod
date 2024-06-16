@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.powers.LoadedDicePower;
@@ -18,11 +17,11 @@ public abstract class RollBaseAction extends AbstractGameAction {
     public int magic = 0;
     public AbstractPlayer player;
 
-    public RollBaseAction(AbstractCreature owner, int magic) {
-        this(owner, magic, 1, 6);
+    public RollBaseAction(int magic) {
+        this(magic, 1, 6);
     }
 
-    public RollBaseAction(AbstractCreature owner, int magic, int minroll, int maxroll) {
+    public RollBaseAction(int magic, int minroll, int maxroll) {
         this.player = AbstractDungeon.player;
         this.magic = magic;
         this.minroll = minroll;

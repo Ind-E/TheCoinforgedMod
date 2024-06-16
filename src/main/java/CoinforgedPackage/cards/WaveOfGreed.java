@@ -16,9 +16,9 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class WaveOfGreed extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 26;
+    private static final int DAMAGE = 24;
     private static final int UPG_DAMAGE = 8;
-    private static final int GOLD = 10;
+    private static final int GOLD = 5;
     private static final int UPG_GOLD = 5;
 
     public static final String ID = makeID(WaveOfGreed.class.getSimpleName());

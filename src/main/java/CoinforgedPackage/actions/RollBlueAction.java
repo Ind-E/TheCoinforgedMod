@@ -3,7 +3,6 @@ package CoinforgedPackage.actions;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import CoinforgedPackage.cards.tempCards.BlueFive;
 import CoinforgedPackage.cards.tempCards.BlueFour;
@@ -15,12 +14,12 @@ import CoinforgedPackage.powers.SnakeEyesPower;
 
 public class RollBlueAction extends RollBaseAction {
 
-    public RollBlueAction(AbstractCreature owner, int magic) {
-        super(owner, magic);
+    public RollBlueAction(int magic) {
+        super(magic);
     }
 
-    public RollBlueAction(AbstractCreature owner, int magic, int minroll, int maxroll) {
-        super(owner, magic, minroll, maxroll);
+    public RollBlueAction(int magic, int minroll, int maxroll) {
+        super(magic, minroll, maxroll);
     }
 
     @Override

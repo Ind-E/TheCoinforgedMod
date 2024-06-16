@@ -14,7 +14,7 @@ import CoinforgedPackage.util.Wiz;
 public class BrokenBottle extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 2;
-    private static final int X_COST = -1;
+    
 
     public static final String ID = makeID(BrokenBottle.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,13 +27,13 @@ public class BrokenBottle extends AbstractCoinforgedCard {
     public BrokenBottle() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.damageType = this.damageTypeForTurn = DamageInfo.DamageType.NORMAL;
-        this.cardsToPreview = new GlassShard();
+        damageType = damageTypeForTurn = DamageInfo.DamageType.NORMAL;
+        cardsToPreview = new GlassShard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new BrokenBottleAction(m, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));
+        Wiz.atb(new BrokenBottleAction(m, damage, damageTypeForTurn, freeToPlayOnce, energyOnUse));
         Wiz.atb(new MakeTempCardInHandAction(new GlassShard(), 1));
     }
 }
