@@ -34,7 +34,7 @@ public abstract class RollBaseAction extends AbstractGameAction {
         for (int i = 0; i < magic; i++) {
             AbstractCard rolledCard = roll();
             if (player.hasPower(SnakeEyesPower.POWER_ID)) {
-                addToTop(new ReducePowerAction(player, player, SnakeEyesPower.POWER_ID, 1));
+                Wiz.att(new ReducePowerAction(player, player, SnakeEyesPower.POWER_ID, 1));
             }
             if (player.hasPower(LoadedDicePower.POWER_ID)) {
                 int amount = player.getPower(LoadedDicePower.POWER_ID).amount;
@@ -47,7 +47,7 @@ public abstract class RollBaseAction extends AbstractGameAction {
 
                 rolledCard.initializeDescription();
             }
-            Wiz.atb(new MakeTempCardInHandAction(rolledCard, 1));
+            Wiz.att(new MakeTempCardInHandAction(rolledCard, 1));
         }
         this.isDone = true;
     }

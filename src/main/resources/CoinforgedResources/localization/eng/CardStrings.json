@@ -482,13 +482,17 @@
     "NAME": "Seeing Ahead",
     "DESCRIPTION": "Gain [E] [E]. NL Exhaust."
   },
-  "${modID}:SwiftDefend": {
-    "NAME": "Swift Defend",
+  "${modID}:GoodReflexes": {
+    "NAME": "Good Reflexes",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card."
   },
   "${modID}:Refill": {
     "NAME": "Refill",
     "DESCRIPTION": "Draw X cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw X+1 cards. NL Exhaust."
+  },
+  "${modID}:ColdEmbrace": {
+    "NAME": "Cold Embrace",
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice. NL Increase the Block gained by all cards in your hand by !${modID}:block!."
   }
 }

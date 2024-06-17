@@ -2,7 +2,6 @@ package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -10,13 +9,12 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-//TODO: change name
-public class SwiftDefend extends AbstractCoinforgedCard {
+public class GoodReflexes extends AbstractCoinforgedCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
     private static final int MAGIC = 1;
 
-    public static final String ID = makeID(SwiftDefend.class.getSimpleName());
+    public static final String ID = makeID(GoodReflexes.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
@@ -24,7 +22,7 @@ public class SwiftDefend extends AbstractCoinforgedCard {
             CardTarget.SELF,
             1);
 
-    public SwiftDefend() {
+    public GoodReflexes() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(MAGIC);
@@ -34,10 +32,5 @@ public class SwiftDefend extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new GainBlockAction(p, p, block));
         Wiz.atb(new DrawCardAction(MAGIC));
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new SwiftDefend();
     }
 }

@@ -104,7 +104,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
         this.isRotatingPreview = isRotatingPreview;
         if (isRotatingPreview && getPreviewTags() == null) {
-            throw new IllegalStateException("getTags() must be overridden when isRotatingPreview is true");
+            throw new IllegalStateException("getPreviewTags() must be overridden when isRotatingPreview is set to true");
         }
         if (isRotatingPreview) {
             this.rotatingPreviewTags = getPreviewTags();
@@ -175,6 +175,11 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     @Override
     public void update() {
         super.update();
+        // if (Wiz.player() != null && !AbstractDungeon.isScreenUp &&
+        // HitboxRightClick.rightClicked.get(hb)
+        // && !AbstractDungeon.actionManager.turnHasEnded) {
+        // onRightClick();
+        // }
         if (!isRotatingPreview)
             return;
         if (this.dupeListForPrev.isEmpty()) {
@@ -184,6 +189,9 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
             updatePreview();
         }
     }
+
+    // public void onRightClick() {
+    // };
 
     private static String getName(String ID) {
         return CardCrawlGame.languagePack.getCardStrings(ID).NAME;
