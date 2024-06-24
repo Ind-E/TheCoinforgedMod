@@ -16,7 +16,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Underdog extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 19;
     private static final int UPG_DAMAGE = 8;
     private static final int MAGIC = 2;
 

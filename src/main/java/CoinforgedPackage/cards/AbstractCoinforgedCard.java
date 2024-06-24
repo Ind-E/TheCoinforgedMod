@@ -63,8 +63,8 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
-    protected static float rotationTimer;
-    protected static int previewIndex;
+    protected float rotationTimer;
+    protected int previewIndex;
     protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
     protected boolean isRotatingPreview;
     protected ArrayList<CardTags> rotatingPreviewTags;

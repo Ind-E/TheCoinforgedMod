@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import CoinforgedPackage.cards.RollRed;
-import CoinforgedPackage.relics.LuckRelic;
+import CoinforgedPackage.relics.CasinoCatalyst;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 
@@ -89,10 +89,10 @@ public class Coinforged extends CustomPlayer {
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
-        startingDeck.add(CoinforgedPackage.cards.GoodReflexes.ID);
+        startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.RollRed.ID);
         startingDeck.add(CoinforgedPackage.cards.Advance.ID);
-        startingDeck.add(CoinforgedPackage.cards.SeeingAhead.ID);
+        startingDeck.add(CoinforgedPackage.cards.LeftToChance.ID);
 
         return startingDeck;
     }
@@ -101,7 +101,7 @@ public class Coinforged extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         // IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(LuckRelic.ID);
+        retVal.add(CasinoCatalyst.ID);
         return retVal;
     }
 

@@ -15,10 +15,10 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Bluff extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 17;
-    private static final int UPG_DAMAGE = 3;
-    private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 3;
+    private static final int DAMAGE = 16;
+    private static final int UPG_DAMAGE = 5;
+    private static final int BLOCK = 9;
+    private static final int UPG_BLOCK = 4;
 
     public static final String ID = makeID(Bluff.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -36,12 +36,12 @@ public class Bluff extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.NONE));
-
         if (countDebuffs() > 0) {
             Wiz.atb(new GainBlockAction(p, block));
         }
+
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SMASH));
     }
 
     private int countDebuffs() {

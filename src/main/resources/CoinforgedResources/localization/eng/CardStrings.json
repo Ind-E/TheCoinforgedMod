@@ -41,7 +41,7 @@
   },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
-    "DESCRIPTION": "Roll !M! ${modID}:Red_Dice."
+    "DESCRIPTION": "Gain !${modID}:str! Temporary Strength. NL Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",
@@ -491,5 +491,10 @@
   "${modID}:MillenniumDie": {
     "NAME": "Millennium Die",
     "DESCRIPTION": "Roll any *Chaos *Die of your choice. NL Exhaust."
+  },
+  "${modID}:LeftToChance": {
+    "NAME": "Left To Chance",
+    "DESCRIPTION": "Play a copy of the leftmost card in your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play a copy of the leftmost card in your hand."
   }
 }

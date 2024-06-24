@@ -2,7 +2,6 @@ package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -14,10 +13,6 @@ import CoinforgedPackage.util.Wiz;
 public class RedRage extends AbstractCoinforgedCard {
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 1;
-
-    public float rotationTimer;
-    public int previewIndex;
-    public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
 
     public static final String ID = makeID(RedRage.class.getSimpleName());
     private static final CardStats info = new CardStats(

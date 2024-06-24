@@ -13,7 +13,7 @@ import CoinforgedPackage.util.Wiz;
 
 public class BrokenBottle extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 3;
     
 
     public static final String ID = makeID(BrokenBottle.class.getSimpleName());

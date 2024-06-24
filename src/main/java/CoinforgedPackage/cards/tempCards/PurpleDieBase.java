@@ -1,13 +1,8 @@
 package CoinforgedPackage.cards.tempCards;
 
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
@@ -39,12 +34,12 @@ public abstract class PurpleDieBase extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.FAST_MODE) {
-            Wiz.atb(new VFXAction((AbstractCreature) p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
-        } else {
-            Wiz.atb(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.4F));
-        }
-        Wiz.atb(new ApplyPowerAction(p, p, new VigorPower(p, this.magicNumber), this.magicNumber));
+        // if (Settings.FAST_MODE) {
+        //     Wiz.atb(new VFXAction((AbstractCreature) p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
+        // } else {
+        //     Wiz.atb(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.4F));
+        // }
+        Wiz.applyToSelf(new VigorPower(p, magicNumber));
     }
 
 }

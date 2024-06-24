@@ -9,6 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+//TODO: doesn't return cards in the same order sometimes
 public class Grapes extends AbstractCoinforgedCard {
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 2;

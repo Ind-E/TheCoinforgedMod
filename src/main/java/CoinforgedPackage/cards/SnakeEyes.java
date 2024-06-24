@@ -20,6 +20,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 import basemod.BaseMod;
 
+//TODO: add upgrade
 public class SnakeEyes extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
 
@@ -39,7 +40,7 @@ public class SnakeEyes extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < BaseMod.MAX_HAND_SIZE - Wiz.adp().hand.size(); i++) {
+        for (int i = 0; i < BaseMod.MAX_HAND_SIZE - Wiz.adp().hand.size() + 1; i++) {
             switch (AbstractDungeon.cardRandomRng.random(0, 4)) {
                 case 0:
                     Wiz.atb(new RollBlueAction(1, 1, 1));
@@ -50,8 +51,11 @@ public class SnakeEyes extends AbstractCoinforgedCard {
                 case 2:
                     Wiz.atb(new RollGreenAction(1, 1, 1));
                     break;
-                default:
+                case 3:
                     Wiz.atb(new RollPurpleAction(1, 1, 1));
+                    break;
+                default:
+                    Wiz.atb(new RollPurpleAction(1, 2, 2));
                     break;
             }
         }

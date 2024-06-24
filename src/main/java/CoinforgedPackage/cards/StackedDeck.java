@@ -11,6 +11,7 @@ import CoinforgedPackage.util.Wiz;
 
 public class StackedDeck extends AbstractCoinforgedCard {
     private static final int MAGIC = 10;
+    private static final int UPG_MAGIC = 90;
 
     public static final String ID = makeID(StackedDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -22,7 +23,7 @@ public class StackedDeck extends AbstractCoinforgedCard {
 
     public StackedDeck() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
         setExhaust(true, false);
     }
 
