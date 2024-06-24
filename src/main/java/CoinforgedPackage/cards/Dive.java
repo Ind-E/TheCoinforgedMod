@@ -13,7 +13,7 @@ import CoinforgedPackage.util.Wiz;
 
 public class Dive extends AbstractReturnCard {
     private static final int MAGIC = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 4;
 
     public static final String ID = makeID(Dive.class.getSimpleName());

@@ -2,45 +2,40 @@ package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.RollBlueAction;
+import CoinforgedPackage.actions.MillenniumDieAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-public class RollBlue extends AbstractCoinforgedCard {
-    private static final int DICE_TO_ROLL = 3;
-    private static final int UPG_DICE_TO_ROLL = 1;
+public class MillenniumDie extends AbstractCoinforgedCard {
 
-    public static final String ID = makeID(RollBlue.class.getSimpleName());
+    public static final String ID = makeID(MillenniumDie.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.NONE,
             1);
 
-    public RollBlue() {
+    public MillenniumDie() {
         super(ID, info, true);
-        setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
+        setCostUpgrade(0);
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RollBlueAction(magicNumber));
-    }
-
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
-        tags.add(CustomTags.BLUE_DIE);
-        return tags;
+        Wiz.atb(new MillenniumDieAction());
     }
 
     @Override
-    public AbstractCard makeCopy() {
-        return new RollBlue();
+    public ArrayList<CardTags> getPreviewTags() {
+        ArrayList<CardTags> tags = new ArrayList<>();
+        tags.add(CustomTags.MAGIC_DIE);
+        return tags;
     }
+
 }

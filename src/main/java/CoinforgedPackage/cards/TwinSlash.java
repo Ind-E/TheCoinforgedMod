@@ -22,7 +22,7 @@ public class TwinSlash extends AbstractCoinforgedCard {
     public static final String ID = makeID(TwinSlash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
             1);
@@ -44,7 +44,7 @@ public class TwinSlash extends AbstractCoinforgedCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (Wiz.player().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
+        if (Wiz.adp().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

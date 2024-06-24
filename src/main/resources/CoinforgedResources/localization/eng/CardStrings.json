@@ -49,8 +49,7 @@
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
-    "DESCRIPTION": "Ethereal. NL The next 2 times you roll *Dice you will always roll a one. NL Gain 1 *Buffer.",
-    "UPGRADE_DESCRIPTION": "The next 2 times you roll *Dice you will always roll a one. NL Gain 1 *Buffer."
+    "DESCRIPTION": "Fill your hand with *Ones of any color. NL Exhaust."
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
@@ -120,7 +119,7 @@
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card and set its cost to 1 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !${modID}:draw! card and set its cost to !M! this turn."
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
@@ -143,7 +142,7 @@
   },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
-    "DESCRIPTION": "Deal !D! damage !${modID}:time! times. NL Reduce your max hand size by !M!."
+    "DESCRIPTION": "Deal !D! damage !${modID}:times! times. NL Reduce your max hand size by !M!."
   },
   "${modID}:BlueOne": {
     "NAME": "Blue Die",
@@ -169,10 +168,9 @@
     "NAME": "Blue Die",
     "DESCRIPTION": "Gain !B! Block. NL Exhaust."
   },
-  "${modID}:RollBlue": {
-    "NAME": "Roll Blue",
-    "DESCRIPTION": "Roll !M! ${modID}:Blue_Die.",
-    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Blue_Dice."
+  "${modID}:IceDice": {
+    "NAME": "Ice Dice",
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice. NL Apply !${modID}:weak! Weak."
   },
   "${modID}:LongGame": {
     "NAME": "Long Game",
@@ -205,7 +203,7 @@
   "${modID}:CheatersLuck": {
     "NAME": "Cheater's Luck",
     "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Duplicate a random cards in your hand twice. NL They cost 0 this turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Duplicate a random card in your hand twice. NL They cost 0 this turn. NL Exhaust."
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",
@@ -281,7 +279,7 @@
   "${modID}:AceInTheHole": {
     "NAME": "Ace In The Hole",
     "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. NL Purge.",
-    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. NL Purge."
+    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or discard pile into your hand. It costs 0 this turn. NL Purge."
   },
   "${modID}:WaveOfGreed": {
     "NAME": "Wave of Greed",
@@ -344,7 +342,7 @@
   },
   "${modID}:Grapes": {
     "NAME": "Grapes",
-    "DESCRIPTION": "Ethereal. NL Increase a card's Block and damage by !M! this combat. Add a copy of this card into your hand that costs 1 more. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Increase a card's Block and damage by !M! this combat. Add a 1 cost copy of this card into your hand. NL Exhaust."
   },
   "${modID}:Melon": {
     "NAME": "Melon",
@@ -353,10 +351,6 @@
   "${modID}:CoinFlick": {
     "NAME": "Coin Flick",
     "DESCRIPTION": "Deal !D! damage. NL Whenever you play a 2+ cost card, add this from the draw pile to your hand and increase its damage by !M!."
-  },
-  "${modID}:BankError": {
-    "NAME": "Bank Error",
-    "DESCRIPTION": "Deal !M! damage. NL Apply !${modID}:debt! ${modID}:Crippling_Debt."
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
@@ -391,8 +385,7 @@
   },
   "${modID}:RedRage": {
     "NAME": "Red Rage",
-    "DESCRIPTION": "Roll !${modID}:rolls! ${modID}:Red_Dice.",
-    "UPGRADE_DESCRIPTION": "Roll !${modID}:rolls! ${modID}:Red_Dice. NL Gain !M! ${modID}:Advantage."
+    "DESCRIPTION": "Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:Reroll": {
     "NAME": "Re-Roll",
@@ -494,5 +487,9 @@
   "${modID}:ColdEmbrace": {
     "NAME": "Cold Embrace",
     "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice. NL Increase the Block gained by all cards in your hand by !${modID}:block!."
+  },
+  "${modID}:MillenniumDie": {
+    "NAME": "Millennium Die",
+    "DESCRIPTION": "Roll any *Chaos *Die of your choice. NL Exhaust."
   }
 }

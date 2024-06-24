@@ -32,7 +32,7 @@ public class ChippedBlade extends AbstractCoinforgedCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = baseDamage;
-        baseMagicNumber = Wiz.player().discardPile.size();
+        baseMagicNumber = Wiz.adp().discardPile.size();
         baseDamage -= baseMagicNumber;
         super.applyPowers();
         baseDamage = realBaseDamage;
@@ -41,7 +41,7 @@ public class ChippedBlade extends AbstractCoinforgedCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        baseMagicNumber = Wiz.player().discardPile.size();
+        baseMagicNumber = Wiz.adp().discardPile.size();
         int realBaseDamage = baseDamage;
         baseDamage -= baseMagicNumber;
         super.calculateCardDamage(mo);

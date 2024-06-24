@@ -35,7 +35,7 @@ public class Wiz {
     // The wonderful Wizard of Oz allows access to most easy compilations of data,
     // or functions.
 
-    public static AbstractPlayer player() {
+    public static AbstractPlayer adp() {
         return AbstractDungeon.player;
     }
 
@@ -191,7 +191,7 @@ public class Wiz {
     }
 
     public static void discard(int amount, boolean isRandom) {
-        atb(new DiscardAction(player(), player(), amount, isRandom));
+        atb(new DiscardAction(adp(), adp(), amount, isRandom));
     }
 
     public static void discard(int amount) {

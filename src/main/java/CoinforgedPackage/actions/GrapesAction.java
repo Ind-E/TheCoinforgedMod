@@ -19,19 +19,17 @@ import basemod.helpers.CardModifierManager;
 //TODO: don't hardcode strings
 public class GrapesAction extends AbstractGameAction {
     private int amount;
-    private int cost;
     private boolean upgraded;
     private AbstractPlayer p;
     private String msg;
     private ArrayList<AbstractCard> cannotBuff = new ArrayList<AbstractCard>();
 
-    public GrapesAction(int amount, int cost, boolean upgraded) {
+    public GrapesAction(int amount, boolean upgraded) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.isDone = false;
         this.amount = amount;
-        this.cost = cost;
         this.upgraded = upgraded;
         msg = "Increase Damage and Block by " + this.amount + ".";
     }
@@ -53,7 +51,6 @@ public class GrapesAction extends AbstractGameAction {
                 this.isDone = true;
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
                         AbstractDungeon.player.dialogY, 3.0F, "I have no cards that can be buffed", true));
-                Wiz.atb(new MakeTempCardInHandAction(new Grapes(this.cost, this.upgraded)));
                 return;
             }
 
@@ -103,7 +100,7 @@ public class GrapesAction extends AbstractGameAction {
         }
 
         this.p.hand.refreshHandLayout();
-        Wiz.atb(new MakeTempCardInHandAction(new Grapes(this.cost + 1, this.upgraded)));
+        Wiz.atb(new MakeTempCardInHandAction(new Grapes(1, this.upgraded)));
         return;
     }
 

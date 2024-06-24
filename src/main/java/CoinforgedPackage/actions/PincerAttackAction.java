@@ -25,39 +25,39 @@ public class PincerAttackAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (Wiz.player().hand.isEmpty()) {
+        if (Wiz.adp().hand.isEmpty()) {
             isDone = true;
-        } else if (Wiz.player().hand.size() == 1) {
-            if (Wiz.player().hand.getBottomCard().costForTurn == -1) {
+        } else if (Wiz.adp().hand.size() == 1) {
+            if (Wiz.adp().hand.getBottomCard().costForTurn == -1) {
                 dealDamage(EnergyPanel.getCurrentEnergy());
-            } else if (Wiz.player().hand.getBottomCard().costForTurn > 0) {
-                dealDamage(Wiz.player().hand.getBottomCard().costForTurn);
+            } else if (Wiz.adp().hand.getBottomCard().costForTurn > 0) {
+                dealDamage(Wiz.adp().hand.getBottomCard().costForTurn);
             }
 
-            Wiz.player().hand.moveToDiscardPile(Wiz.player().hand.getBottomCard());
+            Wiz.adp().hand.moveToDiscardPile(Wiz.adp().hand.getBottomCard());
             isDone = true;
         } else {
-            if (Wiz.player().hand.getTopCard().costForTurn == -1) {
+            if (Wiz.adp().hand.getTopCard().costForTurn == -1) {
                 dealDamage(EnergyPanel.getCurrentEnergy());
-            } else if (Wiz.player().hand.getTopCard().costForTurn > 0) {
-                dealDamage(Wiz.player().hand.getTopCard().costForTurn);
+            } else if (Wiz.adp().hand.getTopCard().costForTurn > 0) {
+                dealDamage(Wiz.adp().hand.getTopCard().costForTurn);
             }
 
-            if (Wiz.player().hand.getBottomCard().costForTurn == -1) {
+            if (Wiz.adp().hand.getBottomCard().costForTurn == -1) {
                 dealDamage(EnergyPanel.getCurrentEnergy());
-            } else if (Wiz.player().hand.getBottomCard().costForTurn > 0) {
-                dealDamage(Wiz.player().hand.getBottomCard().costForTurn);
+            } else if (Wiz.adp().hand.getBottomCard().costForTurn > 0) {
+                dealDamage(Wiz.adp().hand.getBottomCard().costForTurn);
             }
 
-            Wiz.player().hand.moveToDiscardPile(Wiz.player().hand.getTopCard());
-            Wiz.player().hand.moveToDiscardPile(Wiz.player().hand.getBottomCard());
+            Wiz.adp().hand.moveToDiscardPile(Wiz.adp().hand.getTopCard());
+            Wiz.adp().hand.moveToDiscardPile(Wiz.adp().hand.getBottomCard());
             isDone = true;
         }
     }
 
     private void dealDamage(int x) {
         for (int i = 0; i < x; i++) {
-            Wiz.atb(new DamageAction(target, new DamageInfo(Wiz.player(), damage, DamageInfo.DamageType.NORMAL),
+            Wiz.atb(new DamageAction(target, new DamageInfo(Wiz.adp(), damage, DamageInfo.DamageType.NORMAL),
                     AttackEffect.SLASH_VERTICAL));
         }
     }

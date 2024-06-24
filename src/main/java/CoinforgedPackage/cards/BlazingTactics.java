@@ -15,8 +15,9 @@ import CoinforgedPackage.util.Wiz;
 
 public class BlazingTactics extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
+    private static final int UPG_MAGIC = -1;
+    private static final int DRAW = 1;
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -28,13 +29,15 @@ public class BlazingTactics extends AbstractCoinforgedCard {
 
     public BlazingTactics() {
         super(ID, info);
-        setMagic(MAGIC);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC, UPG_MAGIC);
+        setCustomVar("draw", DRAW);
+        setDamage(DAMAGE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        Wiz.atb(new DrawCardAction(this.magicNumber, new SetCostFollowUpAction(1)));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        Wiz.atb(new DrawCardAction(customVar("draw"), new SetCostFollowUpAction(magicNumber)));
     }
 
     @Override

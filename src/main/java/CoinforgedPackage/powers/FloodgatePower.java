@@ -39,6 +39,14 @@ public class FloodgatePower extends BasePower implements OnReceivePowerPower, On
         }
     }
 
+    @Override // ???
+    public void onDrawOrDiscard() {
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+            Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
+            Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.NORMAL, AttackEffect.NONE));
+        }
+    }
+
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;
     }

@@ -10,9 +10,9 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-public class LayLow extends AbstractReturnCard {
+public class LayLow extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 7;
     private static final int UPG_BLOCK = 3;
 
     public static final String ID = makeID(LayLow.class.getSimpleName());
@@ -21,7 +21,7 @@ public class LayLow extends AbstractReturnCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
-            4);
+            1);
 
     public LayLow() {
         super(ID, info);

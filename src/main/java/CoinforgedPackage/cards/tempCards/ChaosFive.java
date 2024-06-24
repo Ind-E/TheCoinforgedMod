@@ -30,6 +30,7 @@ public class ChaosFive extends AbstractCoinforgedCard {
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true;
         tags.add(CustomTags.MAGIC_DIE);
+        tags.add(CustomTags.DIE);
     }
 
     @Override

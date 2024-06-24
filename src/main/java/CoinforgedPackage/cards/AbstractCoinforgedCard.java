@@ -20,8 +20,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.util.CardStats;
@@ -103,9 +101,6 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
         this.magicUpgrade = 0;
 
         this.isRotatingPreview = isRotatingPreview;
-        if (isRotatingPreview && getPreviewTags() == null) {
-            throw new IllegalStateException("getPreviewTags() must be overridden when isRotatingPreview is set to true");
-        }
         if (isRotatingPreview) {
             this.rotatingPreviewTags = getPreviewTags();
             this.cardsToPreview = CardLibrary.cards.get("Madness");
@@ -113,16 +108,14 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     }
 
     BiFunction<AbstractMonster, Integer, Integer> debtCalc = (m, base) -> {
-        AbstractPower Str = Wiz.player().getPower(StrengthPower.POWER_ID);
-        if (Str != null) {
-            base -= Math.min(0, Str.amount);
+        int count = 0;
+        for (AbstractPower p : Wiz.adp().powers) {
+            if (p.type == AbstractPower.PowerType.DEBUFF) {
+                ++count;
+            }
         }
 
-        if (Wiz.player().hasPower(WeakPower.POWER_ID)) {
-            base = MathUtils.floor(base * 1.25F);
-        }
-
-        return base;
+        return MathUtils.floor((1 + count * 0.25F) * base);
     };
 
     public ArrayList<CardTags> getPreviewTags() {

@@ -18,5 +18,10 @@
     "TEXT": [
       "{modID}:poker chip"
     ]
+  },
+  "${modID}:MillenniumDie": {
+    "TEXT": [
+      "Choose a Die to roll."
+    ]
   }
 }

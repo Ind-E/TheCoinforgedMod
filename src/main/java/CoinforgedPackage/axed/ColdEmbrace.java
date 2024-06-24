@@ -11,7 +11,6 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
-//TODO: game feel is bad because Defends hit by Buff aren't distinguishable from normal Defends
 public class ColdEmbrace extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;

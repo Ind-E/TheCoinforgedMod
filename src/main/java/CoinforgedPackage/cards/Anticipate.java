@@ -32,7 +32,7 @@ public class Anticipate extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new RollPurpleAction(magicNumber));
-        Wiz.applyToSelf(new EquilibriumPower(p, magicNumber));
+        Wiz.applyToSelf(new EquilibriumPower(p, 1));
     }
 
     @Override

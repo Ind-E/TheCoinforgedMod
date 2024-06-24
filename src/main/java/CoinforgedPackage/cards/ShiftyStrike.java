@@ -46,7 +46,7 @@ public class ShiftyStrike extends AbstractCoinforgedCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (Wiz.player().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
+        if (Wiz.adp().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
