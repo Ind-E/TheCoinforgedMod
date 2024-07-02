@@ -1,6 +1,7 @@
 package CoinforgedPackage.patches;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
@@ -20,13 +21,14 @@ public class NoCompendiumColorlessPatch {
             CardGroup colorlessCards = (CardGroup) ReflectionHacks.getPrivate(__instance, CardLibraryScreen.class,
                     "colorlessCards");
 
-            Iterator<AbstractCard> iterator = colorlessCards.group.iterator();
-            while (iterator.hasNext()) {
-                AbstractCard card = iterator.next();
+            List<AbstractCard> cardsToRemove = new ArrayList<>();
+            for (AbstractCard card : colorlessCards.group) {
                 if (card.getClass().isAnnotationPresent(NoCompendium.class)) {
-                    iterator.remove();
+                    cardsToRemove.add(card);
                 }
             }
+
+            colorlessCards.group.removeAll(cardsToRemove);
         }
     }
 }

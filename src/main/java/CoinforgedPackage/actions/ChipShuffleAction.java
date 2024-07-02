@@ -1,6 +1,7 @@
 package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -20,8 +21,8 @@ public class ChipShuffleAction extends AbstractGameAction {
     public void update() {
         int cardsToDraw = 0;
         CardGroup hand = AbstractDungeon.player.hand;
-        ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
-        
+        List<AbstractCard> cardsToMove = new ArrayList<>();
+
         for (AbstractCard c : hand.group) {
             if (c.hasTag(CustomTags.POKER_CHIP)) {
                 cardsToMove.add(c);

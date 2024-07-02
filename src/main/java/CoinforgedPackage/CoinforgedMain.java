@@ -159,12 +159,7 @@ public class CoinforgedMain implements
                         BaseMod.addRelic(relic, relic.relicType); // Register a shared or base game character specific
                                                                   // relic
 
-                    // If the class is annotated with @AutoAdd.Seen, it will be marked as seen,
-                    // making it visible in the relic library.
-                    // If you want all your relics to be visible by default, just remove this if
-                    // statement.
-                    if (info.seen)
-                        UnlockTracker.markRelicAsSeen(relic.relicId);
+                    UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
     }
 

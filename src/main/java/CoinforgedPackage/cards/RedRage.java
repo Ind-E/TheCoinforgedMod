@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -32,8 +33,8 @@ public class RedRage extends AbstractCoinforgedCard {
         Wiz.atb(new RollRedAction(magicNumber));
     }
 
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         return tags;
     }

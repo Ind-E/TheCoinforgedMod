@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -63,8 +64,8 @@ public class RedKing extends AbstractCoinforgedCard {
     }
 
     @Override
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         return tags;
     }

@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -42,8 +43,8 @@ public class Upswing extends AbstractCoinforgedCard {
         Wiz.atb(new RollBlueAction(magicNumber));
     }
 
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.BLUE_DIE);
         return tags;
     }

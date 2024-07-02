@@ -1,6 +1,7 @@
 package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +14,7 @@ public class DoubleDealingAction extends AbstractGameAction {
 
     private AbstractPlayer p = AbstractDungeon.player;
     private String prompt = "swap costs.";
-    private ArrayList<AbstractCard> chosenCards;
+    private List<AbstractCard> chosenCards;
 
     public DoubleDealingAction() {
         super();

@@ -9,11 +9,11 @@
   },
   "${modID}:Advance": {
     "NAME": "Cash Advance",
-    "DESCRIPTION": "Draw !M! Cards. NL Draw 1 less card next turn."
+    "DESCRIPTION": "Draw !M! Cards. NL Draw !${modID}:drawDown! less card next turn."
   },
   "${modID}:GoldenGamble": {
     "NAME": "Golden Gamble",
-    "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
+    "DESCRIPTION": "Lose !${modID}:loseGold! Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
   },
   "${modID}:RedOne": {
     "NAME": "Red Die",
@@ -89,7 +89,7 @@
   },
   "${modID}:ChaosFive": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Gain !M! Artifact and 1 Intangible. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Artifact and !M! Intangible. NL Exhaust."
   },
   "${modID}:ChaosSix": {
     "NAME": "Chaos Die",
@@ -338,7 +338,7 @@
   },
   "${modID}:Indebt": {
     "NAME": "Indebt",
-    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Apply !M! Weak."
+    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Apply !M! Weak. NL Lose !${modID:focus! Focus."
   },
   "${modID}:Grapes": {
     "NAME": "Grapes",
@@ -347,10 +347,6 @@
   "${modID}:Melon": {
     "NAME": "Melon",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, draw a card."
-  },
-  "${modID}:CoinFlick": {
-    "NAME": "Coin Flick",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a 2+ cost card, add this from the draw pile to your hand and increase its damage by !M!."
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
@@ -406,7 +402,7 @@
   },
   "${modID}:TwinSlash": {
     "NAME": "Twin Slash",
-    "DESCRIPTION": "Deal !D! damage twice. ${modID}:Overflow: draw 1 card."
+    "DESCRIPTION": "Deal !D! damage twice. ${modID}:Overflow: draw !M! card."
   },
   "${modID}:Discipline": {
     "NAME": "Discipline",
@@ -419,15 +415,6 @@
   "${modID}:RestoringForce": {
     "NAME": "Restoring Force",
     "DESCRIPTION": "Gain !B! Block twice. NL ${modID}:Overflow: Increase your max hand size by !M!."
-  },
-  "${modID}:ShiftyStrike": {
-    "NAME": "Shifty Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL ${modID}:Overflow: Apply !M! Vulnerable."
-  },
-  "${modID}:SlotMachineLearning": {
-    "NAME": "Slot Machine Learning",
-    "DESCRIPTION": "At the start of your turn, draw 1 additional card. If you don't, gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw 1 additional card. If you don't, gain !M! Strength."
   },
   "${modID}:OverflowingArmor": {
     "NAME": "Overflowing Armor",
@@ -444,7 +431,7 @@
   },
   "${modID}:LayLow": {
     "NAME": "Lay Low",
-    "DESCRIPTION": "Gain !B! Block. NL Discard 1 card. NL Draw !M! cards."
+    "DESCRIPTION": "Gain !B! Block. NL Discard !${modID}:discard! card. NL Draw !M! cards."
   },
   "${modID}:Grow": {
     "NAME": "Grow",
@@ -475,10 +462,6 @@
     "NAME": "Seeing Ahead",
     "DESCRIPTION": "Gain [E] [E]. NL Exhaust."
   },
-  "${modID}:GoodReflexes": {
-    "NAME": "Good Reflexes",
-    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card."
-  },
   "${modID}:Refill": {
     "NAME": "Refill",
     "DESCRIPTION": "Draw X cards. NL Exhaust.",
@@ -496,5 +479,13 @@
     "NAME": "Left To Chance",
     "DESCRIPTION": "Play a copy of the leftmost card in your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Play a copy of the leftmost card in your hand."
+  },
+  "${modID}:GoneWithTheWind": {
+    "NAME": "Gone With the Wind",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Cascade."
+  },
+  "${modID}:Vision": {
+    "NAME": "Vision",
+    "DESCRIPTION": "Scry !M!. NL The top card of your draw pile costs 0 until played."
   }
 }

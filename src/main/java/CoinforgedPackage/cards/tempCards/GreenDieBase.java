@@ -1,7 +1,5 @@
 package CoinforgedPackage.cards.tempCards;
 
-import java.util.Iterator;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -54,21 +52,11 @@ public abstract class GreenDieBase extends AbstractCoinforgedCard {
                new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveType.CHAOTIC), 1.5F));
       }
 
-      Iterator<AbstractMonster> var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-
-      AbstractMonster mo;
-      while (var3.hasNext()) {
-         mo = (AbstractMonster) var3.next();
-         Wiz.atb(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true,
+      for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+         Wiz.atb(new ApplyPowerAction(mo, p, new StrengthPower(mo, -magicNumber), -magicNumber, true,
                AttackEffect.NONE));
-      }
-
-      var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-
-      while (var3.hasNext()) {
-         mo = (AbstractMonster) var3.next();
          if (!mo.hasPower("Artifact")) {
-            Wiz.atb(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, this.magicNumber), this.magicNumber,
+            Wiz.atb(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, magicNumber), magicNumber,
                   true, AttackEffect.NONE));
          }
       }

@@ -18,6 +18,7 @@ public class BlazingTactics extends AbstractCoinforgedCard {
     private static final int UPG_MAGIC = -1;
     private static final int DRAW = 1;
     private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 1;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -31,7 +32,7 @@ public class BlazingTactics extends AbstractCoinforgedCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         setCustomVar("draw", DRAW);
-        setDamage(DAMAGE);
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

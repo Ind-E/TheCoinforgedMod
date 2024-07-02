@@ -11,8 +11,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class SwiftGuard extends AbstractCoinforgedCard {
-    private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 4;
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 3;
     private static final int MAGIC = 2;
 
     public static final String ID = makeID(SwiftGuard.class.getSimpleName());

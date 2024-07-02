@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,8 +37,8 @@ public class Anticipate extends AbstractCoinforgedCard {
     }
 
     @Override
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.PURPLE_DIE);
         return tags;
     }

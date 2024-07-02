@@ -117,5 +117,12 @@
       "return"
     ],
     "DESCRIPTION": "Instead of paying energy, shuffle cards from your discard pile into your draw pile to play this card."
+  },
+  {
+    "PROPER_NAME": "Cascade",
+    "NAMES": [
+      "cascade"
+    ],
+    "DESCRIPTION": "After this card is played, autoplay the top card in your draw pile that costs less."
   }
 ]

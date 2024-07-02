@@ -34,7 +34,7 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
         } else if (chipWeights == null) {
             return intToChip(AbstractDungeon.miscRng.random(ChipColor.values().length - 1));
         } else {
-            ArrayList<ChipColor> weightedChipColors = new ArrayList<>();
+            List<ChipColor> weightedChipColors = new ArrayList<>();
             for (Map.Entry<ChipColor, Integer> entry : chipWeights.entrySet()) {
                 for (int i = 0; i < entry.getValue(); i++) {
                     weightedChipColors.add(entry.getKey());

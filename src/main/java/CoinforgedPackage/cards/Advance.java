@@ -27,12 +27,13 @@ public class Advance extends AbstractCoinforgedCard {
     public Advance() {
         super(ID, info);
         setMagic(CARD_DRAW, UPG_CARD_DRAW);
+        setCustomVar("drawDown", DRAW_REDUCTION);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DrawCardAction(p, this.magicNumber));
-        addToTop(new ApplyPowerAction(p, p, new PlayerAppliedDrawReductionPower(p, DRAW_REDUCTION)));
+        addToTop(new ApplyPowerAction(p, p, new PlayerAppliedDrawReductionPower(p, customVar("drawDown"))));
     }
 
     @Override

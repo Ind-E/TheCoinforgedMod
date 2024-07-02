@@ -5,6 +5,7 @@ import static CoinforgedPackage.util.TextureLoader.getCardTextureString;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
@@ -65,9 +66,9 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
     protected float rotationTimer;
     protected int previewIndex;
-    protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
+    protected List<AbstractCard> dupeListForPrev = new ArrayList<>();
     protected boolean isRotatingPreview;
-    protected ArrayList<CardTags> rotatingPreviewTags;
+    protected List<CardTags> rotatingPreviewTags;
     protected float timerDuration = 1.5F;
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
@@ -118,12 +119,12 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
         return MathUtils.floor((1 + count * 0.25F) * base);
     };
 
-    public ArrayList<CardTags> getPreviewTags() {
+    public List<CardTags> getPreviewTags() {
         return null;
     }
 
-    public ArrayList<AbstractCard> getList() {
-        ArrayList<AbstractCard> myList = new ArrayList<>();
+    public List<AbstractCard> getList() {
+        List<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
             for (CardTags tag : rotatingPreviewTags) {
                 if (q.hasTag(tag) && q.damage <= 6) { // damage <= 6 b/c red dice go up to 10
@@ -635,7 +636,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
                 var.value = var.calculation.apply(null, var.base);
             }
             if (isMultiDamage) {
-                ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
+                List<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
                 AbstractMonster m;
                 for (LocalVarInfo var : cardVariables.values()) {
                     if (var.aoeValue == null || var.aoeValue.length != monsters.size())
@@ -661,7 +662,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
                 var.value = var.calculation.apply(m, var.base);
             }
             if (isMultiDamage) {
-                ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
+                List<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
                 for (LocalVarInfo var : cardVariables.values()) {
                     if (var.aoeValue == null || var.aoeValue.length != monsters.size())
                         var.aoeValue = new int[monsters.size()];

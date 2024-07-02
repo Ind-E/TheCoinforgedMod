@@ -9,7 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import java.util.Iterator;
+
+import basemod.BaseMod;
 
 public class AceInTheHoleAction extends SeekAction {
     private static final UIStrings uiStrings;
@@ -24,36 +25,32 @@ public class AceInTheHoleAction extends SeekAction {
     }
 
     public void update() {
-        AbstractCard card1;
-        if (this.duration == Settings.ACTION_DUR_MED) {
-            if (AbstractDungeon.player.hand.size() == 10) {
+        if (duration == Settings.ACTION_DUR_MED) {
+            if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
                 AbstractDungeon.player.createHandIsFullDialog();
-                this.isDone = true;
+                isDone = true;
                 return;
             }
+
             CardGroup tmp = new CardGroup(CardGroupType.UNSPECIFIED);
-            AbstractCard card;
 
-            Iterator<AbstractCard> drawPileIterator = this.p.drawPile.group.iterator();
-            while (drawPileIterator.hasNext()) {
-                card = drawPileIterator.next();
-                tmp.addToRandomSpot(card);
+            for (AbstractCard c : p.drawPile.group) {
+                tmp.addToRandomSpot(c);
             }
-            if (upgraded) {
-                Iterator<AbstractCard> exhaustPileIterator = this.p.exhaustPile.group.iterator();
-                while (exhaustPileIterator.hasNext()) {
-                    card = exhaustPileIterator.next();
-                    tmp.addToRandomSpot(card);
+
+            if (upgraded)
+                for (AbstractCard c : p.exhaustPile.group) {
+                    tmp.addToRandomSpot(c);
                 }
-            }
 
+            AbstractCard card;
             if (tmp.size() == 0) {
-                this.isDone = true;
+                isDone = true;
             } else if (tmp.size() == 1) {
                 card = tmp.getTopCard();
-                if (this.p.hand.size() == 10) {
-                    this.p.drawPile.moveToDiscardPile(card);
-                    this.p.createHandIsFullDialog();
+                if (p.hand.size() == 10) {
+                    p.drawPile.moveToDiscardPile(card);
+                    p.createHandIsFullDialog();
                 } else {
                     card.unhover();
                     card.lighten(true);
@@ -62,10 +59,10 @@ public class AceInTheHoleAction extends SeekAction {
                     card.targetDrawScale = 0.75F;
                     card.current_x = CardGroup.DRAW_PILE_X;
                     card.current_y = CardGroup.DRAW_PILE_Y;
-                    if (this.p.drawPile.contains(card))
-                        this.p.drawPile.removeCard(card);
-                    else if (this.p.exhaustPile.contains(card))
-                        this.p.exhaustPile.removeCard(card);
+                    if (p.drawPile.contains(card))
+                        p.drawPile.removeCard(card);
+                    else if (p.exhaustPile.contains(card))
+                        p.exhaustPile.removeCard(card);
 
                     card.setCostForTurn(0);
                     AbstractDungeon.player.hand.addToTop(card);
@@ -73,13 +70,13 @@ public class AceInTheHoleAction extends SeekAction {
                     AbstractDungeon.player.hand.applyPowers();
                 }
 
-                this.isDone = true;
-            } else if (tmp.size() <= this.amount) {
+                isDone = true;
+            } else if (tmp.size() <= amount) {
                 for (int i = 0; i < tmp.size(); ++i) {
                     card = tmp.getNCardFromTop(i);
-                    if (this.p.hand.size() == 10) {
-                        this.p.drawPile.moveToDiscardPile(card);
-                        this.p.createHandIsFullDialog();
+                    if (p.hand.size() == 10) {
+                        p.drawPile.moveToDiscardPile(card);
+                        p.createHandIsFullDialog();
                     } else {
                         card.unhover();
                         card.lighten(true);
@@ -88,10 +85,10 @@ public class AceInTheHoleAction extends SeekAction {
                         card.targetDrawScale = 0.75F;
                         card.current_x = CardGroup.DRAW_PILE_X;
                         card.current_y = CardGroup.DRAW_PILE_Y;
-                        if (this.p.drawPile.contains(card))
-                            this.p.drawPile.removeCard(card);
-                        else if (this.p.exhaustPile.contains(card))
-                            this.p.exhaustPile.removeCard(card);
+                        if (p.drawPile.contains(card))
+                            p.drawPile.removeCard(card);
+                        else if (p.exhaustPile.contains(card))
+                            p.exhaustPile.removeCard(card);
                         card.setCostForTurn(0);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();
@@ -99,44 +96,44 @@ public class AceInTheHoleAction extends SeekAction {
                     }
                 }
 
-                this.isDone = true;
+                isDone = true;
             } else {
-                if (this.amount == 1) {
-                    AbstractDungeon.gridSelectScreen.open(tmp, this.amount, TEXT[0], false);
+                if (amount == 1) {
+                    AbstractDungeon.gridSelectScreen.open(tmp, amount, TEXT[0], false);
                 } else {
-                    AbstractDungeon.gridSelectScreen.open(tmp, this.amount, TEXT[1], false);
+                    AbstractDungeon.gridSelectScreen.open(tmp, amount, TEXT[1], false);
                 }
 
-                this.tickDuration();
+                tickDuration();
             }
-        } else {
-            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
-                Iterator<AbstractCard> var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
+        } else
 
-                while (var1.hasNext()) {
-                    card1 = (AbstractCard) var1.next();
-                    card1.unhover();
-                    if (this.p.hand.size() == 10) {
-                        this.p.drawPile.moveToDiscardPile(card1);
-                        this.p.createHandIsFullDialog();
+        {
+            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
+
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    c.unhover();
+                    if (p.hand.size() == BaseMod.MAX_HAND_SIZE) {
+                        p.drawPile.moveToDiscardPile(c);
+                        p.createHandIsFullDialog();
                     } else {
-                        if (this.p.drawPile.contains(card1))
-                            this.p.drawPile.removeCard(card1);
-                        else if (this.p.exhaustPile.contains(card1))
-                            this.p.exhaustPile.removeCard(card1);
-                        card1.setCostForTurn(0);
-                        this.p.hand.addToTop(card1);
+                        if (p.drawPile.contains(c))
+                            p.drawPile.removeCard(c);
+                        else if (p.exhaustPile.contains(c))
+                            p.exhaustPile.removeCard(c);
+                        c.setCostForTurn(0);
+                        p.hand.addToTop(c);
                     }
 
-                    this.p.hand.refreshHandLayout();
-                    this.p.hand.applyPowers();
+                    p.hand.refreshHandLayout();
+                    p.hand.applyPowers();
                 }
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
-                this.p.hand.refreshHandLayout();
+                p.hand.refreshHandLayout();
             }
 
-            this.tickDuration();
+            tickDuration();
         }
     }
 

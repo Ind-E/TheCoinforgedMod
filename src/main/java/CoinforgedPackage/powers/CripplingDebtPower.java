@@ -24,12 +24,6 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
     }
 
     @Override
-    public int onLoseHp(int damageAmount) {
-        checkInstantKill();
-        return damageAmount;
-    }
-
-    @Override
     public void atEndOfRound() {
         flashWithoutSound();
         this.stackPower((int) Math.max(1, Math.round(this.amount * 0.25)));

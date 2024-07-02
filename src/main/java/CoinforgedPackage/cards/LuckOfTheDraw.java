@@ -10,6 +10,7 @@ import CoinforgedPackage.powers.LuckOfTheDrawPower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+//TODO: rework
 public class LuckOfTheDraw extends AbstractCoinforgedCard {
     private static final int MAGIC = 4;
     private static final int UPG_MAGIC = 2;

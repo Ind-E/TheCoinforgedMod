@@ -32,7 +32,7 @@ public class JokerTrick extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> cardChoices = new ArrayList<>();
+        ArrayList<AbstractCard> cardChoices = new ArrayList<AbstractCard>();
         cardChoices.add(new AttackFromDeck(this.upgraded));
         cardChoices.add(new SkillFromDeck(this.upgraded));
         cardChoices.add(new PowerFromDeck(this.upgraded));

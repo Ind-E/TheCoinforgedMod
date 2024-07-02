@@ -1,6 +1,7 @@
 package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,7 +32,7 @@ public class AddTypeToHandAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractCard cardToDraw;
-        ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
+        List<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
         for (AbstractCard c : p.drawPile.group) {
             if (c.type == this.type && !c.hasTag(CustomTags.POKER_CHIP)) {
                 possibleCards.add(c);

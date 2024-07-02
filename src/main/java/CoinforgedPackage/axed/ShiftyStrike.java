@@ -44,13 +44,13 @@ public class ShiftyStrike extends AbstractCoinforgedCard {
         Wiz.atb(new OverflowAction(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false))));
     }
 
-    @Override
-    public void triggerOnGlowCheck() {
-        if (Wiz.adp().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-    }
+    // @Override
+    // public void triggerOnGlowCheck() {
+    //     if (Wiz.adp().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
+    //         glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+    //     } else {
+    //         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+    //     }
+    // }
 
 }

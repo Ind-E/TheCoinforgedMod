@@ -1,7 +1,7 @@
 package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -22,7 +22,7 @@ public class GrapesAction extends AbstractGameAction {
     private boolean upgraded;
     private AbstractPlayer p;
     private String msg;
-    private ArrayList<AbstractCard> cannotBuff = new ArrayList<AbstractCard>();
+    private List<AbstractCard> cannotBuff = new ArrayList<AbstractCard>();
 
     public GrapesAction(int amount, boolean upgraded) {
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -35,13 +35,8 @@ public class GrapesAction extends AbstractGameAction {
     }
 
     public void update() {
-        Iterator<AbstractCard> var1;
-        AbstractCard c;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            var1 = this.p.hand.group.iterator();
-
-            while (var1.hasNext()) {
-                c = var1.next();
+            for (AbstractCard c : p.hand.group) {
                 if (c.baseDamage <= 0 && c.baseBlock <= 0) {
                     this.cannotBuff.add(c);
                 }
@@ -71,10 +66,7 @@ public class GrapesAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
-
-            while (var1.hasNext()) {
-                c = var1.next();
+            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 CardModifierManager.addModifier(c, new GrapesModifier(this.amount));
                 c.superFlash();
                 c.applyPowers();
@@ -91,11 +83,8 @@ public class GrapesAction extends AbstractGameAction {
     }
 
     private void returnCards() {
-        Iterator<AbstractCard> var1 = this.cannotBuff.iterator();
-
-        while (var1.hasNext()) {
-            AbstractCard c = var1.next();
-            this.p.hand.addToTop(c);
+        for (AbstractCard c : cannotBuff) {
+            p.hand.addToTop(c);
             c.superFlash();
         }
 

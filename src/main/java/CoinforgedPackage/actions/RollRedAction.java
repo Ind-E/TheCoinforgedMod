@@ -2,6 +2,7 @@ package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,6 +21,7 @@ import CoinforgedPackage.powers.AdvantagePower;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.powers.SnakeEyesPower;
 
+//TODO: make dice rolls use StS rng (search ThreadLocal)
 public class RollRedAction extends RollBaseAction {
     private boolean redKingActive = false;
 
@@ -38,7 +40,7 @@ public class RollRedAction extends RollBaseAction {
             dmg = 1;
         } else if (player.hasPower(AdvantagePower.POWER_ID)) {
             int adv = player.getPower(AdvantagePower.POWER_ID).amount;
-            ArrayList<Integer> rolls = new ArrayList<Integer>();
+            List<Integer> rolls = new ArrayList<Integer>();
             for (int i = 0; i < adv; i++) {
                 rolls.add(ThreadLocalRandom.current().nextInt(minroll, maxroll + 1));
             }

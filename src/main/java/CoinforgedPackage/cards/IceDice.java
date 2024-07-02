@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,8 +38,8 @@ public class IceDice extends AbstractCoinforgedCard {
         Wiz.applyToEnemy(m, new WeakPower(p, customVar("weak"), false));
     }
 
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.BLUE_DIE);
         return tags;
     }

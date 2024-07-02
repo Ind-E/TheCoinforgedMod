@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField.ExhaustiveFields;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -67,8 +68,8 @@ public class DiceBag extends AbstractCoinforgedCard {
     }
 
     @Override
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         tags.add(CustomTags.BLUE_DIE);
         tags.add(CustomTags.GREEN_DIE);

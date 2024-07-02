@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,19 +17,20 @@ import CoinforgedPackage.util.Wiz;
 public class RollRed extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 1;
+    private static final int TEMP_STR = 1;
 
     public static final String ID = makeID(RollRed.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.COMMON,
             CardTarget.NONE,
             1);
 
     public RollRed() {
         super(ID, info, true);
         setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
-        setCustomVar("str", 1);
+        setCustomVar("str", TEMP_STR);
     }
 
     @Override
@@ -39,8 +41,8 @@ public class RollRed extends AbstractCoinforgedCard {
     }
 
     @Override
-    public ArrayList<CardTags> getPreviewTags() {
-        ArrayList<CardTags> tags = new ArrayList<>();
+    public List<CardTags> getPreviewTags() {
+        List<CardTags> tags = new ArrayList<>();
         tags.add(CustomTags.RED_DIE);
         return tags;
     }

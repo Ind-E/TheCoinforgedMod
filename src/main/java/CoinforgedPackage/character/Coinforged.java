@@ -90,9 +90,8 @@ public class Coinforged extends CustomPlayer {
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
         startingDeck.add(CoinforgedPackage.cards.DefendCoinforged.ID);
-        startingDeck.add(CoinforgedPackage.cards.RollRed.ID);
         startingDeck.add(CoinforgedPackage.cards.Advance.ID);
-        startingDeck.add(CoinforgedPackage.cards.LeftToChance.ID);
+        startingDeck.add(CoinforgedPackage.cards.GoneWithTheWind.ID);
 
         return startingDeck;
     }

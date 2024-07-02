@@ -1,7 +1,5 @@
 package CoinforgedPackage.actions;
 
-import java.util.Iterator;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -42,12 +40,9 @@ public class MillenniumDieAction extends AbstractGameAction {
             tickDuration();
         } else {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                Iterator<AbstractCard> var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
-                while (var1.hasNext()) {
-                    AbstractCard c = (AbstractCard) var1.next();
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards)
                     Wiz.atb(new MakeTempCardInHandAction(c, 1));
-                }
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 AbstractDungeon.player.hand.refreshHandLayout();

@@ -3,13 +3,13 @@ package CoinforgedPackage.cards;
 import static CoinforgedPackage.CoinforgedMain.imagePath;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import CoinforgedPackage.modifiers.ReturnModifier;
@@ -19,7 +19,7 @@ import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 
 public abstract class AbstractReturnCard extends AbstractCoinforgedCard {
-    protected ArrayList<TooltipInfo> tooltip;
+    protected List<TooltipInfo> tooltip;
 
     public AbstractReturnCard(String ID, CardStats info) {
         this(ID, info, false);
@@ -46,69 +46,34 @@ public abstract class AbstractReturnCard extends AbstractCoinforgedCard {
     @Override
     public boolean hasEnoughEnergy() {
         if (AbstractDungeon.actionManager.turnHasEnded) {
-            this.cantUseMessage = TEXT[9];
-            return false;
-        } else {
-            @SuppressWarnings("rawtypes")
-            Iterator var1 = AbstractDungeon.player.powers.iterator();
-
-            AbstractPower p;
-            do {
-                if (!var1.hasNext()) {
-                    if (AbstractDungeon.player.hasPower("Entangled")
-                            && this.type == com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK) {
-                        this.cantUseMessage = TEXT[10];
-                        return false;
-                    }
-
-                    var1 = AbstractDungeon.player.relics.iterator();
-
-                    AbstractRelic r;
-                    do {
-                        if (!var1.hasNext()) {
-                            var1 = AbstractDungeon.player.blights.iterator();
-
-                            AbstractBlight b;
-                            do {
-                                if (!var1.hasNext()) {
-                                    var1 = AbstractDungeon.player.hand.group.iterator();
-
-                                    AbstractCard c;
-                                    do {
-                                        if (!var1.hasNext()) { // this part was changed
-                                            if (AbstractDungeon.player.discardPile.size() < this.costForTurn
-                                                    && !this.isInAutoplay) {
-                                                this.cantUseMessage = "Not enough cards in #rDiscard #rPile.";
-                                                return false;
-                                            }
-
-                                            return true;
-                                        }
-
-                                        c = (AbstractCard) var1.next();
-                                    } while (c.canPlay(this));
-
-                                    return false;
-                                }
-
-                                b = (AbstractBlight) var1.next();
-                            } while (b.canPlay(this));
-
-                            return false;
-                        }
-
-                        r = (AbstractRelic) var1.next();
-                    } while (r.canPlay(this));
-
-                    return false;
-                }
-
-                p = (AbstractPower) var1.next();
-            } while (p.canPlayCard(this));
-
-            this.cantUseMessage = TEXT[13];
+            cantUseMessage = TEXT[9];
             return false;
         }
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (!p.canPlayCard(this)) {
+                cantUseMessage = TEXT[13];
+                return false;
+            }
+        }
+        if (AbstractDungeon.player.hasPower(EntanglePower.POWER_ID) && type == CardType.ATTACK) {
+            cantUseMessage = TEXT[10];
+            return false;
+        }
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (!r.canPlay(this))
+                return false;
+        }
+        for (AbstractBlight b : AbstractDungeon.player.blights) {
+            if (!b.canPlay(this))
+                return false;
+        }
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (!c.canPlay(this))
+                return false;
+        }
+        if (AbstractDungeon.player.discardPile.size() >= costForTurn || freeToPlay() || isInAutoplay)
+            return true;
+        cantUseMessage = TEXT[11];
+        return false;
     }
-
 }

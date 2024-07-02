@@ -10,6 +10,7 @@ import CoinforgedPackage.powers.ModifiedHandSizePower;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+// TODO: rework -- overflow effect?
 public class UnleashedStrategy extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
