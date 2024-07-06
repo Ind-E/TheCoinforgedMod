@@ -1,9 +1,7 @@
 package CoinforgedPackage.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import CoinforgedPackage.util.Wiz;
 
@@ -13,8 +11,11 @@ public class UnleashedStrategyAction extends AbstractGameAction {
     }
 
     public void update() {
-        AbstractPlayer p = AbstractDungeon.player;
-        Wiz.atb(new GainEnergyAction(p.hand.size() / 3));
-        this.isDone = true;
+        for (AbstractCard c : Wiz.adp().hand.group) {
+            if (c.costForTurn >= 1) {
+                c.setCostForTurn(c.costForTurn - 1);
+            }
+        }
+        isDone = true;
     }
 }

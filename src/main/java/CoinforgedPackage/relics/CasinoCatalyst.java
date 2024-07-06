@@ -14,7 +14,7 @@ public class CasinoCatalyst extends BaseRelic {
     private static final String NAME = "CasinoCatalyst";
     public static final String ID = makeID(NAME);
     private static final RelicTier TIER = RelicTier.STARTER;
-    private static final LandingSound sfx = LandingSound.HEAVY;
+    private static final LandingSound sfx = LandingSound.MAGICAL;
 
     public CasinoCatalyst() {
         super(ID, NAME, Coinforged.Enums.CARD_COLOR, TIER, sfx);

@@ -1,10 +1,9 @@
 package CoinforgedPackage.cards;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.character.Coinforged;
@@ -41,10 +40,11 @@ public class CheatersLuck extends AbstractCoinforgedCard {
     }
 
     public void copyRandomCard(AbstractPlayer p) {
-        AbstractCard randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size()))
+        AbstractCard randomCardInHand = p.hand.group.get(AbstractDungeon.cardRandomRng.random(0, p.hand.size() - 1))
                 .makeStatEquivalentCopy();
         while (randomCardInHand.originalName == this.originalName) {
-            randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeStatEquivalentCopy();
+            randomCardInHand = p.hand.group.get(AbstractDungeon.cardRandomRng.random(0, p.hand.size() - 1))
+                    .makeStatEquivalentCopy();
         }
         randomCardInHand.setCostForTurn(0);
         Wiz.atb(new MakeTempCardInHandAction(randomCardInHand));

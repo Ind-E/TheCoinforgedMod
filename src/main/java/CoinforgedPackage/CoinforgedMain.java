@@ -124,6 +124,7 @@ public class CoinforgedMain implements
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("Name,Cost,Type,Rarity,Description\n");
             for (AbstractCard c : CardLibrary.getCardList(CardLibrary.LibraryType.valueOf("COINFORGED_COLOR"))) {
+                
                 String cardName = c.name;
                 String cardType = c.type.toString();
                 String cardRarity = c.rarity.toString();

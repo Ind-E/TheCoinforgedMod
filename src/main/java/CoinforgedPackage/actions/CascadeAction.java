@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class CascadeAction extends AbstractGameAction {
@@ -39,8 +38,7 @@ public class CascadeAction extends AbstractGameAction {
     }
 
     private void playCard(AbstractCard card) {
-        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true,
-                AbstractDungeon.cardRandomRng);
+        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         AbstractDungeon.player.drawPile.group.remove(card);
         AbstractDungeon.getCurrRoom().souls.remove(card);
         AbstractDungeon.player.limbo.group.add(card);
@@ -55,9 +53,9 @@ public class CascadeAction extends AbstractGameAction {
         addToTop(new NewQueueCardAction(card, target, false, true));
         addToTop(new UnlimboAction(card));
         if (!Settings.FAST_MODE) {
-            this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+            addToTop(new WaitAction(Settings.ACTION_DUR_MED));
         } else {
-            this.addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
+            addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
         }
     }
 }

@@ -12,7 +12,6 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class HeartOfTheCards extends AbstractCoinforgedCard {
-    private static final int X_COST = -1;
     public static final String ID = makeID(HeartOfTheCards.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,

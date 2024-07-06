@@ -2,7 +2,6 @@ package CoinforgedPackage.actions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
@@ -44,7 +43,7 @@ public class AddTypeToHandAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        cardToDraw = possibleCards.get(ThreadLocalRandom.current().nextInt(0, possibleCards.size()));
+        cardToDraw = possibleCards.get(AbstractDungeon.cardRandomRng.random(0, possibleCards.size() - 1));
 
         if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
             p.drawPile.moveToDiscardPile(cardToDraw);

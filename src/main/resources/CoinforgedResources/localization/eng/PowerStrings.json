@@ -118,7 +118,7 @@
   "${modID}:InvigoratingRifflePower": {
     "NAME": "Invigorating Riffle",
     "DESCRIPTIONS": [
-      "Whenever a Skill is Exhausted, gain #b",
+      "Whenever a card is Exhausted, gain #b",
       " Vigor."
     ]
   },
@@ -235,6 +235,19 @@
     "DESCRIPTIONS": [
       "Whenever your hand becomes full, deal #b",
       " damage to ALL enemies."
+    ]
+  },
+  "${modID}:ForeclosurePower": {
+    "NAME": "Foreclosure",
+    "DESCRIPTIONS": [
+      "At the end of your turn, double ALL enemies' debuffs."
+    ]
+  },
+  "${modID}:DontRenderIntentPower": {
+    "NAME": "Cloaked",
+    "DESCRIPTIONS": [
+      "Enemy intent hidden.",
+      "Enemy intent will be hidden next turn."
     ]
   }
 }

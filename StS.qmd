@@ -1,0 +1,114 @@
+---
+title: "Coinforged Card Metrics"
+author: "Ind_E"
+format:
+  html:
+    embed-resources: true
+---
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+library(stringr)
+library(jsonlite)
+cards <- read_csv("C:\\Users\\sacha\\Desktop\\VSCode\\CoinforgedMod\\card_data.csv")
+parsed_data <- fromJSON("C:/Users/sacha/Downloads/cards_2020_11_14.json")
+
+reshaped_list <- lapply(parsed_data, function(x) unlist(x))
+
+base_cards <- as.data.frame(do.call(rbind, reshaped_list))
+```
+
+
+```{r}
+total <- as.numeric(cards %>% filter(!Rarity %in% c("SPECIAL", "CURSE")) %>% count())
+total_wo_basics <- as.numeric(cards %>% filter(!Rarity %in% c("BASIC", "SPECIAL", "CURSE")) %>% count())
+cards_left <- 71 - total_wo_basics
+```
+
+```{r echo=FALSE}
+cat("Total Cards: ",total)
+cat("Total Cards Not Including Basics:", total_wo_basics)
+cat("Cards Left to Make: ",cards_left)
+```
+
+
+```{r}
+colors <- unique(base_cards$color)
+
+costs_table <- cards %>% count(Cost)
+
+for (clr in colors) {
+    base_costs <- base_cards %>%
+        filter(color == clr) %>%
+        count(cost)
+    base_costs <- base_costs %>% mutate(cost = as.double(cost))
+
+    costs_table <- full_join(costs_table, base_costs, by = c("Cost" = "cost"))
+}
+
+names(costs_table) <- c("Cost", "Coinforged", colors)
+
+costs_table
+```
+
+```{r}
+rarity_table <- cards %>% count(Rarity)
+
+for (clr in colors) {
+    base_rarities <- base_cards %>%
+        filter(color == clr) %>%
+        count(rarity)
+
+    rarity_table <- full_join(rarity_table, base_rarities, by = c("Rarity" = "rarity"))
+}
+
+names(rarity_table) <- c("Rarity", "Coinforged", colors)
+
+rarity_table
+```
+
+```{r}
+type_table <- cards %>% count(Type)
+
+for (clr in colors) {
+    base_types <- base_cards %>%
+        filter(color == clr) %>%
+        count(card_type)
+
+    type_table <- full_join(type_table, base_types, by = c("Type" = "card_type"))
+}
+
+names(type_table) <- c("Type", "Coinforged", colors)
+
+type_table
+```
+
+```{r}
+cards %>%
+    mutate(contains_overflow = str_detect(Description, regex("overflow", ignore_case = TRUE))) %>%
+    summarise(overflow = sum(contains_overflow))
+
+cards %>%
+    mutate(contains_dice = str_detect(Description, regex("die|dice", ignore_case = TRUE))) %>%
+    summarise(dice = sum(contains_dice))
+
+cards %>%
+    mutate(contains_debt = str_detect(Description, regex("debt", ignore_case = TRUE))) %>%
+    summarise(debt = sum(contains_debt))
+
+cards %>%
+    mutate(contains_weak = str_detect(Description, regex("weak", ignore_case = TRUE))) %>%
+    summarise(weak = sum(contains_weak))
+
+cards %>%
+    mutate(contains_vuln = str_detect(Description, regex("vulnerable", ignore_case = TRUE))) %>%
+    summarise(vuln = sum(contains_vuln))
+
+cards %>%
+    mutate(contains_draw = str_detect(Description, regex("draw", ignore_case = TRUE))) %>%
+    summarise(draw = sum(contains_draw))
+
+cards %>%
+    mutate(contains_discard = str_detect(Description, regex("discard", ignore_case = TRUE))) %>%
+    summarise(discard = sum(contains_discard))
+```

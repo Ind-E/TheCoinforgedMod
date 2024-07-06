@@ -3,6 +3,7 @@ package CoinforgedPackage.cards.tempCards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
@@ -27,14 +28,16 @@ public class ChaosTwo extends AbstractCoinforgedCard {
     public ChaosTwo() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
-        this.exhaust = true;
+        exhaust = true;
         tags.add(CustomTags.MAGIC_DIE);
         tags.add(CustomTags.DIE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+        Wiz.atb(new ApplyPowerAction(p, p, new ArtifactPower(p, 1)));
+
     }
 
 }

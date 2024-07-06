@@ -13,7 +13,7 @@
   },
   "${modID}:GoldenGamble": {
     "NAME": "Golden Gamble",
-    "DESCRIPTION": "Lose !${modID}:loseGold! Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
+    "DESCRIPTION": "If you win next turn, gain !M! Gold. NL Exhaust."
   },
   "${modID}:RedOne": {
     "NAME": "Red Die",
@@ -77,11 +77,11 @@
   },
   "${modID}:ChaosTwo": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Gain 1 Artifact. NL Exhaust."
   },
   "${modID}:ChaosThree": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Gain [E] [E] . NL Exhaust."
+    "DESCRIPTION": "Gain [E] [E] [E] . NL Exhaust."
   },
   "${modID}:ChaosFour": {
     "NAME": "Chaos Die",
@@ -89,7 +89,7 @@
   },
   "${modID}:ChaosFive": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Gain !M! Artifact and !M! Intangible. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust."
   },
   "${modID}:ChaosSix": {
     "NAME": "Chaos Die",
@@ -119,7 +119,8 @@
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !${modID}:draw! card and set its cost to !M! this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !${modID}:draw! card and reduce its cost by !M! this turn."
+
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
@@ -170,7 +171,7 @@
   },
   "${modID}:IceDice": {
     "NAME": "Ice Dice",
-    "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice. NL Apply !${modID}:weak! Weak."
+    "DESCRIPTION": "Apply !${modID}:weak! Weak. NL Roll !M! ${modID}:Blue_Dice. "
   },
   "${modID}:LongGame": {
     "NAME": "Long Game",
@@ -186,7 +187,7 @@
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
     "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! less this turn. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs 0 this turn. NL Exhaust"
+    "UPGRADE_DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! this turn. NL Exhaust"
   },
   "${modID}:AttackFromDeck": {
     "NAME": "Attack",
@@ -274,7 +275,7 @@
   },
   "${modID}:InvigoratingRiffle": {
     "NAME": "Invigorating Riffle",
-    "DESCRIPTION": "Whenever a Skill is Exhausted, gain !M! Vigor."
+    "DESCRIPTION": "Whenever a card is Exhausted, gain !M! Vigor."
   },
   "${modID}:AceInTheHole": {
     "NAME": "Ace In The Hole",
@@ -326,7 +327,8 @@
   },
   "${modID}:UnleashedStrategy": {
     "NAME": "Unleashed Strategy",
-    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E] \u00a0for every 3 cards in hand. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card. NL Reduce the cost of cards in your hand by 1 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Reduce the cost of cards in your hand by 1 this turn. NL Exhaust."
   },
   "${modID}:Cripple": {
     "NAME": "Cripple",
@@ -338,7 +340,7 @@
   },
   "${modID}:Indebt": {
     "NAME": "Indebt",
-    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Apply !M! Weak. NL Lose !${modID:focus! Focus."
+    "DESCRIPTION": "Apply !${modID}:debt! ${modID}:Crippling_Debt. NL Apply !M! Weak."
   },
   "${modID}:Grapes": {
     "NAME": "Grapes",
@@ -350,12 +352,11 @@
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "Roll !M! ${modID}:Purple_Die. NL Retain your hand this turn.",
-    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Purple_Dice. NL Retain your hand this turn."
+    "DESCRIPTION": "Roll !M! ${modID}:Purple_Die. NL Retain your hand this turn."
   },
   "${modID}:CardCascade": {
     "NAME": "Card Cascade",
-    "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy. NL Draw a card."
+    "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy. NL Draw 1 card."
   },
   "${modID}:DownPayment": {
     "NAME": "Down Payment",
@@ -420,14 +421,9 @@
     "NAME": "Overflowing Armor",
     "DESCRIPTION": "Your cards have ${modID}:Overflow: Gain !M! Block."
   },
-  "${modID}:HoldOut": {
-    "NAME": "Hold Out",
-    "DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E].",
-    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! Cards. NL Gain [E] [E] [E] [E]."
-  },
   "${modID}:Dive": {
     "NAME": "Dive",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, draw !M! additional card."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Vulnerable."
   },
   "${modID}:LayLow": {
     "NAME": "Lay Low",
@@ -473,7 +469,7 @@
   },
   "${modID}:MillenniumDie": {
     "NAME": "Millennium Die",
-    "DESCRIPTION": "Roll any *Chaos *Die of your choice. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Roll any *Chaos *Die of your choice. NL Exhaust."
   },
   "${modID}:LeftToChance": {
     "NAME": "Left To Chance",
@@ -487,5 +483,33 @@
   "${modID}:Vision": {
     "NAME": "Vision",
     "DESCRIPTION": "Scry !M!. NL The top card of your draw pile costs 0 until played."
+  },
+  "${modID}:Foreclosure": {
+    "NAME": "Foreclosure",
+    "DESCRIPTION": "At the end of your turn, double ALL enemies' debuffs."
+  },
+  "${modID}:AllIn": {
+    "NAME": "All In",
+    "DESCRIPTION": "Ethereal. NL Gain !M! Intangible. Lose !M! Strength and Dexterity. Gain !M! Weak, Frail, and Vulnerable. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. Lose !M! Strength and Dexterity. Gain !M! Weak, Frail, and Vulnerable. Exhaust."
+  },
+  "${modID}:BlueDrink": {
+    "NAME": "Blue Drink",
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Die. NL Upgrade all cards in your hand for the rest of combat. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Blue_Die. NL Upgrade all cards in your hand for the rest of combat."
+  },
+  "${modID}:MurkyStrike": {
+    "NAME": "Murky Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL Hide enemy's intent next turn."
+  },
+  "${modID}:Boooost": {
+    "NAME": "Boooost!!",
+    "DESCRIPTION": "Gain [E] . NL Energy is conserved this turn. NL Draw 1 less card next turn.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] . NL Energy is conserved this turn. NL Draw 1 less card next turn."
+  },
+  "${modID}:Condense": {
+    "NAME": "Condense",
+    "DESCRIPTION": "Gain [E] [E] . NL Reduce your max hand size by !${modID}:hand!. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] . NL Reduce your max hand size by !${modID}:hand!."
   }
 }

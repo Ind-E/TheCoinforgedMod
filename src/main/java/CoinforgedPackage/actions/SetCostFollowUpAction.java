@@ -9,10 +9,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class SetCostFollowUpAction extends AbstractGameAction {
 
     private int magic = -1;
+    private boolean reduce;
 
-    public SetCostFollowUpAction(int magic) {
+    public SetCostFollowUpAction(int magic, boolean reduce) {
         this.magic = magic;
         this.duration = 0.001F;
+        this.reduce = reduce;
     }
 
     public void update() {
@@ -20,7 +22,8 @@ public class SetCostFollowUpAction extends AbstractGameAction {
         tickDuration();
         if (this.isDone) {
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                c.setCostForTurn(magic);
+                if ((!reduce && magic < c.costForTurn) || c.costForTurn > 0)
+                    c.setCostForTurn(reduce ? c.costForTurn - magic : magic);
             }
         }
 

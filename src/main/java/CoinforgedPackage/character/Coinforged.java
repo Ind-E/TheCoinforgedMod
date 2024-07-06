@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
-import CoinforgedPackage.cards.RollRed;
+import CoinforgedPackage.cards.GoneWithTheWind;
 import CoinforgedPackage.relics.CasinoCatalyst;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
@@ -108,7 +108,7 @@ public class Coinforged extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         // This card is used for the Gremlin card matching game.
         // It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new RollRed();
+        return new GoneWithTheWind();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

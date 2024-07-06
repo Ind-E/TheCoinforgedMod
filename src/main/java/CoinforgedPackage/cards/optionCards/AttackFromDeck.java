@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.actions.AddTypeToHandAction;
 import CoinforgedPackage.cards.AbstractCoinforgedCard;
-import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
@@ -15,7 +14,7 @@ public class AttackFromDeck extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(AttackFromDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Coinforged.Enums.CARD_COLOR,
+            CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -24,7 +23,7 @@ public class AttackFromDeck extends AbstractCoinforgedCard {
     public AttackFromDeck() {
         super(ID, info);
     }
-    
+
     public AttackFromDeck(boolean upgraded) {
         super(ID, info);
         if (upgraded) {

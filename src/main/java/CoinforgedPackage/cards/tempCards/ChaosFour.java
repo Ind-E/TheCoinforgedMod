@@ -16,8 +16,8 @@ import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScre
 
 @NoCompendium
 public class ChaosFour extends AbstractCoinforgedCard {
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(ChaosFour.class.getSimpleName());
     public static final CardStats info = new CardStats(

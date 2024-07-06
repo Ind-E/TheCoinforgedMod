@@ -19,12 +19,13 @@ public class MillenniumDie extends AbstractCoinforgedCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            1);
+            2);
 
     public MillenniumDie() {
         super(ID, info, true);
-        setCostUpgrade(0);
-        exhaust = true;
+        setCostUpgrade(1);
+        setExhaust(true);
+        setEthereal(true);
     }
 
     @Override

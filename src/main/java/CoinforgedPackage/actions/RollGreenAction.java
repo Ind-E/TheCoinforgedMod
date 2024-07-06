@@ -1,8 +1,7 @@
 package CoinforgedPackage.actions;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.cards.tempCards.GreenFive;
 import CoinforgedPackage.cards.tempCards.GreenFour;
@@ -28,7 +27,7 @@ public class RollGreenAction extends RollBaseAction {
         if (player.hasPower(SnakeEyesPower.POWER_ID)) {
             str_to_lose = 1;
         } else {
-            str_to_lose = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
+            str_to_lose = AbstractDungeon.cardRandomRng.random(minroll, maxroll);
         }
 
         AbstractCard cardToAdd = null;

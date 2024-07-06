@@ -12,7 +12,7 @@ import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScre
 
 @NoCompendium
 public abstract class BlueDieBase extends AbstractCoinforgedCard {
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 2;
 
     public static final String ID = makeID(BlueDieBase.class.getSimpleName());
     public static final CardStats info = new CardStats(

@@ -35,51 +35,51 @@ public class GrapesAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             for (AbstractCard c : p.hand.group) {
                 if (c.baseDamage <= 0 && c.baseBlock <= 0) {
-                    this.cannotBuff.add(c);
+                    cannotBuff.add(c);
                 }
             }
 
-            if (this.cannotBuff.size() == this.p.hand.group.size()) {
-                this.isDone = true;
+            if (cannotBuff.size() == p.hand.group.size()) {
+                isDone = true;
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
                         AbstractDungeon.player.dialogY, 3.0F, "I have no cards that can be buffed", true));
                 return;
             }
 
-            this.p.hand.group.removeAll(this.cannotBuff);
+            p.hand.group.removeAll(cannotBuff);
 
-            if (this.p.hand.group.size() > 1) {
-                AbstractDungeon.handCardSelectScreen.open(this.msg, 1, false, false, false, false);
-                this.tickDuration();
+            if (p.hand.group.size() > 1) {
+                AbstractDungeon.handCardSelectScreen.open(msg, 1, false, false, false, false);
+                tickDuration();
                 return;
             }
 
-            if (this.p.hand.group.size() == 1) {
-                CardModifierManager.addModifier(this.p.hand.getTopCard(), new GrapesModifier(this.amount));
-                this.p.hand.getTopCard().superFlash();
-                this.returnCards();
-                this.isDone = true;
+            if (p.hand.group.size() == 1) {
+                CardModifierManager.addModifier(p.hand.getTopCard(), new GrapesModifier(amount));
+                p.hand.getTopCard().superFlash();
+                returnCards();
+                isDone = true;
             }
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                CardModifierManager.addModifier(c, new GrapesModifier(this.amount));
+                CardModifierManager.addModifier(c, new GrapesModifier(amount));
                 c.superFlash();
                 c.applyPowers();
-                this.p.hand.addToTop(c);
+                p.hand.addToTop(c);
             }
 
-            this.returnCards();
+            returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
-            this.isDone = true;
+            isDone = true;
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 
     private void returnCards() {
@@ -88,8 +88,8 @@ public class GrapesAction extends AbstractGameAction {
             c.superFlash();
         }
 
-        this.p.hand.refreshHandLayout();
-        Wiz.atb(new MakeTempCardInHandAction(new Grapes(1, this.upgraded)));
+        p.hand.refreshHandLayout();
+        Wiz.atb(new MakeTempCardInHandAction(new Grapes(1, upgraded)));
         return;
     }
 

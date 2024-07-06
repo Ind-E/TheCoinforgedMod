@@ -21,18 +21,18 @@ public class CardCascadePower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public void onCardDraw(AbstractCard card) {
         flash();
-        Wiz.atb(new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount, DamageType.THORNS),
+        Wiz.atb(new DamageRandomEnemyAction(new DamageInfo(owner, amount, DamageType.THORNS),
                 AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void atStartOfTurn() {
-        Wiz.atb(new RemoveSpecificPowerAction(this.owner, this.owner, CardCascadePower.POWER_ID));
+        Wiz.att(new RemoveSpecificPowerAction(owner, owner, CardCascadePower.POWER_ID));
     }
 }

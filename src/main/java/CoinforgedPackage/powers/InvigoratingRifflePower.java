@@ -18,13 +18,11 @@ public class InvigoratingRifflePower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public void onExhaust(AbstractCard card) {
-        if (card.type == AbstractCard.CardType.SKILL) {
-            Wiz.atb(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
-        }
+        Wiz.atb(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount)));
     }
 }

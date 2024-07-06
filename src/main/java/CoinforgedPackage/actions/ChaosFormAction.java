@@ -1,9 +1,8 @@
 package CoinforgedPackage.actions;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.cards.tempCards.ChaosFive;
 import CoinforgedPackage.cards.tempCards.ChaosFour;
@@ -19,7 +18,7 @@ public class ChaosFormAction extends RollBaseAction {
     }
 
     public AbstractCard roll() {
-        int chaosRoll = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        int chaosRoll = AbstractDungeon.cardRandomRng.random(1, 6);
         AbstractCard cardToAdd = null;
         switch (chaosRoll) {
             case 1:

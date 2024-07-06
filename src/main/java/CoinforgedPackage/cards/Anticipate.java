@@ -15,7 +15,6 @@ import CoinforgedPackage.util.Wiz;
 // card art idea: laying caltrops in front of sleeping lagavulin
 public class Anticipate extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Anticipate.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +26,8 @@ public class Anticipate extends AbstractCoinforgedCard {
 
     public Anticipate() {
         super(ID, info, true);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
+        setCostUpgrade(0);
     }
 
     @Override

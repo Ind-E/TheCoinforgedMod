@@ -15,27 +15,30 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class JokerTrick extends AbstractCoinforgedCard {
+    private static final int MAGIC = 1;
+    private static final int UPG_MAGIC = -1;
+
     public static final String ID = makeID(JokerTrick.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.NONE,
             1);
 
     public JokerTrick() {
         super(ID, info);
-        this.exhaust = true;
-        setMagic(1, 0);
+        setExhaust(true);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> cardChoices = new ArrayList<AbstractCard>();
-        cardChoices.add(new AttackFromDeck(this.upgraded));
-        cardChoices.add(new SkillFromDeck(this.upgraded));
-        cardChoices.add(new PowerFromDeck(this.upgraded));
+        cardChoices.add(new AttackFromDeck(upgraded));
+        cardChoices.add(new SkillFromDeck(upgraded));
+        cardChoices.add(new PowerFromDeck(upgraded));
         Wiz.atb(new ChooseOneAction(cardChoices));
     }
 

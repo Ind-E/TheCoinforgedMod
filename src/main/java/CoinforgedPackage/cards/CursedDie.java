@@ -1,13 +1,10 @@
 package CoinforgedPackage.cards;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-// import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class CursedDie extends AbstractCoinforgedCard {
@@ -27,7 +24,7 @@ public class CursedDie extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int num = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        int num = AbstractDungeon.cardRandomRng.random(1, 6);
         if (num == 6) {
             AbstractDungeon.player.masterDeck.removeCard(CursedDie.ID);
         }

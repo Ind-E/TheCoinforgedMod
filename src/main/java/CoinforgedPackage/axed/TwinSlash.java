@@ -45,9 +45,9 @@ public class TwinSlash extends AbstractCoinforgedCard {
     @Override
     public void triggerOnGlowCheck() {
         if (Wiz.adp().hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            // glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            // glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

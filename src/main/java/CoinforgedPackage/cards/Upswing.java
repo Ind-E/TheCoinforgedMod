@@ -39,7 +39,7 @@ public class Upswing extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageAction(m,
                 new DamageInfo(p, damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
-                AttackEffect.NONE));
+                AttackEffect.BLUNT_LIGHT));
         Wiz.atb(new RollBlueAction(magicNumber));
     }
 
