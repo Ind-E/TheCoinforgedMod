@@ -7,14 +7,10 @@ import java.util.List;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import CoinforgedPackage.cards.tempCards.RedEight;
 import CoinforgedPackage.cards.tempCards.RedFive;
 import CoinforgedPackage.cards.tempCards.RedFour;
-import CoinforgedPackage.cards.tempCards.RedNine;
 import CoinforgedPackage.cards.tempCards.RedOne;
-import CoinforgedPackage.cards.tempCards.RedSeven;
 import CoinforgedPackage.cards.tempCards.RedSix;
-import CoinforgedPackage.cards.tempCards.RedTen;
 import CoinforgedPackage.cards.tempCards.RedThree;
 import CoinforgedPackage.cards.tempCards.RedTwo;
 import CoinforgedPackage.powers.AdvantagePower;
@@ -73,21 +69,8 @@ public class RollRedAction extends RollBaseAction {
                 break;
             case 6:
                 cardToAdd = redKingActive ? new RedSix(true) : new RedSix();
-                break;
-            case 7:
-                cardToAdd = redKingActive ? new RedSeven(true) : new RedSeven();
-                break;
-            case 8:
-                cardToAdd = redKingActive ? new RedEight(true) : new RedEight();
-                break;
-            case 9:
-                cardToAdd = redKingActive ? new RedNine(true) : new RedNine();
-                break;
-            case 10:
-                cardToAdd = redKingActive ? new RedTen(true) : new RedTen();
-                break;
             default:
-                cardToAdd = redKingActive ? new RedTen(dmg, true) : new RedTen(dmg);
+                cardToAdd = redKingActive ? new RedSix(dmg, true) : new RedSix(dmg);
                 break;
         }
         return cardToAdd;

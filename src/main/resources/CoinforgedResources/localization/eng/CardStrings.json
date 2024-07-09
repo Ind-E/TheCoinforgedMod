@@ -13,7 +13,7 @@
   },
   "${modID}:GoldenGamble": {
     "NAME": "Golden Gamble",
-    "DESCRIPTION": "If you win next turn, gain !M! Gold. NL Exhaust."
+    "DESCRIPTION": "If you win this turn, gain !M! Gold. NL Exhaust."
   },
   "${modID}:RedOne": {
     "NAME": "Red Die",
@@ -41,7 +41,7 @@
   },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
-    "DESCRIPTION": "Gain !${modID}:str! Temporary Strength. NL Roll !M! ${modID}:Red_Dice."
+    "DESCRIPTION": "Gain !${modID}:str! temporary Strength. NL Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",
@@ -98,7 +98,8 @@
   },
   "${modID}:ChaosForm": {
     "NAME": "Chaos Form",
-    "DESCRIPTION": "Ethereal. NL At the start of your turn, roll a *Chaos *Die."
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, roll a *Chaos *Die.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, roll a *Chaos *Die."
   },
   "${modID}:Fold": {
     "NAME": "Fold",
@@ -109,10 +110,6 @@
       " cards played.)"
     ]
   },
-  "${modID}:LuckOfTheDraw": {
-    "NAME": "Luck of the Draw",
-    "DESCRIPTION": "Whenever you draw a card, you have a 25% chance to gain !M! Block."
-  },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
     "DESCRIPTION": "Deal !D! damage. If this is the leftmost card in your hand, it costs 0."
@@ -120,16 +117,10 @@
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
     "DESCRIPTION": "Deal !D! damage. NL Draw !${modID}:draw! card and reduce its cost by !M! this turn."
-
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
-    "DESCRIPTION": "Deal !D! damage. If you have any debuffs, gain !B! Block."
-  },
-  "${modID}:HeartOfTheCards": {
-    "NAME": "Heart Of The Cards",
-    "DESCRIPTION": "Draw X cards and set their cost to 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw X+1 cards and set their cost to 0 this turn. NL Exhaust."
+    "DESCRIPTION": "If you have any debuffs, gain !B! Block. NL Deal !D! damage."
   },
   "${modID}:StackedDeck": {
     "NAME": "Stacked Deck",
@@ -138,8 +129,8 @@
   },
   "${modID}:HitAndRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Ethereal. NL Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it.",
-    "UPGRADE_DESCRIPTION": "Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it."
+    "DESCRIPTION": "Ethereal. NL Your Attacks deal double damage. Whenever you play an Attack, Exhaust it.",
+    "UPGRADE_DESCRIPTION": "Your Attacks deal double damage. Whenever you play an Attack, Exhaust it."
   },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
@@ -301,7 +292,7 @@
   },
   "${modID}:LuckyEight": {
     "NAME": "Lucky Eight",
-    "DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, gain 8 Thorns.",
+    "DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, gain 8 Thorns and exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " card played.)",
@@ -432,7 +423,7 @@
   "${modID}:Grow": {
     "NAME": "Grow",
     "DESCRIPTION": "Gain !M! Strength. NL Shuffle a copy of this into your draw pile that costs 1 more.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Strength and !M! Temporary Strength. NL Shuffle a copy of this into your draw pile that costs 1 more."
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength and !M! temporary Strength. NL Shuffle a copy of this into your draw pile that costs 1 more."
   },
   "${modID}:PincerAttack": {
     "NAME": "Pincer Attack",
@@ -509,7 +500,20 @@
   },
   "${modID}:Condense": {
     "NAME": "Condense",
-    "DESCRIPTION": "Gain [E] [E] . NL Reduce your max hand size by !${modID}:hand!. NL Exhaust",
+    "DESCRIPTION": "Gain [E] [E] . NL Reduce your max hand size by !${modID}:hand!. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] . NL Reduce your max hand size by !${modID}:hand!."
+  },
+  "${modID}:LiquidCourage": {
+    "NAME": "Liquid Courage",
+    "DESCRIPTION": "Gain !M! temporary Dexterity. NL ${modID}:Overflow: gain !${modID}:dex! Dexterity. NL Exhaustive !stslib:ex!."
+  },
+  "${modID}:Slide": {
+    "NAME": "Slide",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL ${modID}:Overflow: gain 1 Artifact."
+  },
+  "${modID}:Brace": {
+    "NAME": "Brace",
+    "DESCRIPTION": "Your hand size can't go below !M!.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Your hand size can't go below !M!."
   }
 }

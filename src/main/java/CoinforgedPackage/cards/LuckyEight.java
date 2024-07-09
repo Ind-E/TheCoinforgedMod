@@ -52,8 +52,10 @@ public class LuckyEight extends AbstractCoinforgedCard {
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+            exhaustOnUseOnce = true;
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
+            exhaustOnUseOnce = false;
         }
     }
 

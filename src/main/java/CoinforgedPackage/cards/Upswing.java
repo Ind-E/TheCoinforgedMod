@@ -16,8 +16,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
 public class Upswing extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 1;
     private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
 

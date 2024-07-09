@@ -96,7 +96,7 @@
   "${modID}:HitAndRunPower": {
     "NAME": "Hit and Run",
     "DESCRIPTIONS": [
-      "Your Attacks deal #b75% more damage. Whenever you play an Attack, #yExhaust it."
+      "#yAttacks deal double damage. Whenever you play an Attack, #yExhaust it."
     ]
   },
   "${modID}:PokerFacePower": {
@@ -248,6 +248,12 @@
     "DESCRIPTIONS": [
       "Enemy intent hidden.",
       "Enemy intent will be hidden next turn."
+    ]
+  },
+  "${modID}:MinHandSizePower": {
+    "NAME": "Braced",
+    "DESCRIPTIONS": [
+      "Your hand size can't go below #b%d [REMOVE_SPACE]."
     ]
   }
 }

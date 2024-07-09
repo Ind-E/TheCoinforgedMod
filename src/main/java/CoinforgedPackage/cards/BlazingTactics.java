@@ -13,6 +13,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.util.Wiz;
 
+//TODO: seems quite strong
 public class BlazingTactics extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
     private static final int DRAW = 1;

@@ -15,7 +15,6 @@ import CoinforgedPackage.util.Wiz;
 
 public class AllIn extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(AllIn.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +26,7 @@ public class AllIn extends AbstractCoinforgedCard {
 
     public AllIn() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
         setEthereal(true, false);
         setExhaust(true);
     }

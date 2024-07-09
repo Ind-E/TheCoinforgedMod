@@ -17,13 +17,13 @@ public class HitAndRunPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL)
-            return damage * (1F + this.amount * 0.75F);
+            return damage * (1F + amount);
         return damage;
     }
 
