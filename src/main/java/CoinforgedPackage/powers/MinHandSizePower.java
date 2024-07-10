@@ -27,6 +27,7 @@ public class MinHandSizePower extends BasePower implements BetterOnApplyPowerPow
     @Override
     public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power instanceof ModifiedHandSizePower && power.amount < 0 && BaseMod.MAX_HAND_SIZE == amount) {
+            flash();
             return false;
         }
         return true;
@@ -44,6 +45,7 @@ public class MinHandSizePower extends BasePower implements BetterOnApplyPowerPow
             return stackAmount;
         }
         if (BaseMod.MAX_HAND_SIZE + power.amount < amount) {
+            flash();
             return -(BaseMod.MAX_HAND_SIZE - amount);
         } else {
             return power.amount;

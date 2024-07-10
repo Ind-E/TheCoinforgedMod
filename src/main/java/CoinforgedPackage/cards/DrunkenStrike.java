@@ -1,7 +1,7 @@
 package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,7 +33,7 @@ public class DrunkenStrike extends AbstractCoinforgedCard {
 
     @Override
     public void triggerWhenDrawn() {
-        this.costForTurn = getRandomCost();
+        costForTurn = getRandomCost();
     }
 
     private int getRandomCost() {
@@ -42,8 +42,7 @@ public class DrunkenStrike extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, this.damageType),
-                AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        Wiz.atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override

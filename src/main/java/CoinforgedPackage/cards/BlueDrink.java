@@ -20,7 +20,7 @@ public class BlueDrink extends AbstractCoinforgedCard {
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.NONE,
             1);
 

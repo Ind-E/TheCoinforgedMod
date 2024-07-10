@@ -18,7 +18,7 @@ public class Reroll extends AbstractCoinforgedCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            1);
+            0);
 
     public Reroll() {
         super(ID, info);

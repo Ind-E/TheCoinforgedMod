@@ -377,8 +377,8 @@
   },
   "${modID}:Reroll": {
     "NAME": "Re-Roll",
-    "DESCRIPTION": "Once per turn, whenever you play all six dice values, take an extra turn after this one.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Once per turn, whenever you play all six dice values, take an extra turn after this one."
+    "DESCRIPTION": "Whenever you play all six dice values, take an extra turn after this one.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play all six dice values, take an extra turn after this one."
   },
   "${modID}:BackBurner": {
     "NAME": "Back Burner",
@@ -515,5 +515,9 @@
     "NAME": "Brace",
     "DESCRIPTION": "Your hand size can't go below !M!.",
     "UPGRADE_DESCRIPTION": "Innate. NL Your hand size can't go below !M!."
+  },
+  "${modID}:IronRoll": {
+    "NAME": "Iron Roll",
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Die. NL Roll !M! ${modID}:Red_Die."
   }
 }

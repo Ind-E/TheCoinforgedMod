@@ -26,7 +26,8 @@ public class OverflowingArmorPower extends BasePower {
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) { // happens before card leaves hand
         if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE - 1) {
-            Wiz.atb(new GainBlockAction(AbstractDungeon.player, amount));
+            flash();
+            Wiz.atb(new GainBlockAction(AbstractDungeon.player, amount, true));
         }
     }
 

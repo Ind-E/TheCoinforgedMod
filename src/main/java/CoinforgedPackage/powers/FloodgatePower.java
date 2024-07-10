@@ -19,7 +19,7 @@ import basemod.BaseMod;
 
 public class FloodgatePower extends BasePower implements OnReceivePowerPower, OnCreateCardInterface {
     public static final String POWER_ID = makeID(FloodgatePower.class.getSimpleName());
-    private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
+    private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
     private AbstractPlayer p = AbstractDungeon.player;
 
@@ -35,15 +35,8 @@ public class FloodgatePower extends BasePower implements OnReceivePowerPower, On
     public void onCardDraw(AbstractCard c) {
         if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
             Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
-            Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.NORMAL, AttackEffect.NONE));
-        }
-    }
-
-    @Override // ???
-    public void onDrawOrDiscard() {
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-            Wiz.atb(new VFXAction(p, new CleaveEffect(), 0.1F));
-            Wiz.atb(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.NORMAL, AttackEffect.NONE));
+            Wiz.atb(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount, true),
+                    DamageInfo.DamageType.THORNS, AttackEffect.NONE));
         }
     }
 
